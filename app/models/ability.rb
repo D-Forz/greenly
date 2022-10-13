@@ -5,5 +5,6 @@ class Ability
 
   def initialize(user)
     can :index, Event
+    can :show, Event, user
   end
 end

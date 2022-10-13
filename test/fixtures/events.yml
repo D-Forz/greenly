@@ -1,0 +1,7 @@
+one:
+  title: MyString
+  description: MyText
+  date: <%= Date.today %>
+  time: <%= Time.now %>
+  address: MyString
+  user: admin

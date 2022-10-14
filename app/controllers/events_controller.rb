@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    authorize @event
+    @attendance = Attendance.new
   end
 
   def new
@@ -43,6 +43,7 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id])
+    authorize @event
   end
 
   def event_params

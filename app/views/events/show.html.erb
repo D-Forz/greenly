@@ -1,16 +1,44 @@
-<div class="events">
-  <h1>Event Details</h1>
-  <h2><%= @event.title %></h2>
-  <p><%= @event.description %></p>
-  <p><%= @event.address %></p>
-  <p><%= @event.date %></p>
-  <p><%= @event.time %></p>
-</div>
- <div class="event-comments">
-    <h3>Comments</h3>
-    <% @event.comments.order(created_at: :desc).each do |comment| %>
-      <p><%= comment.content %></p>
-    <% end %>
+<div class="row">
+  <div class="col-md-8">
+    <div class="events">
+      <h1>Event Details</h1>
+      <h2><%= @event.title %></h2>
+      <p><%= @event.description %></p>
+      <p><%= @event.address %></p>
+      <p><%= @event.date %></p>
+      <p><%= @event.time %></p>
+    </div>
+    <div class="event-comments">
+        <h3>Comments</h3>
+        <% @event.comments.order(created_at: :desc).each do |comment| %>
+          <p><%= comment.content %></p>
+        <% end %>
+    </div>
   </div>
+  <div class="col-md-4">
+    <div class="event-attendees">
+      <h3>Attendees</h3>
+      <% if @event.attendances.empty? %>
+        <p>No attendees yet, bet the first!</p>
+      <% else %>
+        <h4>Going</h4>
+        <% @event.attendances.each do |attendance| %>
+          <% if attendance.attendance_status == "Going" %>
+            <p><%= attendance.user.first_name %></p>
+          <% end %>
+        <% end %>
+        <h4>Maybe</h4>
+        <% @event.attendances.each do |attendance| %>
+          <% if attendance.attendance_status == "Maybe" %>
+            <p><%= attendance.user.first_name %></p>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <%= simple_form_for [@event, @attendance] do |f| %>
+      <%= f.input :attendance_status, collection: ["Going", "Maybe"] %>
+      <%= f.button :submit, "Attend" %>
+    <% end %>
+</div>
 <%= link_to "edit", edit_event_path(@event) %>
 <%= link_to "back", events_path %>

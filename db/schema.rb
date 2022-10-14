@@ -45,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_134919) do
   create_table "attendances", force: :cascade do |t|
     t.bigint "event_id", null: false
     t.bigint "user_id", null: false
+    t.string "attendance_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_attendances_on_event_id"

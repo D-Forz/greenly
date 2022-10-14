@@ -1,11 +1,11 @@
 comment_one:
-  content: MyString
+  content: MyFirstComment
   user: admin
   commentable: post_one
   commentable_type: Post
 
 comment_two:
-  content: MyString
+  content: MySecondComment
   user: admin
   commentable: event_one
   commentable_type: Event

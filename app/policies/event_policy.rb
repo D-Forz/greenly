@@ -11,6 +11,14 @@ class EventPolicy < ApplicationPolicy
   end
 
   def create?
-    user.organizer?
+    user.organizer
+  end
+
+  def update?
+    user.organizer
+  end
+
+  def destroy?
+    user.organizer
   end
 end

@@ -1,6 +1,6 @@
 event_one:
-  title: MyString
-  description: MyText
+  title: MyFirstEvent
+  description: MyFirstEventDescription
   date: <%= Date.today %>
   time: <%= Time.now %>
   address: MyString

@@ -1,8 +1,16 @@
-<h1>Event Details</h1>
-<h2><%= @event.title %></h2>
-<p><%= @event.description %></p>
-<p><%= @event.address %></p>
-<p><%= @event.date %></p>
-<p><%= @event.time %></p>
+<div class="events">
+  <h1>Event Details</h1>
+  <h2><%= @event.title %></h2>
+  <p><%= @event.description %></p>
+  <p><%= @event.address %></p>
+  <p><%= @event.date %></p>
+  <p><%= @event.time %></p>
+</div>
+ <div class="event-comments">
+    <h3>Comments</h3>
+    <% @event.comments.order(created_at: :desc).each do |comment| %>
+      <p><%= comment.content %></p>
+    <% end %>
+  </div>
 <%= link_to "edit", edit_event_path(@event) %>
 <%= link_to "back", events_path %>

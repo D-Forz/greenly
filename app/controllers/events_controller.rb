@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
   before_action :set_event, only: %i[show edit update destroy]
   def index
-    @events = policy_scope(Event)
+    @events = policy_scope(Event).order(created_at: :desc)
   end
 
   def show

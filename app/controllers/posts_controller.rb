@@ -1,15 +1,20 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: %i[show edit update destroy]
+
   def index
-    @posts = policy_scope(Post).order(created_at: :desc)
+    @posts = policy_scope(Post).order(created_at: :desc).load_async
+    @events = policy_scope(Event).last(3)
   end
 
   def new
     @post = Post.new
+    authorize @post
   end
 
   def create
     @post = Post.new(post_params)
     @post.user = current_user
+    authorize @post
     if @post.save
       redirect_to posts_path, notice: 'Post was successfully created.'
     else
@@ -18,11 +23,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    authorize @post
   end
 
   def update
-    @post = Post.find(params[:id])
+    authorize @post
     if @post.update(post_params)
       redirect_to posts_path, notice: 'Post was successfully updated.'
     else
@@ -31,12 +36,16 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
+    authorize @post
     redirect_to posts_path, status: :see_other
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:content)

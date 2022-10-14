@@ -7,6 +7,10 @@ class EventPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    user
+  end
+
+  def create?
+    user.organizer?
   end
 end

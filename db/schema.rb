@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_13_230620) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_14_122739) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_230620) do
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_attendances_on_event_id"
     t.index ["user_id"], name: "index_attendances_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content", null: false
+    t.string "commentable_type"
+    t.bigint "commentable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
   end
 
   create_table "events", force: :cascade do |t|
@@ -51,6 +60,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_230620) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name", null: false
+    t.string "lastname", null: false
+    t.boolean "organizer", default: false
+    t.integer "phone"
+    t.integer "points", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

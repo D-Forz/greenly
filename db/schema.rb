@@ -27,9 +27,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_122739) do
     t.string "content", null: false
     t.string "commentable_type"
     t.bigint "commentable_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -61,7 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_122739) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "first_name", null: false
-    t.string "lastname", null: false
+    t.string "last_name", null: false
     t.boolean "organizer", default: false
     t.integer "phone"
     t.integer "points", default: 0
@@ -71,6 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_122739) do
 
   add_foreign_key "attendances", "events"
   add_foreign_key "attendances", "users"
+  add_foreign_key "comments", "users"
   add_foreign_key "events", "users"
   add_foreign_key "posts", "users"
 end

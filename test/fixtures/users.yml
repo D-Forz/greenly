@@ -1,3 +1,6 @@
 admin:
+  first_name: John
+  last_name: Doe
+  organizer: true
   email: jhon@email.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

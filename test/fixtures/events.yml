@@ -1,4 +1,4 @@
-one:
+event_one:
   title: MyString
   description: MyText
   date: <%= Date.today %>

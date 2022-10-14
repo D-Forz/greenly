@@ -1,3 +1,19 @@
 post_one:
   content: MyFirstPost
   user: admin
+
+post_two:
+  content: MySecondPost
+  user: jhon
+
+post_three:
+  content: MyThirdPost
+  user: pedro
+
+post_four:
+  content: MyFourthPost
+  user: admin
+
+post_five:
+  content: MyFifthPost
+  user: admin

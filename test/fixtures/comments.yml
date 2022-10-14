@@ -9,3 +9,15 @@ comment_two:
   user: admin
   commentable: event_one
   commentable_type: Event
+
+comment_three:
+  content: MyThirdComment
+  user: pedro
+  commentable: post_two
+  commentable_type: Post
+
+comment_four:
+  content: MyFourthComment
+  user: jhon
+  commentable: event_two
+  commentable_type: Event

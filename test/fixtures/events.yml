@@ -5,3 +5,35 @@ event_one:
   time: <%= Time.now %>
   address: MyString
   user: admin
+
+event_two:
+  title: MySecondEvent
+  description: MySecondEventDescription
+  date: <%= Date.today %>
+  time: <%= Time.now %>
+  address: MyString
+  user: admin
+
+event_three:
+  title: MyThirdEvent
+  description: MyThirdEventDescription
+  date: <%= Date.today %>
+  time: <%= Time.now %>
+  address: MyString
+  user: admin
+
+event_four:
+  title: MyFourthEvent
+  description: MyFourthEventDescription
+  date: <%= Date.today %>
+  time: <%= Time.now %>
+  address: MyString
+  user: admin
+
+event_five:
+  title: MyFifthEvent
+  description: MyFifthEventDescription
+  date: <%= Date.today %>
+  time: <%= Time.now %>
+  address: MyString
+  user: admin

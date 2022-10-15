@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     authorize @comment
     if @comment.save
-      redirect_back_or_to @commentable, notice: 'Comment was successfully created.'
+      redirect_back_or_to root_path, notice: 'Comment was successfully created.'
     else
-      redirect_back_or_to @commentable, alert: 'Comment was not created.'
+      redirect_back_or_to root_path, alert: 'Comment was not created.'
     end
   end
 

@@ -2,8 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
-    @posts = policy_scope(Post).order(created_at: :desc)
-    @events = policy_scope(Event).last(3)
+    @posts ||= policy_scope(Post).order(created_at: :desc)
+    @events ||= policy_scope(Event).last(3)
     @comment = Comment.new
   end
 

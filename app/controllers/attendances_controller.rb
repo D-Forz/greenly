@@ -1,20 +1,15 @@
 class AttendancesController < ApplicationController
   before_action :set_event, only: %i[show destroy create]
 
-  def new
-    @attendance = Attendance.new
-    authorize @attendance
-  end
-
   def create
     @attendance = Attendance.new(attendance_params)
     @attendance.user = current_user
     @attendance.event = @event
     authorize @attendance
     if @attendance.save
-      redirect_to event_path(@attendance.event), notice: 'Attendance was successfully created.'
+      redirect_to event_path(@event), notice: 'Attendance was successfully created.'
     else
-      render 'events/show', status: :unprocessable_entity
+      redirect_to @event, status: :unprocessable_entity, alert: 'Attendance was not created.'
     end
   end
 

@@ -7,6 +7,7 @@ class EventsController < ApplicationController
 
   def show
     @attendance = Attendance.new
+    @comment = Comment.new
   end
 
   def new

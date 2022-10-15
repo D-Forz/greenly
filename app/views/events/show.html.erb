@@ -7,6 +7,15 @@
       <p><%= @event.address %></p>
       <p><%= @event.event_date %></p>
     </div>
+    <div class="comment-create">
+      <% if policy(@comment).create? %>
+        <h2>leave a comment</h2>
+        <%= simple_form_for [@event, @comment] do |f| %>
+          <%= f.input :content %>
+          <%= f.button :submit %>
+        <% end %>
+      <% end %>
+    </div>
     <div class="event-comments">
         <h3>Comments</h3>
         <% @event.comments.order(created_at: :desc).each do |comment| %>

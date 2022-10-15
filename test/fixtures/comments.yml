@@ -1,23 +1,23 @@
 comment_one:
-  content: MyFirstComment
+  content: Que increible, me encanta!
   user: admin
   commentable: post_one
   commentable_type: Post
 
 comment_two:
-  content: MySecondComment
+  content: Esta muy interesante, me gustaria aprender mas!
   user: admin
   commentable: event_one
   commentable_type: Event
 
 comment_three:
-  content: MyThirdComment
+  content: siempre he querido aprender a sembrar lechugas, gracias!
   user: pedro
   commentable: post_two
   commentable_type: Post
 
 comment_four:
-  content: MyFourthComment
+  content: ¿Se puede invitar a más personas?
   user: jhon
   commentable: event_two
   commentable_type: Event

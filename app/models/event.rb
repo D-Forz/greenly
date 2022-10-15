@@ -5,5 +5,5 @@ class Event < ApplicationRecord
   has_one_attached :photo
   belongs_to :user
 
-  validates :title, :description, :date, :time, :address, presence: true
+  validates :title, :description, :event_date, :address, presence: true
 end

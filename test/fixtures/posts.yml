@@ -1,19 +1,19 @@
 post_one:
-  content: MyFirstPost
+  content: En este post vamos a aprender a sembrar tomates, es muy facil!
   user: admin
 
 post_two:
-  content: MySecondPost
+  content: En este post vamos a aprender a sembrar lechugas, es un poco mas dificil!
   user: jhon
 
 post_three:
-  content: MyThirdPost
+  content: En este post vamos a aprender a sembrar papas, es muy facil!
   user: pedro
 
 post_four:
-  content: MyFourthPost
+  content: En este post vamos a aprender a sembrar zanahorias, es un poco mas dificil!
   user: admin
 
 post_five:
-  content: MyFifthPost
+  content: En este post vamos a aprender a sembrar cebollas, es muy facil!
   user: admin

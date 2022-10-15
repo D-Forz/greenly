@@ -1,39 +1,34 @@
 event_one:
-  title: MyFirstEvent
-  description: MyFirstEventDescription
-  date: <%= Date.today %>
-  time: <%= Time.now %>
-  address: MyString
+  title: Acompañanos a sembrar tomates!
+  description: Estaremos sembrando tomates en el huerto de la escuela, todos son bienvenidos!
+  event_date: <%= DateTime.now %>
+  address: Escuela de la ciudad
   user: admin
 
 event_two:
-  title: MySecondEvent
-  description: MySecondEventDescription
-  date: <%= Date.today %>
-  time: <%= Time.now %>
-  address: MyString
+  title: Acompañanos a limpiar las playas!
+  description: Estaremos limpiando las playas de la ciudad, todos son bienvenidos!
+  event_date: <%= DateTime.now %>
+  address: Punto de encuentro en la playa
   user: admin
 
 event_three:
-  title: MyThirdEvent
-  description: MyThirdEventDescription
-  date: <%= Date.today %>
-  time: <%= Time.now %>
-  address: MyString
+  title: Campaña de siembra de arboles en Medellín
+  description: Estaremos sembrando arboles en el parque de la ciudad, todos son bienvenidos!
+  event_date: <%= DateTime.now %>
+  address: Parque de la ciudad
   user: admin
 
 event_four:
-  title: MyFourthEvent
-  description: MyFourthEventDescription
-  date: <%= Date.today %>
-  time: <%= Time.now %>
-  address: MyString
+  title: Acompañanos a sembrar lechugas!
+  description: Estaremos sembrando lechugas en el huerto de la escuela, todos son bienvenidos!
+  event_date: <%= DateTime.now %>
+  address: Escuela de la ciudad
   user: admin
 
 event_five:
-  title: MyFifthEvent
-  description: MyFifthEventDescription
-  date: <%= Date.today %>
-  time: <%= Time.now %>
-  address: MyString
+  title: Campaña de recolección de basura en Medellín
+  description: Estaremos recolectando basura en el parque de la ciudad, todos son bienvenidos!
+  event_date: <%= DateTime.now %>
+  address: Parque de la ciudad
   user: admin

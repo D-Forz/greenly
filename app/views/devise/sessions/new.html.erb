@@ -1,20 +1,21 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%=asset_path('greenly_2.jpg')%>)">
+  <div class="container">
+    <div class="row vh-100 align-items-center justify-content-center">
+      <div class="col-sm-8 col-md-6 col-lg-4 bg-white rounded p-4 shadow">
+        <div class="row justify-content-center mb-4">
+          <%# <%= image_tag "campingnb.ico", class: "mt-4 w-25"%>
+        </div>
+        <div class="mb-4">
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
+          <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
+          <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= f.button :submit, "Log in", class: 'btn btn-outline-success w-100' %>
+          <% end %>
+            <p class="text-center text-muted mt-3">Don't have an account?</p>
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

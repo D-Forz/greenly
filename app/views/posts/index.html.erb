@@ -21,14 +21,16 @@
               <% if policy(post).destroy? %>
                 <%= link_to "delete", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
               <% end %>
-              <h2>leave a comment</h2>
-              <%= simple_form_for [post, @comment] do |f| %>
-                <%= f.input :content %>
-                <%= f.button :submit %>
-              <% end %>
-              <% post.comments.order(created_at: :desc).each do |comment| %>
-                <p><%= comment.content %></p>
+              <% if policy(@comment).create? %>
+                <h2>leave a comment</h2>
+                <%= simple_form_for [post, @comment] do |f| %>
+                  <%= f.input :content %>
+                  <%= f.button :submit %>
                 <% end %>
+              <% end %>
+                <% post.comments.order(created_at: :desc).each do |comment| %>
+                  <p><%= comment.content %></p>
+                  <% end %>
         <% end %>
       </div>
     </div>

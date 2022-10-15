@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_14_134919) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_15_193047) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_134919) do
   create_table "attendances", force: :cascade do |t|
     t.bigint "event_id", null: false
     t.bigint "user_id", null: false
+    t.string "attendance_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_attendances_on_event_id"
@@ -65,13 +66,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_134919) do
   create_table "events", force: :cascade do |t|
     t.string "title", null: false
     t.text "description", null: false
-    t.date "date", null: false
-    t.time "time", null: false
+    t.datetime "event_date", null: false
     t.string "address", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "favoritable_type", null: false
+    t.bigint "favoritable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["favoritable_type", "favoritable_id"], name: "index_favorites_on_favoritable"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -105,5 +115,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_134919) do
   add_foreign_key "attendances", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "favorites", "users"
   add_foreign_key "posts", "users"
 end

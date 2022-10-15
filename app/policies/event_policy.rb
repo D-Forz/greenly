@@ -7,18 +7,24 @@ class EventPolicy < ApplicationPolicy
   end
 
   def show?
-    user
+    user.present?
   end
 
   def create?
-    user.organizer
+    user_is_organizer?
   end
 
   def update?
-    user.organizer
+    user_is_organizer?
   end
 
   def destroy?
-    user.organizer
+    user_is_organizer?
+  end
+
+  private
+
+  def user_is_organizer?
+    record.user == user
   end
 end

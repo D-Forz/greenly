@@ -4,9 +4,9 @@
       <img src="/assets/Greenly_icon.ico" alt="greenly_icon">
     <% end %>
     <div>
-      <a href="Eventos" class="nav-link"> Eventos </a>
-      <a href="Comunidad" class="nav-link"> Comunidad </a>
-      <a href="Perfil" class="nav-link"> Mi perfil </a>
+      <%= link_to "Events", events_path, class: "nav-link" %>
+      <%= link_to "Community", posts_path, class: "nav-link" %>
+      <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
     </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

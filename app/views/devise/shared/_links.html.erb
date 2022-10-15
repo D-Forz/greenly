@@ -23,3 +23,7 @@
     <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
   <% end %>
 <% end %>
+
+<%= link_to root_path, class: "btn btn-success" do %>
+  Go Home
+<% end %>

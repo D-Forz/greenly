@@ -1,2 +1,22 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= content_for(:title, 'Log In - Greenly') %>
+<div>
+  <h1>Pages#home</h1>
+  <p>Find me in app/views/pages/home.html.erb</p>
+
+  <%# footer %>
+  <div class="container">
+    <div class="footer row row-col-4">
+      <div class="footer-copyrigth col-lg-4">
+        <p>Greenly, todos los derechos resevados. ©2022</p>
+      </div>
+      <div class="footer-social col lg-4">
+        <a href=""><i class="fab fa-facebook"></i></a>
+        <a href=""><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="footer-links col-lg-2"> <%= link_to "Nuestro equipo" %> </p>
+      <p class="footer-links col-lg-2"> <%= link_to "Sobre nosotros" %> </p>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="">

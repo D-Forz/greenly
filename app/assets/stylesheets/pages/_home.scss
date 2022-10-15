@@ -1,1 +1,10 @@
 // Specific CSS for your home-page
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 85%;
+}
+
+.footer .footer-links {
+  text-decoration: none;
+}

@@ -1,0 +1,19 @@
+post_one:
+  content: En este post vamos a aprender a sembrar tomates, es muy facil!
+  user: admin
+
+post_two:
+  content: En este post vamos a aprender a sembrar lechugas, es un poco mas dificil!
+  user: jhon
+
+post_three:
+  content: En este post vamos a aprender a sembrar papas, es muy facil!
+  user: pedro
+
+post_four:
+  content: En este post vamos a aprender a sembrar zanahorias, es un poco mas dificil!
+  user: admin
+
+post_five:
+  content: En este post vamos a aprender a sembrar cebollas, es muy facil!
+  user: admin

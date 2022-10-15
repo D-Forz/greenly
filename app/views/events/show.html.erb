@@ -4,7 +4,9 @@
   <div class="col-md-8">
     <div class="events">
       <h1>Event Details</h1>
-      <h2><%= @event.title %></h2>
+      <h2><%= @event.title %>
+      <%= link_to '❤', favorites_path(event_id: @event.id), data: {turbo_method: :post} %>
+      </h2>
       <p><%= @event.description %></p>
       <p><%= @event.address %></p>
       <p><%= @event.event_date %></p>

@@ -14,7 +14,9 @@
       <h1>Posts</h1>
       <div class="posts">
         <% @posts.each do |post| %>
-              <h2><%= post.created_at.to_s(:short) %></h2>
+              <h2><%= post.created_at.to_s(:short) %>
+              <%= link_to '❤', favorites_path(post_id: post.id), data: {turbo_method: :post} %>
+              </h2>
               <p><%= post.content %></p>
               <p><%= pluralize(post.comments.count, "comment") %></p>
               <% if policy(post).update? %>

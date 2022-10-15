@@ -1,5 +1,5 @@
 admin:
-  first_name: John
+  first_name: admin
   last_name: Doe
   organizer: true
   email: jhon@email.com

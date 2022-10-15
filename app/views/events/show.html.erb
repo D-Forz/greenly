@@ -34,9 +34,11 @@
         <% end %>
       <% end %>
     </div>
-    <%= simple_form_for [@event, @attendance] do |f| %>
-      <%= f.input :attendance_status, collection: ["Going", "Maybe"] %>
-      <%= f.button :submit, "Attend" %>
+    <% if policy(@attendance).create? %>
+      <%= simple_form_for [@event, @attendance] do |f| %>
+        <%= f.input :attendance_status, collection: ["Going", "Maybe"], label: false %>
+        <%= f.button :submit, "Attend", class: "btn btn-primary" %>
+      <% end %>
     <% end %>
 </div>
 <% if policy(@event).edit? %>

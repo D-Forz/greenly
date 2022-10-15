@@ -1,7 +1,9 @@
 attendance_one:
+  attendance_status: Going
   user: admin
   event: event_one
 
 attendance_two:
+  attendance_status: Maybe
   user: admin
   event: event_two

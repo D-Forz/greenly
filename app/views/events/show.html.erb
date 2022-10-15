@@ -39,5 +39,10 @@
       <%= f.button :submit, "Attend" %>
     <% end %>
 </div>
-<%= link_to "edit", edit_event_path(@event) %>
+<% if policy(@event).edit? %>
+  <%= link_to "Edit", edit_event_path(@event) %>
+<% end %>
+<% if policy(@event).destroy? %>
+  <%= link_to "Delete", event_path(@event), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+<% end %>
 <%= link_to "back", events_path %>

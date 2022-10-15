@@ -1,2 +1,42 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <%= link_to "Create a new Post", new_post_path %>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <span>sidebar</span>
+      <span>History</span>
+      <span>Bookmarks</span>
+    </div>
+    <div class="col-md-7">
+      <h1>Posts</h1>
+      <div class="posts">
+        <% @posts.each do |post| %>
+              <h2><%= post.created_at.to_s(:short) %></h2>
+              <p><%= post.content %></p>
+              <p><%= pluralize(post.comments.count, "comment") %></p>
+              <% if policy(post).update? %>
+                <%= link_to "edit", edit_post_path(post) %>
+              <% end %>
+              <% if policy(post).destroy? %>
+                <%= link_to "delete", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+              <% end %>
+              <% post.comments.order(created_at: :desc).each do |comment| %>
+                <p><%= comment.content %></p>
+                <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="events-list">
+        <h2>Events</h2>
+        <ul>
+          <% @events.each do |event| %>
+            <li><%= link_to event.title, event_path(event) %></li>
+          <% end %>
+        </ul>
+        <p>Look for more events <%= link_to "here", events_path %></p>
+      </div>
+    </div>
+  </div>
+</div>

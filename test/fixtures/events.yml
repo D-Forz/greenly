@@ -1,7 +1,34 @@
-one:
-  title: MyString
-  description: MyText
-  date: <%= Date.today %>
-  time: <%= Time.now %>
-  address: MyString
+event_one:
+  title: Acompañanos a sembrar tomates!
+  description: Estaremos sembrando tomates en el huerto de la escuela, todos son bienvenidos!
+  event_date: <%= DateTime.now %>
+  address: Escuela de la ciudad
+  user: admin
+
+event_two:
+  title: Acompañanos a limpiar las playas!
+  description: Estaremos limpiando las playas de la ciudad, todos son bienvenidos!
+  event_date: <%= DateTime.now %>
+  address: Punto de encuentro en la playa
+  user: admin
+
+event_three:
+  title: Campaña de siembra de arboles en Medellín
+  description: Estaremos sembrando arboles en el parque de la ciudad, todos son bienvenidos!
+  event_date: <%= DateTime.now %>
+  address: Parque de la ciudad
+  user: admin
+
+event_four:
+  title: Acompañanos a sembrar lechugas!
+  description: Estaremos sembrando lechugas en el huerto de la escuela, todos son bienvenidos!
+  event_date: <%= DateTime.now %>
+  address: Escuela de la ciudad
+  user: admin
+
+event_five:
+  title: Campaña de recolección de basura en Medellín
+  description: Estaremos recolectando basura en el parque de la ciudad, todos son bienvenidos!
+  event_date: <%= DateTime.now %>
+  address: Parque de la ciudad
   user: admin

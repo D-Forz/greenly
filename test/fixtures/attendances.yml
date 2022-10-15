@@ -1,0 +1,7 @@
+attendance_one:
+  user: admin
+  event: event_one
+
+attendance_two:
+  user: admin
+  event: event_two

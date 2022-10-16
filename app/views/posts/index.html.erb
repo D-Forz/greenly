@@ -14,6 +14,11 @@
             <%= render "post", post: post %>
         <% end %>
       </div>
+      <div>
+        <% if @pagy.next %>
+          <%= link_to "Next page >", posts_path(page: @pagy.next) %>
+        <% end %>
+      </div>
     </div>
     <div class="col-md-3">
       <div class="events-list">

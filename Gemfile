@@ -80,3 +80,5 @@ end
 gem "pundit", "~> 2.2"
 
 gem "pagy", "~> 5.10"
+
+gem "merit", "~> 4.0"

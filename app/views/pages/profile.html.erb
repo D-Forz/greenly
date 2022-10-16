@@ -3,3 +3,10 @@
 <p><%= @user.first_name %></p>
 <p><%= @user.last_name %></p>
 <p><%= @user.email %></p>
+
+<ul>
+  <% current_user.badges.each do |badge| %>
+    <li><%= badge.name %></li>
+  <% end %>
+</ul>
+<p><%= current_user.points %> points</p>

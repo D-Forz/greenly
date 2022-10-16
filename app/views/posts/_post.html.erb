@@ -4,7 +4,7 @@
   </div>
   <div class="post">
     <h2>
-      <%= post.created_at.to_s(:short) %>
+      <%= post.created_at.to_fs(:short) %>
       <% if post.favorites.find_by(favoritable_id: post.id, user: current_user) %>
         <%= link_to '💔', favorite_path(post.id), data: {turbo_method: :delete} %>
       <% else %>

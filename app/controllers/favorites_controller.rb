@@ -11,6 +11,10 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
+    @favorite = Favorite.find_by(favoritable_id: params[:id], user: current_user)
+    authorize @favorite
+    @favorite.destroy
+    redirect_back_or_to root_path, notice: 'Favorite destroyed'
   end
 
   private

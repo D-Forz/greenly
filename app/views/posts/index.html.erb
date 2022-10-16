@@ -1,9 +1,6 @@
-<%= content_for(:title, 'Comunidad - Greenly') %>
+<%= content_for(:title, 'Comunidad | Greenly') %>
 
 <div class="container">
-  <div class="row">
-    <%= link_to "Create a new Post", new_post_path %>
-  </div>
   <div class="row">
     <div class="col-md-2">
       <span>sidebar</span>
@@ -14,27 +11,7 @@
       <h1>Posts</h1>
       <div class="posts">
         <% @posts.each do |post| %>
-              <h2><%= post.created_at.to_s(:short) %>
-              <%= link_to '❤', favorites_path(post_id: post.id), data: {turbo_method: :post} %>
-              </h2>
-              <p><%= post.content %></p>
-              <p><%= pluralize(post.comments.count, "comment") %></p>
-              <% if policy(post).update? %>
-                <%= link_to "edit", edit_post_path(post) %>
-              <% end %>
-              <% if policy(post).destroy? %>
-                <%= link_to "delete", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-              <% end %>
-              <% if policy(@comment).create? %>
-                <h2>leave a comment</h2>
-                <%= simple_form_for [post, @comment] do |f| %>
-                  <%= f.input :content %>
-                  <%= f.button :submit %>
-                <% end %>
-              <% end %>
-                <% post.comments.order(created_at: :desc).each do |comment| %>
-                  <p><%= comment.content %></p>
-                  <% end %>
+            <%= render "post", post: post %>
         <% end %>
       </div>
     </div>

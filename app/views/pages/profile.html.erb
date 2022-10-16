@@ -6,7 +6,7 @@
 
 <ul>
   <% current_user.badges.each do |badge| %>
-    <li><%= badge.name %></li>
+    <li><%= badge.name %></li><i class="<%= badge.custom_fields[:icon_class] %>"></i>
   <% end %>
 </ul>
 <p><%= current_user.points %> points</p>

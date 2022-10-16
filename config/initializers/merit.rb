@@ -34,18 +34,25 @@ end
 Rails.application.reloader.to_prepare do
   Merit::Badge.create!(
     id: 1,
-    name: "First Post",
-    description: "Create your first post",
-    custom_fields: { difficulty: :copper }
+    name: "pioneer",
+    description: "One of the first 100 members"
   )
   Merit::Badge.create!(
     id: 2,
-    name: "First Comment",
-    description: "Over 1 comments"
+    name: "First Post",
+    description: "Create your first post",
+    custom_fields: { icon_class: "fa-solid fa-user" }
   )
   Merit::Badge.create!(
     id: 3,
+    name: "First Comment",
+    description: "Write your first comment",
+    custom_fields: { icon_class: "fa-solid fa-comment" }
+  )
+  Merit::Badge.create!(
+    id: 4,
     name: "The Commenter",
-    description: "Over 5 comments"
+    description: "Over 5 comments",
+    custom_fields: { icon_class: "fa-solid fa-comment" }
   )
 end

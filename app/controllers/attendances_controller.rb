@@ -22,7 +22,6 @@ class AttendancesController < ApplicationController
 
   def set_event
     @event = Event.find(params[:event_id])
-    authorize @event
   end
 
   def attendance_params

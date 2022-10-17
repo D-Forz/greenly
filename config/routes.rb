@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
-  get 'profile', to: 'pages#profile', as: :profile
+  resources :users, only: [:show], path: 'profile', as: :profile
 
   resources :events do
     resources :attendances, only: [:create]

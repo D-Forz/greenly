@@ -1,16 +1,13 @@
+<%= turbo_stream_from "comments" %>
 <div class="container">
   <div class="row">
     <%= link_to "Create a new Post", new_post_path %>
   </div>
   <div class="post">
-    <h2>
-      <%= post.created_at.to_fs(:short) %>
-      <% if post.favorites.find_by(favoritable_id: post.id, user: current_user) %>
-        <%= link_to '💔', favorite_path(post.id), data: {turbo_method: :delete} %>
-      <% else %>
-        <%= link_to '💖', favorites_path(post_id: post.id), data: {turbo_method: :post} %>
+    <h2><%= post.created_at.to_fs(:short) %></h2>
+      <%= turbo_frame_tag "favorite-#{post.id}" do %>
+        <%= render partial: "favorite", locals: { post: post } %>
       <% end %>
-    </h2>
     <p><%= post.content %></p>
     <p><%= pluralize(post.comments.count, "comment") %></p>
     <% if policy(post).update? %>
@@ -20,10 +17,8 @@
       <%= link_to "delete", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     <% end %>
     <% if policy(@comment).create? %>
-      <h2>leave a comment</h2>
-      <%= simple_form_for [post, @comment] do |f| %>
-        <%= f.input :content %>
-        <%= f.button :submit %>
+      <%= turbo_frame_tag "comment-#{post.id}" do %>
+        <%= render partial: "comment", locals: { post: post } %>
       <% end %>
     <% end %>
     <% post.comments.order(created_at: :desc).each do |comment| %>

@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     authorize @post
     if @post.save
-      redirect_to posts_path, notice: 'Post was successfully created.'
+      redirect_to posts_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
   def update
     authorize @post
     if @post.update(post_params)
-      redirect_to posts_path, notice: 'Post was successfully updated.'
+      redirect_to posts_path
     else
       render :edit, status: :unprocessable_entity
     end

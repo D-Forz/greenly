@@ -4,11 +4,8 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
     authorize @comment
-    if @comment.save
-      redirect_back_or_to root_path, notice: 'Comment was successfully created.'
-    else
-      redirect_back_or_to root_path, alert: 'Comment was not created.'
-    end
+    @comment.save
+    redirect_back_or_to root_path
   end
 
   private

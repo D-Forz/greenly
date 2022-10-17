@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "comment-#{post.id}" do %>
+  <h2>leave a comment</h2>
+  <%= simple_form_for [post, @comment] do |f| %>
+    <%= f.input :content %>
+    <%= f.button :submit %>
+  <% end %>
+<% end %>

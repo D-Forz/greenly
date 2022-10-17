@@ -7,9 +7,9 @@ class AttendancesController < ApplicationController
     @attendance.event = @event
     authorize @attendance
     if @attendance.save
-      redirect_to event_path(@event), notice: 'Attendance was successfully created.'
+      redirect_to event_path(@event)
     else
-      redirect_to @event, status: :unprocessable_entity, alert: 'Attendance was not created.'
+      redirect_to @event, status: :unprocessable_entity
     end
   end
 

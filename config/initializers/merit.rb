@@ -16,26 +16,12 @@ Merit.setup do |config|
   # config.current_user_method = 'current_user'
 end
 
-# Create application badges (uses https://github.com/norman/ambry)
-# Rails.application.reloader.to_prepare do
-#   badge_id = 0
-#   [{
-#     id: (badge_id += 1),
-#     name: 'just-registered'
-#   }, {
-#     id: (badge_id += 1),
-#     name: 'best-unicorn',
-#     custom_fields: { category: 'fantasy' }
-#   }].each do |attrs|
-#     Merit::Badge.create! attrs
-#   end
-# end
-
 Rails.application.reloader.to_prepare do
   Merit::Badge.create!(
     id: 1,
     name: "pioneer",
-    description: "One of the first 100 members"
+    description: "One of the first 100 members",
+    custom_fields: { icon_class: "fa-solid fa-user" }
   )
   Merit::Badge.create!(
     id: 2,
@@ -52,7 +38,19 @@ Rails.application.reloader.to_prepare do
   Merit::Badge.create!(
     id: 4,
     name: "The Commenter",
-    description: "Over 5 comments",
+    description: "Over 10 comments",
     custom_fields: { icon_class: "fa-solid fa-comment" }
+  )
+  Merit::Badge.create!(
+    id: 5,
+    name: "The Poster",
+    description: "Over 10 posts",
+    custom_fields: { icon_class: "fa-solid fa-user" }
+  )
+  Merit::Badge.create!(
+    id: 6,
+    name: "My First Event",
+    description: "Create your first event",
+    custom_fields: { icon_class: "fa-solid fa-calendar" }
   )
 end

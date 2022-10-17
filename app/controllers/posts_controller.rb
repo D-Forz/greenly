@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts ||= policy_scope(Post).order(created_at: :desc)
-    @pagy, @posts = pagy(@posts, items: 10)
+    @pagy, @posts = pagy_countless(@posts, items: 10)
     @events ||= policy_scope(Event).last(3)
     @comment = Comment.new
   end

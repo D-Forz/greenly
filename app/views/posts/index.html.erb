@@ -13,11 +13,13 @@
         <div class="row">
           <%= link_to "Create a new Post", new_post_path %>
         </div>
-        <%= render @posts %>
-      </div>
-      <div>
+        <%= turbo_frame_tag "posts" do %>
+          <%= render @posts %>
+        <% end %>
         <% if @pagy.next %>
-          <%= link_to "Next page >", posts_path(page: @pagy.next) %>
+          <%= turbo_frame_tag "posts", loading: :lazy, src: posts_path(@posts, page: @pagy.next) do %>
+            <p>Loading</p>
+          <% end %>
         <% end %>
       </div>
     </div>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
-  get 'profile', to: 'pages#profile', as: :profile
+  resources :users, only: [:show], path: 'profile', as: :profile
 
   resources :events do
     resources :attendances, only: [:create]
@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create update destroy]
   end
 
-  resources :favorites, only: %i[create destroy]
+  resources :favorites, only: %i[index create destroy]
 end

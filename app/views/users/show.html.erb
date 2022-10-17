@@ -1,0 +1,14 @@
+<%= content_for(:title, 'My Profile - Greenly') %>
+
+<p><%= @user.first_name %></p>
+<p><%= @user.last_name %></p>
+<p><%= @user.email %></p>
+
+<ul>
+  <% current_user.badges.each do |badge| %>
+    <li><%= badge.name %><i class="<%= badge.custom_fields[:icon_class] %>"></i></li>
+  <% end %>
+</ul>
+<p><%= current_user.points %> points</p>
+
+<%= link_to "Edit", edit_user_registration_path %>

@@ -10,9 +10,10 @@
     <div class="col-md-7">
       <h1>Posts</h1>
       <div class="posts">
-        <% @posts.each do |post| %>
-            <%= render "post", post: post %>
-        <% end %>
+        <div class="row">
+          <%= link_to "Create a new Post", new_post_path %>
+        </div>
+        <%= render @posts %>
       </div>
       <div>
         <% if @pagy.next %>

@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import RemoteModalController from "./remote_modal_controller"
+application.register("remote-modal", RemoteModalController)
+
 import ResetFormController from "./reset_form_controller"
 application.register("reset-form", ResetFormController)

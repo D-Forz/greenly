@@ -10,7 +10,7 @@
     <div class="col-md-7">
       <h1>Posts</h1>
       <div class="row">
-        <%= link_to "Create a new Post", new_post_path %>
+        <%= link_to "Create a new Post", new_post_path, data: { turbo_frame: "remote_modal" } %>
         <div class="posts">
           <%= turbo_frame_tag "posts-#{@pagy.page}" do %>
             <%= render @posts %>

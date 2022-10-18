@@ -7,6 +7,9 @@
     <% if policy(post).destroy? %>
       <%= link_to "delete", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     <% end %>
+    <% post.photos.each do |image| %>
+      <%= image_tag image %>
+    <% end %>
     <p><%= post.content %></p>
     <p><%= pluralize(post.comments.count, "comment") %></p>
     <%= render partial: "comment_form", locals: { post: post } if policy(@comment).create? %>

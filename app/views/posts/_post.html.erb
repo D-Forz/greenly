@@ -11,9 +11,9 @@
       <%= image_tag image %>
     <% end %>
     <p><%= post.content %></p>
-    <p><%= pluralize(post.comments.count, "comment") %></p>
     <%= render partial: "comment_form", locals: { post: post } if policy(@comment).create? %>
     <%= turbo_frame_tag "comments-#{post.id}" do %>
+      <p><%= pluralize(post.comments.count, "comment") %></p>
       <% post.comments.order(created_at: :desc).each do |comment| %>
         <span><%= comment.user.full_name %> |</span> <span><%= comment.content %></span>
         <div><small><%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small></div>

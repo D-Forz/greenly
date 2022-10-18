@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts ||= policy_scope(Post).order(created_at: :desc)
-    @pagy, @posts = pagy_countless(@posts, items: 10)
+    @pagy, @posts = pagy(@posts, items: 10)
     @events ||= policy_scope(Event).last(3)
     @comment = Comment.new
   end
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     authorize @post
-    redirect_to posts_path, status: :see_other
+    redirect_back_or_to posts_path, status: :see_other
   end
 
   private
@@ -50,6 +50,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, photos: [])
   end
 end

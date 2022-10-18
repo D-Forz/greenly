@@ -3,9 +3,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2">
-      <span>sidebar</span>
-      <span>History</span>
-      <span>Bookmarks</span>
+      <h2>sidebar</h2>
+      <p>History</p>
+      <p><%= link_to "favorites", favorites_path %></p>
     </div>
     <div class="col-md-7">
       <h1>Posts</h1>
@@ -13,14 +13,15 @@
         <div class="row">
           <%= link_to "Create a new Post", new_post_path %>
         </div>
-        <%= turbo_frame_tag "posts" do %>
+        <%= turbo_frame_tag "posts-#{@pagy.page}" do %>
           <%= render @posts %>
         <% end %>
         <% if @pagy.next %>
-          <%= turbo_frame_tag "posts", loading: :lazy, src: posts_path(@posts, page: @pagy.next) do %>
-            <p>Loading</p>
+            <%= turbo_frame_tag "posts-#{@pagy.next}", loading: :lazy, src: pagy_url_for(@pagy, @pagy.next) do %>
+              <p>Loading...</p>
+            <% end %>
           <% end %>
-        <% end %>
+
       </div>
     </div>
     <div class="col-md-3">

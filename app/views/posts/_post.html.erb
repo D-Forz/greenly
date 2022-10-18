@@ -2,27 +2,19 @@
   <div class="post">
     <h2><%= post.user.full_name %></h2>
     <%= distance_of_time_in_words_to_now(post.created_at) %> ago
-      <%= turbo_frame_tag "favorite-#{post.id}" do %>
-        <%= render partial: "favorite", locals: { post: post } %>
-      <% end %>
-      <% if policy(post).update? %>
-      <%= link_to "edit", edit_post_path(post) %>
-    <% end %>
+    <%= render partial: "favorite", locals: { post: post } %>
+    <%= link_to "edit", edit_post_path(post) if policy(post).update?%>
     <% if policy(post).destroy? %>
       <%= link_to "delete", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     <% end %>
     <p><%= post.content %></p>
     <p><%= pluralize(post.comments.count, "comment") %></p>
-    <% if policy(@comment).create? %>
-      <%= turbo_frame_tag "comment-#{post.id}" do %>
-        <%= render partial: "comment", locals: { post: post } %>
-      <% end %>
-    <% end %>
+    <%= render partial: "comment_form", locals: { post: post } if policy(@comment).create? %>
     <%= turbo_frame_tag "comments-#{post.id}" do %>
-    <% post.comments.order(created_at: :desc).each do |comment| %>
-      <span><%= comment.user.full_name %> |</span>
-      <span><%= comment.content %></span>
-      <br>
+      <% post.comments.order(created_at: :desc).each do |comment| %>
+        <span><%= comment.user.full_name %> |</span> <span><%= comment.content %></span>
+        <div><small><%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small></div>
+        <br>
       <% end %>
     <% end %>
   </div>

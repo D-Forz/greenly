@@ -31,7 +31,7 @@
     <div class="event-attendees">
       <h3>Attendees</h3>
       <% if @event.attendances.empty? %>
-        <p>No attendees yet, bet the first!</p>
+        <p>No attendees yet, be the first!</p>
       <% else %>
         <h4>Going</h4>
         <% @event.attendances.each do |attendance| %>
@@ -47,9 +47,12 @@
         <% end %>
       <% end %>
     </div>
-    <% if policy(@attendance).create? %>
+    <% if policy(@attendance).create? && @event.attendances.where(user: current_user).empty? %>
       <%= simple_form_for [@event, @attendance] do |f| %>
-        <%= f.input :attendance_status, collection: ["Going", "Maybe"], label: false %>
+        <%= f.radio_button :attendance_status, "Going" %>
+        <%= f.label :attendance_status, "Going" %>
+        <%= f.radio_button :attendance_status, "Maybe" %>
+        <%= f.label :attendance_status, "Maybe" %>
         <%= f.button :submit, "Attend", class: "btn btn-primary" %>
       <% end %>
     <% end %>

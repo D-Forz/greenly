@@ -15,10 +15,10 @@ module Merit
     include Merit::RankRulesMethods
 
     def initialize
-      set rank level: 1, to: :user do |user|
-        user.organizer == true || user.attendances.count >= 1
+      set_rank level: 1, to: :user do |user|
+        user.organizer == true
       end
-      set rank level: 2, to: :user do |user|
+      set_rank level: 2, to: :user do |user|
         user.events.count >= 2 || user.attendances.count >= 5
       end
     end

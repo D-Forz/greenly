@@ -16,9 +16,27 @@ module Merit
       # score 10, :on => 'users#create' do |user|
       #   user.bio.present?
       # end
-      score 10, on: 'posts#create' do |post|
-        post.user.posts.count >= 1 && post.user.posts.count < 5
+      score 1, on: 'comments#create' do |comment|
+        comment.commentable_type.eql?('Post')
       end
+      score 2, on: 'comments#create' do |comment|
+        comment.commentable_type.eql?('Event')
+      end
+      score 5, on: 'posts#create'
+      score 20, on: 'events#create'
+      score 150, on: 'posts#create' do |post|
+        post.user.posts.count == 10
+      end
+
+      score 200, on: 'events#create' do |event|
+        event.user.events.count == 1
+      end
+
+      score 1000, on: 'events#create' do |event|
+        event.user.events.count == 10
+      end
+
+
       #
       # score 15, :on => 'reviews#create', :to => [:reviewer, :reviewed]
       #

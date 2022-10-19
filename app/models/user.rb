@@ -16,6 +16,7 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :username, presence: true
   validates :username, uniqueness: true
+  validates :username, format: { with: /\A[a-zA-Z0-9]+\z/, message: "only allows letters and numbers" }
 
   def full_name
     "#{first_name} #{last_name}"

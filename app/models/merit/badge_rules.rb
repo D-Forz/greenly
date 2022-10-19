@@ -21,13 +21,36 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
-      grant_on 'posts#create', badge_id: 2, badge: 'First Post', to: :user
-
-      grant_on 'comments#create', badge_id: 3, badge: 'First Comment', to: :user do |comment|
-        comment.user.comments.count >= 1 && comment.user.comments.count < 5
+      grant_on 'posts#create', badge_id: 1, badge: 'First Post', to: :user do |post|
+        post.user.posts.count == 1
       end
-      grant_on 'comments#create', badge_id: 4, badge: 'The Commenter', to: :user do |comment|
-        comment.user.comments.count >= 5
+
+      grant_on 'comments#create', badge_id: 2, badge: 'Five Comments', to: :user do |comment|
+        comment.user.comments.count >= 5 && comment.user.comments.count < 25
+      end
+
+      grant_on 'comments#create', badge_id: 3, badge: 'The Commenter', to: :user do |comment|
+        comment.user.comments.count >= 25
+      end
+
+      grant_on 'posts#create', badge_id: 4, badge: 'The Poster Maker', to: :user do |post|
+        post.user.posts.count >= 10
+      end
+
+      grant_on 'events#create', badge_id: 5, badge: 'This is Greenly', to: :user do |event|
+        event.user.events.count == 1
+      end
+
+      grant_on 'events#create', badge_id: 6, badge: 'The Event Maker', to: :user do |event|
+        event.user.events.count >= 10
+      end
+
+      grant_on 'attendances#create', badge_id: 7, badge: 'My First Event', to: :user do |attendance|
+        attendance.user.attendances.count == 1
+      end
+
+      grant_on 'attendances#create', badge_id: 8, badge: 'The Event Attender', to: :user do |attendance|
+        attendance.user.attendances.count >= 10
       end
     end
   end

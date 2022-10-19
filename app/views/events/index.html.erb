@@ -2,13 +2,11 @@
 <h1>Events</h1>
 <% @events.each do |event| %>
   <div class="event">
-    <h2><%= event.title %>
-    <%= link_to '❤', favorites_path(event_id: event.id), data: {turbo_method: :post} %>
-    </h2>
+    <h2><%= link_to event.title, event_path(event) %></h2>
+    <%= render partial: "shared/dropdown", locals: { model: event } %>
     <p><%= event.description %></p>
     <p><%= event.address %></p>
     <p><%= event.event_date %></p>
     <p><%= pluralize(event.comments.count, "comment") %></p>
-    <%= link_to "show", event_path(event) %>
   </div>
-  <% end %>
+<% end %>

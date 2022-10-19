@@ -14,6 +14,7 @@
                   <%= f.input :email,
                               autofocus: true,
                               input_html: { autocomplete: "email" }%>
+                  <%= f.input :username %>
                   <%= f.input :password,
                               hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                               input_html: { autocomplete: "new-password" } %>

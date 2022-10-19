@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
   has_many :attendances, dependent: :destroy
   has_many :users, through: :attendances
   has_many :comments, as: :commentable, dependent: :destroy
@@ -7,4 +9,5 @@ class Event < ApplicationRecord
   belongs_to :user
 
   validates :title, :description, :event_date, :address, presence: true
+  validates :title, uniqueness: true
 end

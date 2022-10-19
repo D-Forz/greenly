@@ -2,8 +2,8 @@
   <h2><%= post.user.full_name %></h2>
   <%= distance_of_time_in_words_to_now(post.created_at) %> ago
   <%= render partial: "shared/dropdown", locals: { model: post } %>
-  <% post.photos.each do |image| %>
-    <%= image_tag image %>
+  <% if post.photo.attached? %>
+    <%= image_tag post.photo %>
   <% end %>
   <p><%= post.content %></p>
   <%= render partial: "comments/comment_form", locals: { model: post } if policy(@comment).create? %>

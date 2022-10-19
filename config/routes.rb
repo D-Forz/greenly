@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
-  resources :users, only: [:show], path: 'profile', as: :profile
+  resources :users, only: [:show], path: 'profile', as: :profile, param: :slug
 
   resources :events do
     resources :attendances, only: [:create]

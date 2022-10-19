@@ -82,3 +82,5 @@ gem "pundit", "~> 2.2"
 gem "pagy", "~> 5.10"
 
 gem "merit", "~> 4.0"
+
+gem "friendly_id", "~> 5.4"

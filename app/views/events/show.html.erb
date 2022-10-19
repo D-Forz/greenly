@@ -1,66 +1,25 @@
-<%= content_for(:title, 'Event details - Greenly') %>
+<%= content_for(:title, 'Event details | Greenly') %>
 
 <div class="row">
   <div class="col-md-8">
     <div class="events">
       <h1>Event Details</h1>
-      <h2><%= @event.title %>
-      <%= link_to '❤', favorites_path(event_id: @event.id), data: {turbo_method: :post} %>
-      </h2>
+      <h2><%= @event.title %></h2>
+      <%= render partial: "shared/dropdown", locals: { model: @event } %>
       <p><%= @event.description %></p>
       <p><%= @event.address %></p>
       <p><%= @event.event_date %></p>
     </div>
     <div class="comment-create">
-      <% if policy(@comment).create? %>
-        <h2>leave a comment</h2>
-        <%= simple_form_for [@event, @comment] do |f| %>
-          <%= f.input :content %>
-          <%= f.button :submit %>
-        <% end %>
-      <% end %>
+      <%= render partial: "comments/comment_form", locals: { model: @event } if policy(@comment).create? %>
     </div>
     <div class="event-comments">
-        <h3>Comments</h3>
-        <% @event.comments.order(created_at: :desc).each do |comment| %>
-          <p><%= comment.content %></p>
-        <% end %>
+      <%= render partial: "comments/comments", locals: { model: @event } %>
     </div>
   </div>
   <div class="col-md-4">
     <div class="event-attendees">
-      <h3>Attendees</h3>
-      <% if @event.attendances.empty? %>
-        <p>No attendees yet, be the first!</p>
-      <% else %>
-        <h4>Going</h4>
-        <% @event.attendances.each do |attendance| %>
-          <% if attendance.attendance_status == "Going" %>
-            <p><%= attendance.user.first_name %></p>
-          <% end %>
-        <% end %>
-        <h4>Maybe</h4>
-        <% @event.attendances.each do |attendance| %>
-          <% if attendance.attendance_status == "Maybe" %>
-            <p><%= attendance.user.first_name %></p>
-          <% end %>
-        <% end %>
-      <% end %>
+      <%= render partial: "attendances/attendances", locals: { model: @event } %>
     </div>
-    <% if policy(@attendance).create? && @event.attendances.where(user: current_user).empty? %>
-      <%= simple_form_for [@event, @attendance] do |f| %>
-        <%= f.radio_button :attendance_status, "Going" %>
-        <%= f.label :attendance_status, "Going" %>
-        <%= f.radio_button :attendance_status, "Maybe" %>
-        <%= f.label :attendance_status, "Maybe" %>
-        <%= f.button :submit, "Attend", class: "btn btn-primary" %>
-      <% end %>
-    <% end %>
 </div>
-<% if policy(@event).edit? %>
-  <%= link_to "Edit", edit_event_path(@event) %>
-<% end %>
-<% if policy(@event).destroy? %>
-  <%= link_to "Delete", event_path(@event), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-<% end %>
 <%= link_to "back", events_path %>

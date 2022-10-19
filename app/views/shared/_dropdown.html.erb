@@ -1,0 +1,14 @@
+  <div class="dropdown">
+    <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fa-sharp fa-solid fa-ellipsis"></i>
+    </span>
+    <ul class="dropdown-menu">
+      <li class="dropdown-item"><%= render partial: "favorites/favorite", locals: { model: model } %></a></li>
+      <li class="dropdown-item"><%= link_to "edit", send("edit_#{model.class.to_s.downcase}_path", model) if policy(model).update?%></li>
+      <li class="dropdown-item">
+        <% if policy(model).destroy? %>
+          <%= link_to "delete", send("#{model.class.to_s.downcase}_path", model), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <% end %>
+      </li>
+    </ul>
+  </div>

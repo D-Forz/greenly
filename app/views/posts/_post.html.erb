@@ -1,25 +1,12 @@
-<div class="container">
-  <div class="post">
-    <h2><%= post.user.full_name %></h2>
-    <%= distance_of_time_in_words_to_now(post.created_at) %> ago
-    <%= render partial: "favorite", locals: { post: post } %>
-    <%= link_to "edit", edit_post_path(post) if policy(post).update?%>
-    <% if policy(post).destroy? %>
-      <%= link_to "delete", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-    <% end %>
-    <% post.photos.each do |image| %>
-      <%= image_tag image %>
-    <% end %>
-    <p><%= post.content %></p>
-    <%= render partial: "comment_form", locals: { post: post } if policy(@comment).create? %>
-    <%= turbo_frame_tag "comments-#{post.id}" do %>
-      <p><%= pluralize(post.comments.count, "comment") %></p>
-      <% post.comments.order(created_at: :desc).each do |comment| %>
-        <span><%= comment.user.full_name %> |</span> <span><%= comment.content %></span>
-        <div><small><%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small></div>
-        <br>
-      <% end %>
-    <% end %>
-  </div>
-  <hr>
+<div class="post">
+  <h2><%= post.user.full_name %></h2>
+  <%= distance_of_time_in_words_to_now(post.created_at) %> ago
+  <%= render partial: "shared/dropdown", locals: { model: post } %>
+  <% post.photos.each do |image| %>
+    <%= image_tag image %>
+  <% end %>
+  <p><%= post.content %></p>
+  <%= render partial: "comments/comment_form", locals: { model: post } if policy(@comment).create? %>
+  <%= render partial: "comments/comments", locals: { model: post } %>
 </div>
+<hr>

@@ -1,5 +1,5 @@
 <%= simple_form_for @post do |f| %>
   <%= f.input :content %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>

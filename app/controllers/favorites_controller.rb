@@ -5,7 +5,8 @@ class FavoritesController < ApplicationController
 
   def create
     @favoritable = favoritable
-    @favorite = @favoritable.favorites.create(user: current_user)
+    @favorite = @favoritable.favorites.create
+    @favorite.user = current_user
     authorize @favorite
     @favorite.save
     redirect_back_or_to root_path

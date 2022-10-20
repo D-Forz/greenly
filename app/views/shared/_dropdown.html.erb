@@ -3,11 +3,11 @@
       <i class="fa-sharp fa-solid fa-ellipsis"></i>
     </span>
     <ul class="dropdown-menu">
-      <li class="dropdown-item"><%= render partial: "favorites/favorite", locals: { model: model } %></a></li>
-      <li class="dropdown-item"><%= link_to "edit", send("edit_#{model.class.to_s.downcase}_path", model), data: { turbo_frame: "remote_modal" } if policy(model).update?%></li>
+      <li class="dropdown-item"><%= render partial: "favorites/favorite", locals: { favoritable: item } %></a></li>
+      <li class="dropdown-item"><%= link_to "edit", send("edit_#{item.class.to_s.downcase}_path", item), data: { turbo_frame: "remote_modal" } if policy(item).update?%></li>
       <li class="dropdown-item">
-        <% if policy(model).destroy? %>
-          <%= link_to "delete", send("#{model.class.to_s.downcase}_path", model), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <% if policy(item).destroy? %>
+          <%= link_to "delete", send("#{item.class.to_s.downcase}_path", item), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         <% end %>
       </li>
     </ul>

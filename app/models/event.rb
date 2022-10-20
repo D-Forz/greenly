@@ -9,5 +9,6 @@ class Event < ApplicationRecord
   belongs_to :user
 
   validates :title, :description, :event_date, :address, presence: true
-  validates :title, uniqueness: true
+  validates :title, uniqueness: true, length: { minimum: 5, maximum: 50 },
+                    format: { with: /\A[a-zA-Z0-9 ]+\z/, message: "only allows letters, numbers and spaces" }
 end

@@ -8,8 +8,6 @@ class EventsController < ApplicationController
   def show
     @event = Event.friendly.find(params[:id])
     authorize @event
-    @attendance = Attendance.new
-    @comment = Comment.new
   end
 
   def new

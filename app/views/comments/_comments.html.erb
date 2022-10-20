@@ -1,8 +1,8 @@
-<%= turbo_frame_tag "comments-#{model.id}" do %>
-      <p><%= pluralize(model.comments.count, "comment") %></p>
-      <% model.comments.order(created_at: :desc).each do |comment| %>
-        <span><%= comment.user.full_name %> |</span> <span><%= comment.content %></span>
-        <div><small><%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small></div>
-        <br>
-      <% end %>
-    <% end %>
+<%= turbo_frame_tag "comments-#{commentable.id}" do %>
+  <p><%= pluralize(commentable.comments.count, "comment") %></p>
+  <% commentable.comments.each do |comment| %>
+    <span><%= comment.user.full_name %> |</span> <span><%= comment.content %></span>
+    <div><small><%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small></div>
+    <br>
+  <% end %>
+<% end %>

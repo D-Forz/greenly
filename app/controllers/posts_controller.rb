@@ -2,10 +2,9 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
-    @posts ||= policy_scope(Post).includes(:user, :photo_attachment).order(created_at: :desc)
+    @posts = policy_scope(Post).includes(:user, :photo_attachment).order(created_at: :desc)
     @pagy, @posts = pagy(@posts, items: 10)
-    @events ||= policy_scope(Event).last(3)
-    @comment = Comment.new
+    @events = policy_scope(Event).last(3)
   end
 
   def new

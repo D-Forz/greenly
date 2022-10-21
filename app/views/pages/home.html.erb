@@ -1,22 +1,46 @@
 <%= content_for(:title, 'Greenly, Make the difference') %>
-<div>
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
 
-  <%# footer %>
-  <div class="container">
-    <div class="footer row row-col-4">
-      <div class="footer-copyrigth col-lg-4">
-        <p>Greenly, todos los derechos resevados. ©2022</p>
-      </div>
-      <div class="footer-social col lg-4">
-        <a href=""><i class="fab fa-facebook"></i></a>
-        <a href=""><i class="fab fa-instagram"></i></a>
-      </div>
-      <p class="footer-links col-lg-2"> <%= link_to "Nuestro equipo" %> </p>
-      <p class="footer-links col-lg-2"> <%= link_to "Sobre nosotros" %> </p>
+<div class="py-5" style="background:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),
+ url(<%=asset_path('greenly_2.jpg')%>) center / cover;">
+    <div class="container">
+        <div class="text-center p-4 p-lg-5">
+            <p class="fw-bold text-primary mb-2">Proud to introduce</p>
+            <h1 class="fw-bold mb-4">Greenly,<br />App that coonect people</h1>
+            <%= link_to "Start Here", events_path, class: "btn btn-primary px-4" %>
+        </div>
     </div>
-  </div>
 </div>
 
-<link rel="stylesheet" href="">
+<div class="container">
+    <div class="bg-success border rounded border-0 border-dark overflow-hidden m-3">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <div class="text-white p-4 p-md-5">
+                    <h2 class="fw-bold text-white mb-3">Biben dum fringi dictum, augue purus</h2>
+                    <p class="mb-4">Tincidunt laoreet leo, adipiscing taciti tempor. Primis senectus sapien, risus donec ad fusce augue interdum.</p>
+                    <div class="my-3">
+                      <%= link_to "Learn More", events_path, class: "btn btn-primary btn-lg me-2" %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 order-first order-md-last" style="min-height: 250px;">
+              <%= image_tag "greenly_1.jpg", class:"w-100 h-100 fit-cover" %>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <%# footer %>
+<div class="container">
+  <div class="footer row row-col-4">
+    <div class="footer-copyrigth col-lg-4">
+      <p>Greenly, todos los derechos resevados. ©2022</p>
+    </div>
+    <div class="footer-social col lg-4">
+      <a href=""><i class="fab fa-facebook"></i></a>
+      <a href=""><i class="fab fa-instagram"></i></a>
+    </div>
+    <p class="footer-links col-lg-2"> <%= link_to "Nuestro equipo" %> </p>
+    <p class="footer-links col-lg-2"> <%= link_to "Sobre nosotros" %> </p>
+  </div>
+</div>

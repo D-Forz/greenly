@@ -1,12 +1,14 @@
 <%= content_for(:title, 'Events | Greenly') %>
-<h1>Events</h1>
-<% @events.each do |event| %>
-  <div class="event">
-    <h2><%= link_to event.title, event_path(event) %></h2>
-    <%= render partial: "shared/dropdown", locals: { item: event } %>
-    <p><%= event.description %></p>
-    <p><%= event.address %></p>
-    <p><%= event.event_date %></p>
-    <p><%= pluralize(event.comments.count, "comment") %></p>
-  </div>
-<% end %>
+<div class="container">
+  <h1>Events</h1>
+  <% @events.each do |event| %>
+    <div class="event">
+      <h2><%= link_to event.title, event_path(event) %></h2>
+      <%= render partial: "shared/dropdown", locals: { item: event } %>
+      <p><%= event.description %></p>
+      <p><%= event.address %></p>
+      <p><%= event.event_date %></p>
+      <p><%= pluralize(event.comments.count, "comment") %></p>
+    </div>
+  <% end %>
+</div>

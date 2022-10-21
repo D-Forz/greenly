@@ -165,6 +165,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_213522) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.boolean "organizer", default: false

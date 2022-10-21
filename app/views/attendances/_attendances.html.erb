@@ -1,0 +1,23 @@
+<h3>Attendees</h3>
+<% if event.attendances.empty? %>
+  <p>No attendees yet, be the first!</p>
+<% else %>
+  <h4>Going</h4>
+  <% event.attendances.each do |attendance| %>
+    <% if attendance.attendance_status == "Going" %>
+      <p><%= attendance.user.first_name %></p>
+    <% end %>
+  <% end %>
+  <h4>Maybe</h4>
+  <% event.attendances.each do |attendance| %>
+    <% if attendance.attendance_status == "Maybe" %>
+      <p><%= attendance.user.first_name %></p>
+    <% end %>
+  <% end %>
+<% end %>
+<% if event.attendances.where(user: current_user).empty? %>
+<%= simple_form_for [event, Attendance.new] do |f| %>
+  <%= f.input :attendance_status, collection: ["Going", "Maybe"], as: :radio_buttons %>
+  <%= f.button :submit, "Attend", class: "btn btn-primary" %>
+<% end %>
+<% end %>

@@ -1,0 +1,8 @@
+<%= turbo_frame_tag "comments-#{commentable.id}" do %>
+  <p><%= pluralize(commentable.comments.count, "comment") %></p>
+  <% commentable.comments.each do |comment| %>
+    <span><%= comment.user.full_name %> |</span> <span><%= comment.content %></span>
+    <div><small><%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small></div>
+    <br>
+  <% end %>
+<% end %>

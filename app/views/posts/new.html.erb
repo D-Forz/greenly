@@ -1,11 +1,11 @@
-<%= content_for(:title, 'New Post - Greenly') %>
+<%= content_for(:title, 'New Post | Greenly') %>
 
 <div class="container">
   <%= link_to "Back", posts_path %>
   <h1>Create Post</h1>
 
-<%= render "remote_modal", title: "New Post" do %>
-  <%= render "form", post: @post %>
-<% end %>
+  <%= render "remote_modal", title: "New Post" do %>
+    <%= render "form", post: @post %>
+  <% end %>
 
 </div>

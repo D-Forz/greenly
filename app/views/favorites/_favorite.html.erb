@@ -1,0 +1,5 @@
+<% if favoritable.favorites.find_by(favoritable_id: favoritable.id, user: current_user) %>
+  <%= link_to '💔', favorite_path(favoritable.id), data: {turbo_method: :delete} %>
+<% else %>
+  <%= link_to '💖', favorites_path("#{favoritable.class.to_s.downcase}_id": favoritable.id), data: {turbo_method: :post} %>
+<% end %>

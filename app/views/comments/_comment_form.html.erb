@@ -1,0 +1,8 @@
+<h2>leave a comment</h2>
+<%= simple_form_for [commentable, Comment.new],
+  data: { turbo_frame: "comments-#{commentable.id}",
+  controller: 'reset-form',
+  action: "turbo:submit-end->reset-form#reset" } do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>

@@ -1,17 +1,33 @@
-<%= content_for(:title, 'My Profile - Greenly') %>
+<%= content_for(:title, "#{@user.username} | Greenly") %>
 
-<p><%= @user.first_name %></p>
-<p><%= @user.last_name %></p>
-<p><%= @user.email %></p>
-<%= image_tag @user.photo, class:'avatar-bordered' %>
-
-
-
-<ul>
-  <% current_user.badges.each do |badge| %>
-    <li><%= badge.name %><i class="<%= badge.custom_fields[:icon_class] %>"></i></li>
-  <% end %>
-</ul>
-<p><%= current_user.points %> points</p>
-
-<%= link_to "Edit", edit_user_registration_path %>
+    <header class="text-center text-white bg-primary">
+        <div class="container">
+        <%= image_tag @user.photo, class:'avatar-profile mx-auto mb-5 mt-5' %>
+            <h1><%= @user.full_name %></h1>
+            <hr>
+            <h3 class="font-weight-light mb-0"><%= current_user.points %> points</h3>
+            <hr>
+            <!-- <h3><%= link_to "Edit", edit_user_registration_path %></h3> -->
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <h2 class="text-uppercase text-center text-secondary mt-5">Badges</h2>
+            <hr class="mb-5">
+            <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+              <% current_user.badges.each do |badge| %>
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body p-4">
+                      <div class="d-flex justify-content-center mb-3">
+                        <%= image_tag "badges/1.png" %>
+                      </div>
+                      <h4 class="card-title text-center"><%= badge.name %></h4>
+                      <p class="card-text text-center"><%= badge.description %></p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+        </div>
+    </section>

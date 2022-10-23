@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def index
     @posts = policy_scope(Post).includes(:user, :photo_attachment, :comments).order(created_at: :desc)
     @pagy, @posts = pagy(@posts, items: 10)
-    @events = policy_scope(Event).last(3)
+    @events = policy_scope(Event).order(event_date: :asc).first(3)
   end
 
   def new

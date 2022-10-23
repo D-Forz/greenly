@@ -7,12 +7,13 @@ Rails.application.routes.draw do
 
   resources :events do
     resources :attendances, only: [:create]
-    resources :comments, only: %i[create update destroy]
+    resources :comments, only: %i[create]
   end
 
   resources :posts, only: %i[index new create edit update destroy] do
-    resources :comments, only: %i[create update destroy]
+    resources :comments, only: %i[create]
   end
 
+  resources :comments, only: %i[destroy]
   resources :favorites, only: %i[index create destroy]
 end

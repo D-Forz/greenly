@@ -19,50 +19,37 @@ end
 Rails.application.reloader.to_prepare do
   Merit::Badge.create!(
     id: 1,
-    name: "First Post",
-    description: "Create your first post",
-    custom_fields: { icon_class: "fa-solid fa-user" }
+    name: "My First Post",
+    description: "Create your first post in mygreenly.me"
   )
   Merit::Badge.create!(
     id: 2,
     name: "Five Comments",
-    description: "Create five comments",
-    custom_fields: { icon_class: "fa-solid fa-comment" }
+    description: "Create five comments"
   )
   Merit::Badge.create!(
     id: 3,
     name: "The Commenter",
-    description: "Over 25 comments",
-    custom_fields: { icon_class: "fa-solid fa-comment" }
+    description: "Over 25 comments"
   )
   Merit::Badge.create!(
     id: 4,
-    name: "The Poster Maker",
-    description: "Over 10 posts",
-    custom_fields: { icon_class: "fa-solid fa-user" }
+    name: "The Post Maker",
+    description: "Over 10 posts"
   )
   Merit::Badge.create!(
     id: 5,
     name: "This is Greenly",
-    description: "Create your first event",
-    custom_fields: { icon_class: "fa-solid fa-calendar" }
+    description: "Create your first event"
   )
   Merit::Badge.create!(
     id: 6,
     name: "The Event Maker",
-    description: "Over 5 events",
-    custom_fields: { icon_class: "fa-solid fa-calendar" }
+    description: "Over 5 events"
   )
   Merit::Badge.create!(
     id: 7,
-    name: "My First Event",
-    description: "Create your first event",
-    custom_fields: { icon_class: "fa-solid fa-calendar" }
-  )
-  Merit::Badge.create!(
-    id: 8,
     name: "The Event Attender",
-    description: "Over 10 events attended",
-    custom_fields: { icon_class: "fa-solid fa-calendar" }
+    description: "Over 10 events attended"
   )
 end

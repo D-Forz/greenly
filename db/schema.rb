@@ -168,7 +168,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_213522) do
     t.string "username", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
-    t.boolean "organizer", default: false
     t.integer "phone"
     t.integer "sash_id"
     t.integer "level", default: 0

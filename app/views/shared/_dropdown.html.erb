@@ -7,7 +7,13 @@
       <li class="dropdown-item"><%= link_to "edit", send("edit_#{item.class.to_s.downcase}_path", item), data: { turbo_frame: "remote_modal" } if policy(item).update?%></li>
       <li class="dropdown-item">
         <% if policy(item).destroy? %>
-          <%= link_to "delete", send("#{item.class.to_s.downcase}_path", item), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          <button
+            data-controller="sweetalert"
+            data-action= "click->sweetalert#confirm"
+            >
+            Delete
+          </button>
+          <%= link_to "", send("#{item.class.to_s.downcase}_path", item), id: "delete-link", data: { turbo_method: :delete }, class: "invisible"%>
         <% end %>
       </li>
     </ul>

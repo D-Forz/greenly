@@ -9,6 +9,17 @@ gem "rails", "~> 7.0.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+# Project dependencies
+gem "devise" # Authentication
+gem "pundit", "~> 2.2" # Authorization
+gem "pagy", "~> 5.10" # Pagination
+gem "merit", "~> 4.0" # Badges
+gem "friendly_id", "~> 5.4" # Friendly URLs
+gem "cloudinary", "~> 1.23" # Image uploads
+gem "autoprefixer-rails" # CSS autoprefixer
+gem "font-awesome-sass", "~> 6.1"
+gem "simple_form", github: "heartcombo/simple_form"
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
@@ -48,10 +59,6 @@ gem "sassc-rails"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem "devise"
-gem "autoprefixer-rails"
-gem "font-awesome-sass", "~> 6.1"
-gem "simple_form", github: "heartcombo/simple_form"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -77,11 +84,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-gem "pundit", "~> 2.2"
-
-gem "pagy", "~> 5.10"
-
-gem "merit", "~> 4.0"
-
-gem "friendly_id", "~> 5.4"

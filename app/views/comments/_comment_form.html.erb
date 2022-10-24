@@ -2,7 +2,14 @@
 <%= simple_form_for [commentable, Comment.new],
   data: { turbo_frame: "comments-#{commentable.id}",
   controller: 'reset-form',
-  action: "turbo:submit-end->reset-form#reset" } do |f| %>
-  <%= f.input :content %>
-  <%= f.button :submit %>
+  action: "turbo:submit-end->reset-form#reset" }, wrapper: :inline_form do |f| %>
+  <div class="row">
+    <div class="col-9">
+      <%= f.input :content %>
+
+    </div>
+    <div class="col-2">
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
+  </div>
 <% end %>

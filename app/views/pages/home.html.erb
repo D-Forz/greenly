@@ -5,7 +5,7 @@
     <div class="container">
         <div class="text-center p-4 p-lg-5">
             <p class="fw-bold text-primary mb-2">Proud to introduce</p>
-            <h1 class="fw-bold mb-4">Greenly,<br />App that coonect people</h1>
+            <h1 class="fw-bold mb-4">Greenly,<br />You can help shape the future</h1>
             <%= link_to "Start Here", events_path, class: "btn btn-primary px-4" %>
         </div>
     </div>
@@ -29,18 +29,4 @@
         </div>
     </div>
 </div>
-
-  <%# footer %>
-<div class="container">
-  <div class="footer row row-col-4">
-    <div class="footer-copyrigth col-lg-4">
-      <p>Greenly, todos los derechos resevados. ©2022</p>
-    </div>
-    <div class="footer-social col lg-4">
-      <a href=""><i class="fab fa-facebook"></i></a>
-      <a href=""><i class="fab fa-instagram"></i></a>
-    </div>
-    <p class="footer-links col-lg-2"> <%= link_to "Nuestro equipo" %> </p>
-    <p class="footer-links col-lg-2"> <%= link_to "Sobre nosotros" %> </p>
-  </div>
-</div>
+<%= render "shared/footer" %>

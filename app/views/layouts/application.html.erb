@@ -11,7 +11,7 @@
     <%= favicon_link_tag asset_path('greenly.ico') %>
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
   <% unless params[:controller].include? 'devise/' %>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>

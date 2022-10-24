@@ -9,7 +9,6 @@ user1 = User.create!(
   first_name: "Juan",
   last_name: "Arango",
   username: 'FelipeTavera1',
-  organizer: true,
   email: "jftaa@hotmail.com",
   password: "password"
 )
@@ -19,7 +18,6 @@ user2 = User.create!(
   first_name: "Jhon",
   last_name: "Doe",
   username: 'Jhoncito',
-  organizer: true,
   email: "jhon@email.com",
   password: "password"
 )
@@ -29,7 +27,6 @@ user3 = User.create!(
   first_name: "Santiago",
   last_name: "Escobar",
   username: 'SantiEscobar',
-  organizer: true,
   email: "sescobar@outlook.com",
   password: "password"
 )

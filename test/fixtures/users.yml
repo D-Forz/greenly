@@ -2,7 +2,6 @@ admin:
   first_name: admin
   last_name: greenly
   username: admincito
-  organizer: true
   email: jhon@email.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
@@ -10,7 +9,6 @@ jhon:
   first_name: Jhon
   last_name: Doe
   username: jhon
-  organizer: false
   email: jhon@gmail.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
@@ -18,6 +16,5 @@ pedro:
   first_name: Pedro
   last_name: Doe
   username: pedro
-  organizer: false
   email: pedro@gmail.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

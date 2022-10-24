@@ -11,15 +11,15 @@ class EventPolicy < ApplicationPolicy
   end
 
   def create?
-    user_is_organizer?
+    user.present?
   end
 
   def update?
-    user_is_organizer?
+    user.present? && user_is_organizer?
   end
 
   def destroy?
-    user_is_organizer?
+    user.present? && user_is_organizer?
   end
 
   private

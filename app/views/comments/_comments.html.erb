@@ -3,8 +3,18 @@
   <% commentable.comments.order(created_at: :desc).each do |comment| %>
     <span><%= comment.user.full_name %> |</span> <span><%= comment.content %></span>
     <div>
-    <%= link_to "delete", comment, data: {turbo_method: :delete } %> |
-    <small><%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small></div>
+      <button
+      data-controller="sweetalert"
+      data-action= "click->sweetalert#confirm"
+      >
+      Delete
+      </button>
+      <%= link_to "", comment,
+        id: "delete-link",
+        data: { turbo_method: :delete},
+        class: "invisible" %>
+      |<small><%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small>
+    </div>
     <br>
   <% end %>
 <% end %>

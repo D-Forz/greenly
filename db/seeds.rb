@@ -1,9 +1,6 @@
 puts "\n== Seeding the database =="
 
-p 'Deleting records'
-Rake::Task['db:reset'].invoke
-
-p 'Generating users'
+p 'Generating users...'
 
 user1 = User.create!(
   first_name: "Juan",

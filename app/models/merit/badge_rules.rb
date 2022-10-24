@@ -45,11 +45,7 @@ module Merit
         event.user.events.count >= 10
       end
 
-      grant_on 'attendances#create', badge_id: 7, badge: 'My First Event', to: :user do |attendance|
-        attendance.user.attendances.count >= 1
-      end
-
-      grant_on 'attendances#create', badge_id: 8, badge: 'The Event Attender', to: :user do |attendance|
+      grant_on 'attendances#create', badge_id: 7, badge: 'The Event Attender', to: :user do |attendance|
         attendance.user.attendances.count >= 10
       end
     end

@@ -20,7 +20,7 @@ Rails.application.reloader.to_prepare do
   Merit::Badge.create!(
     id: 1,
     name: "My First Post",
-    description: "Create your first post in mygreenly.me"
+    description: "Create your first post in Greenly"
   )
   Merit::Badge.create!(
     id: 2,

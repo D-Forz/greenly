@@ -1,1 +1,32 @@
-<h1>Favoritos</h1>
+<div class="container">
+  <h1>Favoritos</h1>
+
+  <% if @favorites.empty? %>
+    <p>No tienes favoritos</p>
+
+  <% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @favorites.each do |favorite| %>
+          <tr>
+            <td><%= favorite.favoritable_type %></td>
+            <td>
+              <% if favorite.favoritable_type == "Post" %>
+                <%= link_to "See", posts_path %>
+              <% else %>
+                <%= link_to 'See', event_path(favorite.favoritable_id) %> <!-- need fix -->
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

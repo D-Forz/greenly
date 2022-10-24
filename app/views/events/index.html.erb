@@ -7,7 +7,7 @@
       <%= render partial: "shared/dropdown", locals: { item: event } %>
       <p><%= event.description %></p>
       <p><%= event.address %></p>
-      <p><%= event.event_date %></p>
+      <p><%= event.event_date.to_fs(:long) %></p>
       <p><%= pluralize(event.comments.count, "comment") %></p>
     </div>
   <% end %>

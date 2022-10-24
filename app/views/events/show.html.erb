@@ -9,7 +9,7 @@
         <%= render partial: "shared/dropdown", locals: { item: @event } %>
         <p><%= @event.description %></p>
         <p><%= @event.address %></p>
-        <p><%= @event.event_date %></p>
+        <p><%= @event.event_date.to_fs(:long) %></p>
       </div>
       <div class="comment-create">
         <%= render partial: "comments/comment_form", locals: { commentable: @event } %>

@@ -23,6 +23,6 @@ class CommentsController < ApplicationController
 
   def commentable
     return Post.find(params[:post_id]) if params[:post_id]
-    return Event.find(params[:event_id]) if params[:event_id]
+    return Event.friendly.find(params[:event_id]) if params[:event_id]
   end
 end

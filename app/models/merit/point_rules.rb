@@ -19,11 +19,14 @@ module Merit
       score 1, on: 'comments#create' do |comment|
         comment.commentable_type.eql?('Post')
       end
-      score 2, on: 'comments#create' do |comment|
+      score 1, on: 'comments#create' do |comment|
         comment.commentable_type.eql?('Event')
       end
+      score (-1), on: 'comments#destroy'
       score 5, on: 'posts#create'
+      score (-5), on: 'posts#destroy'
       score 20, on: 'events#create'
+      score (-20), on: 'events#destroy'
       score 150, on: 'posts#create' do |post|
         post.user.posts.count == 10
       end

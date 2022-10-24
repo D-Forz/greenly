@@ -3,6 +3,7 @@
   <% commentable.comments.order(created_at: :desc).each do |comment| %>
     <span><%= comment.user.full_name %> |</span> <span><%= comment.content %></span>
     <div>
+      <% if comment.user == current_user %>
       <button
       data-controller="sweetalert"
       data-action= "click->sweetalert#confirm"
@@ -14,6 +15,7 @@
         data: { turbo_method: :delete},
         class: "invisible" %>
       |<small><%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small>
+      <% end %>
     </div>
     <br>
   <% end %>

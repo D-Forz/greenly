@@ -1,12 +1,12 @@
 comment_one:
   content: Que increible, me encanta!
-  user: admin
+  user: pedro
   commentable: post_one
   commentable_type: Post
 
 comment_two:
   content: Esta muy interesante, me gustaria aprender mas!
-  user: admin
+  user: jhon
   commentable: event_one
   commentable_type: Event
 

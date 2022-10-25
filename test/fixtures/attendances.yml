@@ -1,9 +1,9 @@
 attendance_one:
   attendance_status: Going
-  user: admin
+  user: jhon
   event: event_one
 
 attendance_two:
   attendance_status: Maybe
-  user: admin
+  user: pedro
   event: event_two

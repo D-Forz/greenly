@@ -7,12 +7,15 @@
         <%= render 'shared/sidebar' %>
       </div>
       <div class="col-md-6">
-        <%= turbo_frame_tag "remote_modal", target: "_top" %>
 
         <%= render "shared/empty_state" if @posts.empty? %>
 
         <%= turbo_frame_tag "posts-#{@pagy.page}", class: "posts" do %>
           <%= render @posts %>
+          <% if @pagy.next %>
+            <%= turbo_frame_tag "posts-#{@pagy.next}", loading: :lazy, class: "posts",
+            src: pagy_url_for(@pagy, @pagy.next) %>
+          <% end %>
         <% end %>
       </div>
       <div class="col-md-3">

@@ -37,11 +37,8 @@
                 </div>
             </div>
         </div>
-        <div class="comments text-muted">View all comments</div>
       </div>
-      <div class="comment-create">
         <%= render partial: "comments/comment_form", locals: { commentable: @event } %>
-      </div>
       <div class="event-comments">
         <%= render partial: "comments/comments", locals: { commentable: @event } %>
       </div>

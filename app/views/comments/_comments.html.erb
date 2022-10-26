@@ -1,22 +1,19 @@
 <%= turbo_frame_tag "comments-#{commentable.id}" do %>
-  <p><%= pluralize(commentable.comments.count, "comment") %></p>
-  <% commentable.comments.order(created_at: :desc).each do |comment| %>
-    <span><%= comment.user.full_name %> |</span> <span><%= comment.content %></span>
-    <div><small>
-      <% if comment.user == current_user %>
-      <a href=""
-      class= "text-decoration-none"
-      data-controller="sweetalert"
-      data-action= "click->sweetalert#confirm">
-      Delete
-      </a>
-      <%= link_to "", comment,
-        id: "delete-link",
-        data: { turbo_method: :delete},
-        class: "invisible" %>
-      <% end %>
-      <%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small>
-    </div>
-    <br>
-  <% end %>
+  <div class="comments">
+    <div class="count-comments text-muted mb-3"><%= pluralize(commentable.comments.count, "comment") %></div>
+    <% commentable.comments.order(created_at: :desc).each do |comment| %>
+        <div class="comment__action">
+          <p>
+            <b><%= comment.user.full_name %></b>
+            <%= comment.content %>
+            <br><small> <%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small>
+          </p>
+          <% if comment.user == current_user %>
+            <a href="" class= "text-decoration-none" data-controller="sweetalert"
+            data-action= "click->sweetalert#confirm"><i class="fa-regular fa-trash-can"></i></a>
+            <%= link_to "", comment, id: "delete-link", data: { turbo_method: :delete}, class: "invisible" %>
+          <% end %>
+        </div>
+    <% end %>
+  </div>
 <% end %>

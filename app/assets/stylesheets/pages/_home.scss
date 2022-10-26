@@ -639,7 +639,134 @@ main .container .right {
     background: hsl(202, 75%, 60%);
 }
 
+.customize-theme .choose-color span.active {
+  border: 5px solid white;
+}
+
+/* color ends */
+
+/* Background starts */
+.customize-theme .choose-bg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.customize-theme .choose-bg > div {
+  padding: var(--card-padding);
+  width: 100%;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.customize-theme .choose-bg > div.active {
+  border: 2px solid var(--color-primary)
+}
+
+.customize-theme .choose-bg .bg-1 {
+  background: white;
+  color: black;
+}
+
+.customize-theme .choose-bg .bg-2 {
+  background: hsl(252, 30%, 17%);
+  color: white;
+}
+
+.customize-theme .choose-bg .bg-3 {
+  background: hsl(252, 30%, 10%);
+  color: white;
+}
+
+.customize-theme .choose-bg > div span {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--color-gray);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
 
 /* color ends */
 
 /* Theme ends */
+
+/*  RESPONSIVENESS media query starts */
+
+@media screen and (max-width: 1200px) {
+  .container {
+      width: 96%;
+  }
+
+  main .container {
+      grid-template-columns: 5rem auto 30vw;
+      gap: 1rem;
+  }
+
+  .left {
+      width: 5rem;
+      z-index: 5;
+  }
+
+  main .container .left .profile {
+      display: none;
+  }
+
+  .sidebar h3 {
+      display: none;
+  }
+
+  .left .btn {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  nav .search-bar {
+      display: none;
+  }
+
+  main .container {
+      grid-template-columns: 0 auto 5rem;
+      gap: 0;
+  }
+
+  main .container .left {
+      grid-column: 3/4;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+  }
+  /* NOTIFICATION POPUP*/
+  .left .notifications-popup {
+      position: absolute;
+      left: -20rem;
+      width: 20rem;
+  }
+
+  .left .notifications-popup::before {
+      display: absolute;
+      top:1.3rem;
+      left: calc(20rem - 0.6rem);
+      display: block;
+  }
+
+
+  main .container .middle {
+      grid-column: 1/3;
+  }
+
+  main .container .right {
+      display: none;
+  }
+
+
+}
+
+
+
+/* RESPONSIVENESS media query ends */

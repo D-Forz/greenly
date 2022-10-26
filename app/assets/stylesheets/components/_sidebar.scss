@@ -1,7 +1,7 @@
 .info-left {
   height: max-content;
   position: sticky;
-  top: var(--sticky-top-left);
+  top: var(--sticky-top);
 }
 
 .info-left .profile {
@@ -12,6 +12,8 @@
   align-items: center;
   column-gap: 1rem;
   width: 100%;
+}
+.info-left .profile-info {
   text-decoration: none;
 }
 

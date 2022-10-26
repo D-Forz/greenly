@@ -5,6 +5,7 @@
   margin: 1rem 0;
   font-size: 0.95rem;
   line-height: 1.5;
+  overflow: hidden;
 }
 
 .event__info .head {
@@ -44,7 +45,7 @@
 .attendance {
   margin-top: 1rem;
   position: sticky;
-  top: var(--sticky-top-left);
+  top: var(--sticky-top);
 }
 
 .attendance h4 {

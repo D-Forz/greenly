@@ -1,28 +1,29 @@
 <%= content_for(:title, 'Events | Greenly') %>
 <div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <%= render 'shared/sidebar' %>
-    </div>
-    <div class="col-md-6">
-      <h1 class="text-center">Events</h1>
-      <% @events.each do |event| %>
-        <div class="event">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><%= link_to event.title, event_path(event) %></h5>
-              <p class="card-text"><%= event.description %></p>
-              <p class="card-text"><%= event.address %></p>
-              <p class="card-text"><small class="text-muted"><%= event.event_date.to_fs(:long) %></small></p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"><%= pluralize(event.comments.count, "comment") %></small>
+  <main>
+    <div class="row">
+      <div class="col-md-3">
+        <%= render 'shared/sidebar' %>
+      </div>
+      <div class="col-md-6">
+        <% @events.each do |event| %>
+          <div class="event">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to event.title, event_path(event) %></h5>
+                <p class="card-text"><%= event.description %></p>
+                <p class="card-text"><%= event.address %></p>
+                <p class="card-text"><small class="text-muted"><%= event.event_date.to_fs(:long) %></small></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted"><%= pluralize(event.comments.count, "comment") %></small>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+      <div class="col-md-3">
+      </div>
     </div>
-    <div class="col-md-3">
-    </div>
-  </div>
+  </main>
 </div>

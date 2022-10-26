@@ -1,15 +1,10 @@
-<h2>leave a comment</h2>
 <%= simple_form_for [commentable, Comment.new],
   data: { turbo_frame: "comments-#{commentable.id}",
   controller: 'reset-form',
-  action: "turbo:submit-end->reset-form#reset" }, wrapper: :inline_form do |f| %>
-  <div class="row">
-    <div class="col-9">
-      <%= f.input :content %>
-
-    </div>
-    <div class="col-2">
+  action: "turbo:submit-end->reset-form#reset" }, wrapper: :create_comment, html: {class: 'form'} do |f| %>
+      <div class="profile-photo">
+        <%= image_tag current_user.photo%>
+      </div>
+      <%= f.input :content, placeholder: "Write a comment" %>
       <%= f.button :submit, class: "btn btn-primary" %>
-    </div>
-  </div>
 <% end %>

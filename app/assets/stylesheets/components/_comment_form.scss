@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  background: var(--color-white);
+  padding: 0.4rem var(--card-padding);
+  border-radius: var(--boder-radius);
+
+  &__group {
+    width: 100%;
+
+  }
+
+  &__input {
+    justify-self: start;
+    width: 100%;
+    padding-left: 1rem;
+    background: transparent;
+    color: var(--color-dark);
+  }
+
+    &:focus {
+      box-shadow: 0 0 0 3px var(--color-primary);
+    }
+
+    &--invalid {
+      border-color: var(--color-primary);
+    }
+}

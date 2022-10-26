@@ -1,26 +1,58 @@
 <%= content_for(:title, 'Event details | Greenly') %>
-<div class="container mt-3">
-  <%= link_to "back", events_path %>
-  <div class="row">
-    <div class="col-md-8">
-      <div class="events">
-        <h1>Event Details</h1>
-        <h2><%= @event.title %></h2>
-        <%= render partial: "shared/dropdown", locals: { item: @event } %>
-        <p><%= @event.description %></p>
-        <p><%= @event.address %></p>
-        <p><%= @event.event_date.to_fs(:long) %></p>
+
+<div class="container">
+  <main>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="event__info">
+          <div class="head">
+            <div class="title">
+              <h2><%= @event.title %></h2>
+            </div>
+            <span class="edit">
+                <%= render partial: "shared/dropdown", locals: { item: @event } %>
+            </span>
+          </div>
+          <div class="photo">
+            <%= image_tag "greenly_1.jpg", alt: "Event Image" %>
+          </div>
+          <div class="action-buttons">
+              <div class="interaction-buttons">
+                  <span><i class="fa-regular fa-heart"></i></span>
+                  <span><i class="fa-regular fa-comment-dots"></i></span>
+                  <span><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
+              </div>
+              <div class="bookmark">
+                  <span><i class="fa-regular fa-bookmark"></i></span>
+              </div>
+          </div>
+          <div class="event__details">
+              <p><%= @event.description %></p>
+              <div class="more-info">
+                  <div class="date">
+                      <span><i class="fa-regular fa-calendar"></i></span>
+                      <span><%= @event.event_date.to_fs(:long) %></span>
+                  </div>
+                  <div class="location">
+                      <span><i class="fa-sharp fa-solid fa-location-dot"></i></span>
+                      <span><%= @event.address %></span>
+                  </div>
+              </div>
+          </div>
+        </div>
+          <%= render partial: "comments/comment_form", locals: { commentable: @event } %>
+        <div class="event-comments">
+          <%= render partial: "comments/comments", locals: { commentable: @event } %>
+        </div>
       </div>
-      <div class="comment-create">
-        <%= render partial: "comments/comment_form", locals: { commentable: @event } %>
-      </div>
-      <div class="event-comments">
-        <%= render partial: "comments/comments", locals: { commentable: @event } %>
+
+      <div class="col-md-4">
+        <div class="attendance">
+          <div class="attendees">
+            <%= render partial: "attendances/attendances", locals: { event: @event } %>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="event-attendees">
-        <%= render partial: "attendances/attendances", locals: { event: @event } %>
-      </div>
-  </div>
+  </main>
 </div>

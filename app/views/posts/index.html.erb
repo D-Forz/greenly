@@ -1,41 +1,32 @@
 <%= content_for(:title, 'Comunidad | Greenly') %>
 
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-md-2">
-      <h2>sidebar</h2>
-      <p>History</p>
-      <%= link_to "favorites", favorites_path %>
-    </div>
-    <div class="col-md-7">
-      <h1>Posts</h1>
-      <%= link_to "Create a new Post", new_post_path,
-        data: { turbo_frame: "remote_modal" },
-        class: "btn btn-primary w-100 my-3" %>
+<div class="container">
+  <main>
+    <div class="row">
+      <div class="col-md-3">
+        <%= render 'shared/sidebar' %>
+      </div>
+      <div class="col-md-6">
+        <%= turbo_frame_tag "remote_modal", target: "_top" %>
 
-      <%= turbo_frame_tag "remote_modal", target: "_top" %>
+        <%= render "shared/empty_state" if @posts.empty? %>
 
-      <%= render "shared/empty_state" if @posts.empty? %>
-
-      <%= turbo_frame_tag "posts-#{@pagy.page}", class: "posts" do %>
-        <%= render @posts %>
-      <% end %>
-
-      <div class="d-flex justify-content-center">
-        <%== pagy_bootstrap_nav(@pagy) %>
+        <%= turbo_frame_tag "posts-#{@pagy.page}", class: "posts" do %>
+          <%= render @posts %>
+        <% end %>
+      </div>
+      <div class="col-md-3">
+        <div class="events-list">
+          <h2>Next Events</h2>
+          <ul>
+            <% @events.each do |event| %>
+              <li><%= link_to event.title, event_path(event), class: 'text-decoration-none' %></li>
+            <% end %>
+          </ul>
+          <p>Look for more events <%= link_to "here", events_path %></p>
+          <p><%= link_to "Create a new Event", new_event_path %></p>
+        </div>
       </div>
     </div>
-    <div class="col-md-3">
-      <div class="events-list">
-        <h2>Next Events</h2>
-        <ul>
-          <% @events.each do |event| %>
-            <li><%= link_to event.title, event_path(event), class: 'text-decoration-none' %></li>
-          <% end %>
-        </ul>
-        <p>Look for more events <%= link_to "here", events_path %></p>
-        <p><%= link_to "Create a new Event", new_event_path %></p>
-      </div>
-    </div>
-  </div>
+  </main>
 </div>

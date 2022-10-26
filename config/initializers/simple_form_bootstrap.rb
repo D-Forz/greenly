@@ -352,6 +352,18 @@ SimpleForm.setup do |config|
     b.use :hint, wrap_with: { class: 'form-text' }
   end
 
+  config.wrappers :create_comment, class: 'form__group', valid_class: :field_without_errors do |b|
+    b.use :html5
+    b.use :placeholder
+    b.optional :maxlength
+    b.optional :minlength
+    b.optional :pattern
+    b.optional :min_max
+    b.optional :readonly
+    b.use :hint,  wrap_with: { tag: :span, class: :hint }
+    b.use :label, class: 'visually-hidden'
+    b.use :input, class: "form__input", error_class: "form__input--invalid"
+  end
 
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :vertical_form

@@ -1,59 +1,23 @@
-<nav class="navbar navbar-expand-md bg-primary">
+<nav>
   <div class="container">
-    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= link_to root_path, class: "log" do %>
       <%= image_tag "greenly.ico", style: "width: 40px; height: 40px", alt: "Greenly icon" %>
     <% end %>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-5">
-        <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
-      </button>
-      <div id="navcol-5" class="collapse navbar-collapse">
-        <!-- Items Navbar -->
-        <% if user_signed_in? %>
-          <ul class="navbar-nav mx-auto ">
-            <li class="nav-item">
-              <%= link_to "Events", events_path, class: "nav-link text-light" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Community", posts_path, class: "nav-link text-light" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Profile", profile_path(current_user), class: "nav-link text-light" %>
-            </li>
-          </ul>
-          <!-- Right Navbar -->
-          <ul class="navbar-nav">
-            <li class="nav-item my-auto mx-3 text-light">
-              <%= current_user.full_name %>
-            </li>
-            <li class="nav-item dropdown">
-              <%= image_tag current_user.photo,
-                class: "rounded-circle dropdown-toggle",
-                style: "width: 40px; height: 40px",
-                data: { bs_toggle: "dropdown" },
-                alt: "User profile" %>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-                </div>
-            </li>
-          </ul>
-        <% else %>
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <%= link_to "Home", root_path, class: "nav-link text-light" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Events", events_path, class: "nav-link text-light" %>
-            </li>
-          </ul>
-          <!-- Right Navbar -->
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <%= link_to "Sign In", new_user_session_path, class: "nav-link text-light" %>
-            </li>
-          </ul>
-        <% end %>
-
-        <!-- Items Navbar end -->
+    <% if user_signed_in? %>
+      <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" placeholder="Search for people, post and events">
       </div>
+      <div class="create">
+        <%= link_to "Create Post", new_post_path, data: { turbo_frame: "remote_modal" }, class: "btn btn-primary" %>
+        <div class="profile-photo">
+          <%= link_to profile_path(current_user) do %>
+            <%= image_tag current_user.photo, alt: "User profile" %>
+          <% end %>
+        </div>
+    <% else %>
+      <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary" %>
+    <% end %>
+    </div>
   </div>
 </nav>

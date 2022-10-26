@@ -1,0 +1,38 @@
+<div class="info-left">
+  <a class="profile">
+      <div class="profile-photo">
+          <%= image_tag current_user.photo %>
+      </div>
+      <div>
+          <h4><%= current_user.full_name %></h4>
+          <p class="text-muted">@<%= current_user.username %></p>
+      </div>
+  </a>
+      <div class="sidebar">
+        <%= link_to root_path, class: "menu-item" do %>
+            <span><i class="fa-solid fa-house"></i></span>
+            <h3>Home</h3>
+        <% end %>
+        <%= link_to posts_path, class: "menu-item" do %>
+            <span><i class="fa-solid fa-user-group"></i></span>
+            <h3>Community</h3>
+        <% end %>
+        <%= link_to events_path, class: "menu-item" do %>
+            <span><i class="fa-solid fa-calendar-days"></i></span>
+            <h3>Events</h3>
+        <% end %>
+        <%= link_to favorites_path, class: "menu-item" do %>
+            <span><i class="fa-solid fa-heart"></i></span>
+            <h3>Favorites</h3>
+        <% end %>
+          <a class="menu-item">
+              <span><i class="fa-solid fa-palette"></i></span>
+              <h3>Theme</h3>
+          </a>
+          <a class="menu-item" active>
+              <span><i class="fa-solid fa-gear"></i></span>
+              <h3>Settings</h3>
+          </a>
+      </div>
+    <%= link_to "Create Post", new_post_path, data: { turbo_frame: "remote_modal" }, class: "btn btn-primary" %>
+</div>

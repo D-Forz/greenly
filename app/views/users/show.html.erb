@@ -1,34 +1,70 @@
 <%= content_for(:title, "#{@user.username} | Greenly") %>
 
-<header class="text-center text-white bg-primary">
-    <div class="container">
-    <%= image_tag @user.photo, class:'avatar-profile mx-auto mb-5 mt-5' %>
-        <h1><%= @user.full_name %></h1>
-        <hr>
-        <h3 class="font-weight-light mb-0"><%= current_user.points %> points</h3>
-        <hr>
-        <!-- <h3><%= link_to "Edit", edit_user_registration_path %></h3> -->
-    </div>
-</header>
-<section>
-    <div class="container">
-        <h2 class="text-uppercase text-center text-secondary mt-5">Badges</h2>
-        <hr class="mb-5">
-        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-          <% current_user.badges.each do |badge| %>
-            <div class="col">
-              <div class="card">
-                <div class="card-body p-4">
-                  <div class="d-flex justify-content-center mb-3">
-                    <%= image_tag "badges/1.png" %>
-                  </div>
-                  <h4 class="card-title text-center"><%= badge.name %></h4>
-                  <p class="card-text text-center"><%= badge.description %></p>
-                </div>
-              </div>
-            </div>
-          <% end %>
+<div class="profile__container">
+  <div class="header"></div>
+  <main>
+    <div class="row">
+      <div class="profile__left col-md-4">
+        <%= image_tag @user.photo, class: "profile__photo" %>
+        <h4 class="profile__name"><%= @user.full_name %></h4>
+        <p class="profile__info">Ambientalist</p>
+        <p class="profile__info"><%= @user.email %></p>
+        <div class="profile__stats row">
+          <div class="stat col-md-4">
+            <p class="number-stat"><%= current_user.points %></p>
+            <p class="desc-stat">Points</p>
+          </div>
+          <div class="stat col-md-4">
+            <p class="number-stat"><%= current_user.posts.count %></p>
+            <p class="desc-stat">Posts</p>
+          </div>
+          <div class="stat col-md-4">
+            <p class="number-stat"><%= current_user.badges.count %></p>
+            <p class="desc-stat">Badges</p>
+          </div>
         </div>
+        <p class="desc">
+          Hi ! My name is Jane Doe. I'm an Ambientalist from Medellín, in Colombia. I really enjoy participate in activities.
+        </p>
+        <div class="social">
+          <i class="fa-brands fa-square-facebook"></i>
+          <i class="fa-brands fa-square-twitter"></i>
+          <i class="fa-brands fa-square-pinterest"></i>
+          <i class="fa-brands fa-square-tumblr"></i>
+        </div>
+      </div>
+      <div class="right col-lg-8">
+        <ul class="nav">
+          <li>Badges</li>
+        </ul>
+        <span class="edit__profile">Edit profile</span>
+        <div class="row badges">
+        <!-- badges
+          <% current_user.badges.each do |badge| %>
+            <%= badge.name %>
+            <%= badge.description %>
+          <% end %>
+          -->
+          <div class="col-md-4">
+             <img src="https://images.pexels.com/photos/1036371/pexels-photo-1036371.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+          </div>
+          <div class="col-md-4">
+            <img src="https://images.pexels.com/photos/861034/pexels-photo-861034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+          </div>
+          <div class="col-md-4">
+             <img src="https://images.pexels.com/photos/113338/pexels-photo-113338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+          </div>
+          <div class="col-md-4">
+             <img src="https://images.pexels.com/photos/5049/forest-trees-fog-foggy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+          </div>
+          <div class="col-md-4">
+            <img src="https://images.pexels.com/photos/428431/pexels-photo-428431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+          </div>
+          <div class="col-md-4">
+            <img src="https://images.pexels.com/photos/50859/pexels-photo-50859.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
-<%= render "shared/footer" %>
+  </main>
+</div>

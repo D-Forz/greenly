@@ -1,20 +1,17 @@
-admin:
-  first_name: admin
-  last_name: greenly
-  username: admincito
+juan:
+  first_name: Juan
+  last_name: Greenly
+  username: juancito
   email: jhon@email.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 jhon:
   first_name: Jhon
   last_name: Doe
-  username: jhon
+  username: jhoncito
   email: jhon@gmail.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 pedro:
   first_name: Pedro
   last_name: Doe
-  username: pedro
+  username: pedritro
   email: pedro@gmail.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

@@ -5,6 +5,6 @@
       <div class="profile-photo">
         <%= image_tag current_user.photo%>
       </div>
-      <%= f.input :content, placeholder: "Write a comment" %>
+      <%= f.input :content, placeholder: "Write a comment", label: "Write a comment" %>
       <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

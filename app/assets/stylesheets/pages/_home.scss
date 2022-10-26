@@ -639,6 +639,57 @@ main .container .right {
     background: hsl(202, 75%, 60%);
 }
 
+.customize-theme .choose-color span.active {
+  border: 5px solid white;
+}
+
+/* color ends */
+
+/* Background starts */
+.customize-theme .choose-bg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.customize-theme .choose-bg > div {
+  padding: var(--card-padding);
+  width: 100%;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.customize-theme .choose-bg > div.active {
+  border: 2px solid var(--color-primary)
+}
+
+.customize-theme .choose-bg .bg-1 {
+  background: white;
+  color: black;
+}
+
+.customize-theme .choose-bg .bg-2 {
+  background: hsl(252, 30%, 17%);
+  color: white;
+}
+
+.customize-theme .choose-bg .bg-3 {
+  background: hsl(252, 30%, 10%);
+  color: white;
+}
+
+.customize-theme .choose-bg > div span {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--color-gray);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
 
 /* color ends */
 

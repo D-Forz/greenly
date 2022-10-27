@@ -1,32 +1,14 @@
 <%= content_for(:title, 'Greenly, Make the difference') %>
 
-<div class="py-5" style="background:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),
- url(<%=asset_path('greenly_2.jpg')%>) center / cover;">
-    <div class="container">
-        <div class="text-center p-4 p-lg-5">
-            <p class="fw-bold text-primary mb-2">Proud to introduce</p>
-            <h1 class="fw-bold mb-4">Greenly,<br />You can help shape the future</h1>
-            <%= link_to "Start Here", events_path, class: "btn btn-primary px-4" %>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="bg-success border rounded border-0 border-dark overflow-hidden m-3">
-        <div class="row g-0">
-            <div class="col-md-6">
-                <div class="text-white p-4 p-md-5">
-                    <h2 class="fw-bold text-white mb-3">Biben dum fringi dictum, augue purus</h2>
-                    <p class="mb-4">Tincidunt laoreet leo, adipiscing taciti tempor. Primis senectus sapien, risus donec ad fusce augue interdum.</p>
-                    <div class="my-3">
-                      <%= link_to "Learn More", events_path, class: "btn btn-primary btn-lg me-2" %>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 order-first order-md-last" style="min-height: 250px;">
-              <%= image_tag "greenly_1.jpg", class:"w-100 h-100 fit-cover" %>
+<% content_for(:home) do %>
+    <div style="background-image: url(<%= asset_path('bg-home.jpg')%>);"></div>
+    <footer> 
+        <div class="content"> 
+            <div class="text-center p-4 p-lg-5 mb-4">
+                <p class="fw-bold text-primary mb-2">Proud to introduce</p>
+                <h1 class="fw-bold mb-4">Greenly,<br />You can help shape the future</h1>
+                <%= link_to "Start Here", events_path, class: "btn btn-primary px-4" %>
             </div>
         </div>
-    </div>
-</div>
-<%= render "shared/footer" %>
+    </footer>
+<% end %>

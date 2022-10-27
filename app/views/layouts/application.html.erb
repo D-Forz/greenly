@@ -21,11 +21,15 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100">
-  <% unless params[:controller].include? 'devise/' %>
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
+    <% if content_for?(:home) %>
+      <%= yield(:home) %>
+    <% else %>
+      <% unless params[:controller].include? 'devise/' %>
+          <%= render "shared/navbar" %>
+          <%= render "shared/flashes" %>
+      <% end %>
+      <%= yield %>
     <% end %>
-    <%= yield %>
     <%= turbo_frame_tag "remote_modal", target: "_top" %>
   </body>
 </html>

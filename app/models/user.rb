@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_merit
   extend FriendlyId
+  include ImageType
   friendly_id :username, use: :slugged
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -14,10 +15,12 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_one_attached :photo
 
-  validates :first_name, :last_name, :username, presence: true
-  validates :username, uniqueness: true
-  validates :username, format: { with: /\A[a-zA-Z0-9]+\z/, message: "only allows letters and numbers" },
-                       length: { minimum: 3, maximum: 20 }
+  validates :first_name, :last_name, :username, presence: true, length: { minimum: 3, maximum: 20 }
+  validates :username,
+            uniqueness: true, format: {
+              with: /\A[a-zA-Z0-9]+\z/, message: "only allows letters and numbers"
+            }
+
   before_save :attach_default_photo
 
   def full_name

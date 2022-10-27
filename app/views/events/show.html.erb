@@ -14,7 +14,7 @@
             </span>
           </div>
           <div class="photo">
-            <%= image_tag "greenly_1.jpg", alt: "Event Image" %>
+            <%= image_tag @event.photo, alt: "Event Image" if @event.photo.attached? %>
           </div>
           <div class="action-buttons">
               <div class="interaction-buttons">

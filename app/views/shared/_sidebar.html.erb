@@ -11,31 +11,31 @@
     </div>
         <div class="sidebar">
           <%= link_to root_path, class: "menu-item" do %>
-              <span><i class="fa-solid fa-house"></i></span>
+              <span><i class="fa-solid fa-house fa-fw"></i></span>
               <h3>Home</h3>
           <% end %>
           <%= link_to posts_path, class: "menu-item" do %>
-              <span><i class="fa-solid fa-user-group"></i></span>
+              <span><i class="fa-solid fa-user-group fa-fw"></i></span>
               <h3>Community</h3>
           <% end %>
           <%= link_to events_path, class: "menu-item" do %>
-              <span><i class="fa-solid fa-calendar-days"></i></span>
+              <span><i class="fa-solid fa-calendar-days fa-fw"></i></span>
               <h3>Events</h3>
           <% end %>
           <%= link_to favorites_path, class: "menu-item" do %>
-              <span><i class="fa-solid fa-heart"></i></span>
+              <span><i class="fa-solid fa-heart fa-fw"></i></span>
               <h3>Favorites</h3>
           <% end %>
             <a class="menu-item">
-                <span><i class="fa-solid fa-palette"></i></span>
+                <span><i class="fa-solid fa-palette fa-fw"></i></span>
                 <h3>Theme</h3>
             </a>
             <a class="menu-item" active>
-                <span><i class="fa-solid fa-gear"></i></span>
+                <span><i class="fa-solid fa-gear fa-fw"></i></span>
                 <h3>Settings</h3>
             </a>
           <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "menu-item" do %>
-              <span><i class="fa-solid fa-arrow-left"></i></span>
+              <span><i class="fa-solid fa-arrow-left fa-fw"></i></span>
               <h3>Logout</h3>
           <% end %>
         </div>

@@ -9,9 +9,15 @@
             <br><small> <%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small>
           </p>
           <% if comment.user == current_user %>
-            <a href="" class= "text-decoration-none" data-controller="sweetalert"
-            data-action= "click->sweetalert#confirm"><i class="fa-regular fa-trash-can"></i></a>
-            <%= link_to "", comment, id: "delete-link", data: { turbo_method: :delete}, class: "invisible" %>
+            <div data-controller="sweetalert">
+              <span class="invisible">
+                <%= link_to "comment", comment_path(comment.id),
+                data: {sweetalert_target:"deleteButton", turbo_method: :delete} %>
+              </span>
+              <div data-action="click->sweetalert#confirmAlert" style="cursor:pointer;">
+                <i class="fa-regular fa-trash-can"></i>
+              </div>
+            </div>
           <% end %>
         </div>
     <% end %>

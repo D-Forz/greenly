@@ -2,8 +2,8 @@ import { Controller } from "@hotwired/stimulus"
 import swal from "sweetalert";
 // Connects to data-controller="sweetalert"
 export default class extends Controller {
-
-  confirm() {
+  static targets = [ "deleteButton" ]
+  confirmAlert() {
     swal({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -13,7 +13,7 @@ export default class extends Controller {
 
     }).then ((willDelete) => {
       if (willDelete) {
-        const link = document.querySelector('#delete-link');
+        const link = this.deleteButtonTarget;
         link.click();
       }
     });

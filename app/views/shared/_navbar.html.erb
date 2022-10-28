@@ -8,8 +8,22 @@
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="search" placeholder="Search for people, post and events">
       </div>
+
       <div class="create">
-        <%= link_to "Create Post", new_post_path, data: { turbo_frame: "remote_modal" }, class: "btn btn-primary" %>
+        <div class="btn-group">
+          <button class="btn btn-secondary btn-lg" type="button">
+            Actions
+          </button>
+          <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Create Post", new_post_path, data: { turbo_frame: "remote_modal" }, class: "dropdown-item" %></li>
+            <li><%= link_to "Community", posts_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Events", events_path, class: "dropdown-item" %></li>
+          </ul>
+        </div>
+
         <div class="profile-photo">
           <%= link_to profile_path(current_user) do %>
             <%= image_tag current_user.photo, alt: "User profile" %>

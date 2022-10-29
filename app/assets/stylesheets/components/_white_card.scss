@@ -1,9 +1,9 @@
 .white__card {
-  background: var(--color-white);
+  background: $color-white;
   border-radius: var(--card-border-radius);
   padding: var(--card-padding);
   margin: 1rem 0;
-  font-size: 0.95rem;
+  font-size: 0.90rem;
   line-height: 1.5;
   overflow: hidden;
   &:first-child {

@@ -6,7 +6,7 @@
 
 .info-left .profile {
   padding: var(--card-padding);
-  background: var(--color-white);
+  background: $color-white;
   border-radius: var(--card-border-radius);
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@
 
 .info-left .sidebar {
   margin-top: 1rem;
-  background: var(--color-white);
+  background: $color-white;
   border-radius: var(--card-border-radius);
 }
 
@@ -34,12 +34,12 @@
 }
 
 .info-left .sidebar .menu-item:hover {
-  background: var(--color-light);
+  background: $color-light;
 }
 
 .info-left .sidebar i {
   font-size: 1.4rem;
-  color: var(--color-gray);
+  color: $color-gray;
   margin-left: 2rem;
   position: relative;
 }
@@ -51,12 +51,12 @@
 }
 
 .info-left .sidebar .active {
-  background: var(--color-light);
+  background: $color-light;
 }
 
 .info-left .sidebar .active i,
 .info-left .sidebar .active h3 {
-  color: var(--color-primary);
+  color: $color-primary;
 }
 
 .info-left .sidebar .active::before {
@@ -65,7 +65,7 @@
   position: absolute;
   width: 0.5rem;
   height: 100%;
-  background: var(--color-primary);
+  background: $color-primary;
 }
 
 .info-left .sidebar .menu-item:first-child.active {

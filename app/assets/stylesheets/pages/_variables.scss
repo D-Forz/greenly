@@ -1,16 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
-    --color-black: hsl(252, 30%, 10%);
-    --color-dark: hsl(252, 30%, 17%);
-    --color-light: hsl(252, 30%, 95%);
-    --color-white: hsl(252, 30%, 100%);
-    --color-primary: hsl(252, 75%, 60%);
-    --color-secondary: hsl(252, 100%, 90%);
-    --color-danger: hsl(0, 95%, 65%);
-    --color-success: hsl(120, 95%, 65%);
-    --color-gray: hsl(252, 15%, 65%);
-
     --boder-radius: 2rem;
     --card-border-radius: 1rem;
     --btn-padding: 0.6rem 2rem;
@@ -33,16 +23,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--color-dark);
-    background-color: var(--color-light);
+    color: $color-dark;
+    background-color: $color-light;
     overflow-x: hidden;
 }
 
-/* general styles */
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
 
 .profile-photo {
     width: 2.7rem;
@@ -71,7 +56,7 @@ img {
 }
 
 .btn-primary {
-    background: var(--color-primary);
+    background: $color-primary;
     color: white;
 }
 
@@ -80,7 +65,7 @@ img {
 }
 
 .text-muted {
-    color: var(--color-gray);
+    color: $color-gray;
 }
 
 /* main starts */
@@ -101,7 +86,7 @@ main .container .right {
 }
 
 .right .messages {
-    background: var(--color-white);
+    background: $color-white;
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     margin-bottom: 1rem;
@@ -133,18 +118,18 @@ main .container .right {
 .right .messages .category h6 {
     width: 100%;
     text-align: center;
-    border-bottom: 4px solid var(--color-light);
+    border-bottom: 4px solid $color-light;
     padding-bottom: 0.5rem;
     font-size: 0.85rem;
 
 }
 
 .right .messages .category .active {
-    border-color: var(--color-dark);
+    border-color: $color-dark;
 }
 
 .right .message .message-requests {
-    border-color: var(--color-primary);
+    border-color: $color-primary;
 }
 
 .right .messages .message {
@@ -176,8 +161,8 @@ main .container .right {
     width: 0.8rem;
     height: 0.8rem;
     border-radius: 50%;
-    border: 3px solid var(--color-white);
-    background: var(--color-success);
+    border: 3px solid $color-white;
+    background: $color-success;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -189,12 +174,12 @@ main .container .right {
 }
 
 .right .friend-requests h4 {
-    color: var(--color-gray);
+    color: $color-gray;
     margin: 1rem 0;
 }
 
 .right .request {
-    background: var(--color-white);
+    background: $color-white;
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     margin-bottom: 0.7rem;
@@ -231,7 +216,7 @@ main .container .right {
 }
 
 .customize-theme .card {
-    background: var(--color-white);
+    background: $color-white;
     padding: 3rem;
     border-radius: var(--card-border-radius);
     width: 50%;
@@ -246,13 +231,13 @@ main .container .right {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--color-light);
+    background: $color-light;
     padding: var(--search-padding);
     border-radius: var(--card-border-radius);
 }
 
 .customize-theme .choose-size {
-    background: var(--color-secondary);
+    background: $color-secondary;
     height: 0.3rem;
     width: 100%;
     margin: 0 1rem;
@@ -264,13 +249,13 @@ main .container .right {
 .customize-theme .choose-size span {
     width: 1rem;
     height: 1rem;
-    background: var(--color-secondary);
+    background: $color-secondary;
     border-radius: 50%;
     cursor: pointer;
 }
 
 .customize-theme .choose-size span.active {
-    background: var(--color-primary);
+    background: $color-primary;
 }
 
 /* font size ends */
@@ -278,7 +263,7 @@ main .container .right {
 /* color starts */
 
 .customize-theme .choose-color {
-    background: var(--color-light);
+    background: $color-light;
     padding: var(--search-padding);
     border-radius: var(--card-border-radius);
     display: flex;
@@ -334,7 +319,7 @@ main .container .right {
 }
 
 .customize-theme .choose-bg > div.active {
-  border: 2px solid var(--color-primary)
+  border: 2px solid $color-primary
 }
 
 .customize-theme .choose-bg .bg-1 {
@@ -355,7 +340,7 @@ main .container .right {
 .customize-theme .choose-bg > div span {
   width: 2rem;
   height: 2rem;
-  border: 2px solid var(--color-gray);
+  border: 2px solid $color-gray;
   border-radius: 50%;
   margin-right: 1rem;
 }

@@ -18,6 +18,6 @@
 <% if event.attendances.where(user: current_user).empty? %>
 <%= simple_form_for [event, Attendance.new] do |f| %>
   <%= f.input :attendance_status, collection: ["Going", "Maybe"], as: :radio_buttons %>
-  <%= f.button :submit, "Attend", class: "btn btn-primary" %>
+  <%= f.button :submit, "Attend", class: "btn btn-primary", value: "Confirm" %>
 <% end %>
 <% end %>

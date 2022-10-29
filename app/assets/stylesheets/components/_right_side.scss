@@ -1,19 +1,16 @@
-
-// attendees
-.attendance {
-  margin-top: 1rem;
+.right__side {
   position: sticky;
   top: var(--sticky-top);
+  & .btn {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
 }
 
-.attendance h4 {
-  color: $color-gray;
-  margin: 1rem 0;
-}
-
-.attendees {
+.mini__card {
   background: $color-white;
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
 }

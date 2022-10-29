@@ -3,18 +3,33 @@
   <p>No attendees yet, be the first!</p>
 <% else %>
   <h4>Going</h4>
-  <% event.attendances.each do |attendance| %>
-    <% if attendance.attendance_status == "Going" %>
-      <p><%= attendance.user.first_name %></p>
+  <div class="attendant">
+    <% event.attendances.last(5).each do |attendance| %>
+      <% if attendance.attendance_status == "Going" %>
+        <span><%= cl_image_tag attendance.user.photo.key %></span>
+      <% end %>
+      <p>
+        <%= event.attendances.where(attendance_status: "Going").last.user.first_name %>
+        and <%= pluralize(event.attendances.where(attendance_status: "Going").count - 1, "user") %> more
+      </p>
     <% end %>
-  <% end %>
-  <h4>Maybe</h4>
-  <% event.attendances.each do |attendance| %>
-    <% if attendance.attendance_status == "Maybe" %>
-      <p><%= attendance.user.first_name %></p>
+  </div>
+  <div class="attendant">
+    <% if event.attendances.where(attendance_status: "Maybe").any? %>
+      <h4>Maybe</h4>
+      <% event.attendances.last(5).each do |attendance| %>
+        <% if attendance.attendance_status == "Maybe" %>
+          <span><%= cl_image_tag attendance.user.photo.key %></span>
+        <% end %>
+        <p>
+          <%= event.attendances.where(attendance_status: "Maybe").last.user.first_name %>
+          and <%= pluralize(event.attendances.where(attendance_status: "Going").count - 1, "user") %> more
+        </p>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 <% end %>
+
 <% if event.attendances.where(user: current_user).empty? %>
 <%= simple_form_for [event, Attendance.new] do |f| %>
   <%= f.input :attendance_status, collection: ["Going", "Maybe"], as: :radio_buttons %>

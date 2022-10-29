@@ -15,4 +15,23 @@
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);
   margin-bottom: 0.7rem;
+
+  & .attendant {
+    display: flex;
+  }
+  & .attendant span {
+    width: 1.4rem;
+    height: 1.4rem;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid $color-white;
+    margin-left: -0.6rem;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  & p {
+    margin-left: 0.5rem;
+  }
 }

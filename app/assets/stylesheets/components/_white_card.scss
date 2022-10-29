@@ -9,6 +9,9 @@
   &:first-child {
     margin-top: 0;
   }
+  & p {
+    margin-bottom: 0;
+  }
   & .head {
     display: flex;
     justify-content: space-between;

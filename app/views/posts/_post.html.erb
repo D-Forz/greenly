@@ -4,9 +4,9 @@
       <div class="profile-photo">
         <%= image_tag post.user.photo, alt: "Profile Photo"%>
       </div>
-      <div class="ingo">
-        <h3><%= post.user.full_name %></h3>
-        <small>Colombia, <%= distance_of_time_in_words_to_now(post.created_at) %> ago</small>
+      <div>
+        <p class="fw-bold"><%= post.user.full_name %></p>
+        <small class="mt-0">Colombia, <%= distance_of_time_in_words_to_now(post.created_at) %> ago</small>
       </div>
     </div>
     <span class="edit">
@@ -29,9 +29,8 @@
   <div class="card__details">
     <p><%= post.content %></p>
   </div>
+  <%= render partial: "comments/comment_form", locals: { commentable: post } %>
+  <div class="card__comments">
+    <%= render partial: "comments/comments", locals: { commentable: post } %>
+  </div>
 </div>
-<%= render partial: "comments/comment_form", locals: { commentable: post } %>
-<div class="card__comments">
-  <%= render partial: "comments/comments", locals: { commentable: post } %>
-</div>
-<hr>

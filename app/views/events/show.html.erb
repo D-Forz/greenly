@@ -39,10 +39,10 @@
                   </div>
               </div>
           </div>
-        </div>
-          <%= render partial: "comments/comment_form", locals: { commentable: @event } %>
+        <%= render partial: "comments/comment_form", locals: { commentable: @event } %>
         <div class="card__comments">
           <%= render partial: "comments/comments", locals: { commentable: @event } %>
+        </div>
         </div>
       </div>
 

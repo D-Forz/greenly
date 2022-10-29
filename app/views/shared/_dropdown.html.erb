@@ -1,20 +1,35 @@
-  <div class="dropdown">
-    <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fa-sharp fa-solid fa-ellipsis"></i>
-    </span>
-    <ul class="dropdown-menu">
-      <li class="dropdown-item"><%= render partial: "favorites/favorite", locals: { favoritable: item } %></a></li>
-      <li class="dropdown-item"><%= link_to "edit", send("edit_#{item.class.to_s.downcase}_path", item), data: { turbo_frame: "remote_modal" } if policy(item).update?%></li>
+<div class="dropdown">
+  <span role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-sharp fa-solid fa-ellipsis"></i>
+  </span>
+
+  <ul class="dropdown-menu">
+    <% if item.user == current_user %>
       <li class="dropdown-item">
-        <% if policy(item).destroy? %>
-          <button
-            data-controller="sweetalert"
-            data-action= "click->sweetalert#confirm"
-            >
-            Delete
-          </button>
-          <%= link_to "", send("#{item.class.to_s.downcase}_path", item), id: "delete-link", data: { turbo_method: :delete }, class: "invisible"%>
+        <% if policy(item).update? %>
+          <%= link_to "edit", send("edit_#{item.class.to_s.downcase}_path", item),
+          data: { turbo_frame: "remote_modal" }, class: "dropdown-item"%>
         <% end %>
       </li>
-    </ul>
-  </div>
+      <li class="dropdown-item">
+        <% if policy(item).destroy? %>
+          <div data-controller="sweetalert">
+            <span class="invisible">
+              <%= link_to "", send("#{item.class.to_s.downcase}_path", item),
+              data: { sweetalert_target: "deleteButton", turbo_method: :delete } %>
+            </span>
+            <div data-action="click->sweetalert#confirmAlert" class="dropdown-item" style="cursor:pointer;">
+              Delete
+            </div>
+          </div>
+        <% end %>
+      </li>
+    <% else %>
+      <li class="dropdown-item" style="cursor:pointer;">
+        <div data-controller="sweetalert" data-action="click->sweetalert#fakeReport">
+          Report
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

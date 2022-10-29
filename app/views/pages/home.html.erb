@@ -1,13 +1,31 @@
 <%= content_for(:title, 'Greenly, Make the difference') %>
 
 <% content_for(:home) do %>
-    <div style="background-image: url(<%= asset_path('bg-home.jpg')%>);"></div>
+    <div class= "bg-image" style="background-image: url(<%= asset_path('bg-home.jpg')%>);"></div>
     <footer> 
-        <div class="content"> 
-            <div class="text-center p-4 p-lg-5 mb-4">
-                <p class="fw-bold text-primary mb-2">Proud to introduce</p>
-                <h1 class="fw-bold mb-4">Greenly,<br />You can help shape the future</h1>
-                <%= link_to "Start Here", events_path, class: "btn btn-primary px-4" %>
+        <div class="container-fluid fixed-bottom" style="color: white;"> 
+            <div class="row row-col-2 p-4 p-lg-5 mb-4  align-items-center">
+                <div class="col-lg-5">
+                    <p class="fw-bold text-start text-white-50 mb-2">Proud to introduce</p>
+                    <h1 class="fw-bold mb-4" >Greenly,<br />You can help shape the future</h1>
+                </div>
+                <div class="col-lg-6 text-end align-self-end";">
+                    <%= link_to "Start Here", events_path, class: "btn btn-primary px-5" %>
+                </div>
+            </div>
+            <hr>
+            <div class="footer row row-col-3">
+                <p class="col-4 text-center"> Copyrigth © 2022 <br> Greenly </p>
+                <div class="col-4 align-self-center text-center">
+                    <button class="btn btn-link text-decoration-none fs-5" style="color: white;">Contact Us</button>
+                </div>
+                <div class="col-4 text-center align-self-center"> 
+                    <ul style="font-size: 25px;">
+                        <li class="fab fa-facebook"></li>
+                        <li class="fab fa-instagram"></li>
+                        <li class="fab fa-twitter"></li>
+                    </ul>
+                </div>    
             </div>
         </div>
     </footer>

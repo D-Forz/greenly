@@ -1,4 +1,5 @@
 <%= content_for(:title, 'Events | Greenly') %>
+
 <div class="container">
   <main>
     <div class="row">
@@ -6,21 +7,7 @@
         <%= render 'shared/sidebar' %>
       </div>
       <div class="col-md-6">
-        <% @events.each do |event| %>
-          <div class="event">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title"><%= link_to event.title, event_path(event) %></h5>
-                <p class="card-text"><%= event.description %></p>
-                <p class="card-text"><%= event.address %></p>
-                <p class="card-text"><small class="text-muted"><%= event.event_date.to_fs(:long) %></small></p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted"><%= pluralize(event.comments.count, "comment") %></small>
-              </div>
-            </div>
-          </div>
-        <% end %>
+        <%= render @events %>
       </div>
       <div class="col-md-3">
       </div>

@@ -8,11 +8,11 @@
       <% if attendance.attendance_status == "Going" %>
         <span><%= cl_image_tag attendance.user.photo.key %></span>
       <% end %>
-      <p>
-        <%= event.attendances.where(attendance_status: "Going").last.user.first_name %>
-        and <%= pluralize(event.attendances.where(attendance_status: "Going").count - 1, "user") %> more
-      </p>
     <% end %>
+    <p>
+      <%= event.attendances.where(attendance_status: "Going").last.user.first_name %>
+      and <%= pluralize(event.attendances.where(attendance_status: "Going").count - 1, "user") %> more
+    </p>
   </div>
   <div class="attendant">
     <% if event.attendances.where(attendance_status: "Maybe").any? %>
@@ -21,11 +21,11 @@
         <% if attendance.attendance_status == "Maybe" %>
           <span><%= cl_image_tag attendance.user.photo.key %></span>
         <% end %>
-        <p>
-          <%= event.attendances.where(attendance_status: "Maybe").last.user.first_name %>
-          and <%= pluralize(event.attendances.where(attendance_status: "Going").count - 1, "user") %> more
-        </p>
       <% end %>
+      <p>
+        <%= event.attendances.where(attendance_status: "Maybe").last.user.first_name %>
+        and <%= pluralize(event.attendances.where(attendance_status: "Going").count - 1, "user") %> more
+      </p>
     <% end %>
   </div>
 <% end %>

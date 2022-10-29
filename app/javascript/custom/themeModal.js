@@ -1,3 +1,5 @@
+
+/*
 const theme = document.querySelector("#theme");
 const themeModal = document.querySelector(".customize-theme");
 
@@ -16,3 +18,4 @@ themeModal.addEventListener("click", closeThemeModal);
 
 theme.addEventListener("click", openThemeModal);
 //theme customization ends
+*/

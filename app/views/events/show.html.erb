@@ -4,7 +4,7 @@
   <main>
     <div class="row">
       <div class="col-md-8">
-        <div class="event__info">
+        <div class="white__card">
           <div class="head">
             <div class="title">
               <h2><%= @event.title %></h2>
@@ -26,7 +26,7 @@
                   <span><%= render "favorites/favorite", favoritable: @event %></span>
               </div>
           </div>
-          <div class="event__details">
+          <div class="card__details">
               <p><%= @event.description %></p>
               <div class="more-info">
                   <div class="date">
@@ -41,7 +41,7 @@
           </div>
         </div>
           <%= render partial: "comments/comment_form", locals: { commentable: @event } %>
-        <div class="event-comments">
+        <div class="card__comments">
           <%= render partial: "comments/comments", locals: { commentable: @event } %>
         </div>
       </div>

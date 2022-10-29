@@ -1,20 +1,37 @@
-<div class="post">
-  <div class="card text-bg-light mb-3">
-    <div class="card-header d-flex justify-content-between">
-      <%= distance_of_time_in_words_to_now(post.created_at) %> ago
-      <span class="badge text-bg-secondary"><%= render partial: "shared/dropdown", locals: { item: post } %></span>
+<div class="white__card">
+  <div class="head">
+    <div class="user">
+      <div class="profile-photo">
+        <%= image_tag post.user.photo, alt: "Profile Photo"%>
+      </div>
+      <div class="ingo">
+        <h3><%= post.user.full_name %></h3>
+        <small>Colombia, <%= distance_of_time_in_words_to_now(post.created_at) %> ago</small>
+      </div>
     </div>
-    <% if post.photo.attached? %>
-      <%= image_tag post.photo %>
-    <% end %>
-    <div class="card-body">
-      <h5 class="card-title"><%= post.user.full_name %></h5>
-      <p class="card-text"><%= post.content %></p>
+    <span class="edit">
+      <%= render partial: "shared/dropdown", locals: { item: post } %>
+    </span>
+  </div>
+  <div class="photo">
+    <%= image_tag post.photo, alt: "Post Image" if post.photo.attached? %>
+  </div>
+  <div class="action-buttons">
+    <div class="interaction-buttons">
+        <span><i class="fa-regular fa-heart"></i></span>
+        <span><i class="fa-regular fa-comment-dots"></i></span>
+        <span><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
     </div>
-    <div class="card-footer">
-      <%= render partial: "comments/comment_form", locals: { commentable: post } %>
-      <%= render partial: "comments/comments", locals: { commentable: post } %>
+    <div class="bookmark">
+        <span><%= render "favorites/favorite", favoritable: post %></span>
     </div>
   </div>
+  <div class="card__details">
+    <p><%= post.content %></p>
+  </div>
+</div>
+<%= render partial: "comments/comment_form", locals: { commentable: post } %>
+<div class="card__comments">
+  <%= render partial: "comments/comments", locals: { commentable: post } %>
 </div>
 <hr>

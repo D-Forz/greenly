@@ -1,0 +1,16 @@
+<div class="white__card">
+  <div class="head">
+    <div class="title">
+      <h2><%= link_to event.title, event_path(event) %></h2>
+    </div>
+    <span class="edit mx-3">
+        <%= render partial: "shared/dropdown", locals: { item: event } %>
+    </span>
+  </div>
+  <div class="photo">
+    <%= image_tag event.photo, alt: "Event Image" if event.photo.attached? %>
+  </div>
+  <div class="card__details">
+    <div class="text-muted"><%= pluralize(event.comments.count, "comment") %></div>
+  </div>
+</div>

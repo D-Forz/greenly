@@ -1,6 +1,6 @@
 <%= turbo_frame_tag "comments-#{commentable.id}" do %>
   <div class="comments">
-    <div class="count-comments text-muted pb-3"><%= pluralize(commentable.comments.count, "comment") %></div>
+    <div class="text-muted pb-3"><%= pluralize(commentable.comments.count, "comment") %></div>
     <% commentable.comments.order(created_at: :desc).each do |comment| %>
         <div class="comment__action">
           <p>

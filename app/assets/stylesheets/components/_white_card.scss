@@ -1,0 +1,38 @@
+.white__card {
+  background: var(--color-white);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  overflow: hidden;
+  &:first-child {
+    margin-top: 0;
+  }
+  & .head {
+    display: flex;
+    justify-content: space-between;
+  }
+  & .user {
+    display: flex;
+    gap: 1rem;
+  }
+  & .photo {
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    margin: 0.7rem 0;
+  }
+  & .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    margin: 0.6rem;
+  }
+  & .card__details {
+    padding: 0.5rem;
+  }
+  & .card__comments {
+    padding: 0.5rem;
+  }
+}

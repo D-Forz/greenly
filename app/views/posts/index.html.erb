@@ -19,16 +19,7 @@
         <% end %>
       </div>
       <div class="col-md-3">
-        <div class="events-list">
-          <h2>Next Events</h2>
-          <ul>
-            <% @events.each do |event| %>
-              <li><%= link_to event.title, event_path(event), class: 'text-decoration-none' %></li>
-            <% end %>
-          </ul>
-          <p>Look for more events <%= link_to "here", events_path %></p>
-          <p><%= link_to "Create a new Event", new_event_path %></p>
-        </div>
+        <%= render 'shared/right_side' %>
       </div>
     </div>
   </main>

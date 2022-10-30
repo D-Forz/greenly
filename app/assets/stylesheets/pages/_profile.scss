@@ -156,6 +156,7 @@
 
 .badges div {
   margin-bottom: 30px;
+  border-radius: var(--card-border-radius);
 }
 
 @media (max-width:990px) {

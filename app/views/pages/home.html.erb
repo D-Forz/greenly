@@ -2,32 +2,43 @@
 
 <% content_for(:home) do %>
   <div class="bg-image">
-    <footer>
-        <div class="container-fluid fixed-bottom text-white">
-            <div class="row row-col-2 p-4 p-lg-5 mb-4  align-items-center">
-                <div class="col-lg-5">
-                    <p class="fw-bold text-start text-white-50 mb-2">Proud to introduce</p>
-                    <h1 class="fw-bold mb-4" >Greenly,<br />You can help shape the future</h1>
-                </div>
-                <div class="col-lg-6 text-end align-self-end";">
-                    <%= link_to "Start Here", events_path, class: "btn btn-primary px-5" %>
-                </div>
-            </div>
-            <hr>
-            <div class="footer row row-col-3">
-                <p class="col-4 text-center"> Copyrigth © 2022 <br> Greenly </p>
-                <div class="col-4 align-self-center text-center">
-                    <button class="btn btn-link text-decoration-none fs-5 text-white">Contact Us</button>
-                </div>
-                <div class="col-4 text-center align-self-center">
-                    <ul style="font-size: 25px;">
-                        <li class="fab fa-facebook"></li>
-                        <li class="fab fa-instagram"></li>
-                        <li class="fab fa-twitter"></li>
-                    </ul>
-                </div>
-            </div>
+    <footer class="container-fluid fixed-bottom text-white">
+      <div class="row row-col-2 px-4 px-lg-5">
+        <div class="col-lg-4">
+          <h1 class="fw-bold">You can help shape the future</h1>
         </div>
+      </div>
+      <div class="row row-col-2 px-4 px-lg-5 mb-4 mt-4 align-items-end">
+        <div class="col-lg-4">
+          <h2>Greenly</h2>
+          <p class="lead mb-0">Greenly is a platform that allows you to connect with people involved in green projects and make a difference in the world.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-end">
+            <%= link_to "Start Here", events_path, class: "btn btn-primary px-5 mx-5" %>
+          </div>
+          <div>
+            <p class="text-center">Giving back to the community has never been easier.</p>
+          <hr>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row row-col-3">
+        <p class="col-4 px-4 px-lg-5 text-center">Copyrigth © 2022</p>
+        <div class="col-4 align-self-center text-center">
+            <button class="btn btn-link text-white">Contact Us</button>
+        </div>
+        <div class="col-4 text-center align-self-center">
+          <ul>
+            <li class="fab fa-facebook"></li>
+            <li class="fab fa-instagram"></li>
+            <li class="fab fa-twitter"></li>
+          </ul>
+        </div>
+      </div>
     </footer>
-  </div>
 <% end %>

@@ -15,7 +15,7 @@
           <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="visually-hidden">Toggle Dropdown</span>
           </button>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu border-radius">
             <li><%= link_to "Create Post", new_post_path, data: { turbo_frame: "remote_modal" }, class: "dropdown-item" %></li>
             <li><%= link_to "Community", posts_path, class: "dropdown-item" %></li>
             <li><%= link_to "Events", events_path, class: "dropdown-item" %></li>

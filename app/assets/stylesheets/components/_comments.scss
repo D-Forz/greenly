@@ -9,6 +9,11 @@
 .comment__action {
   display: flex;
   justify-content: space-between;
+  & .delete {
+    cursor: pointer;
+    display: flex;
+    color: $color-primary;
+  }
 }
 
 .comments:last-child {

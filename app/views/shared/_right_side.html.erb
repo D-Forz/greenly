@@ -1,11 +1,12 @@
 <div class="right__side">
   <div class="mini__card">
-    <h3 class="text-center">Next events</h3>
-    <ul>
-      <% @events.each do |event| %>
-        <li><%= link_to event.title, event_path(event) %></li>
-      <% end %>
-    </ul>
+    <h3 class="text-center">This week on Greenly</h3>
+    <a href="#" target="_blank">
+      <%= image_tag "sembrar_tomates.jpg", class: "photo" %>
+    </a>
+    <div class="text">
+      <p>How to grow tomatoes in home</p>
+    </div>
   </div>
   <%= link_to "Create a new Event", new_event_path, data: { turbo_frame: "remote_modal" }, class: "btn btn-primary" %>
 

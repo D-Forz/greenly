@@ -6,6 +6,12 @@
     text-align: center;
     padding: 1rem 0;
   }
+
+  & .photo {
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    margin: 0.7rem 0;
+  }
   & .footer {
     padding: 1rem 0;
     text-align: center;

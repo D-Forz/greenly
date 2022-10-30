@@ -15,6 +15,12 @@
 }
 .info-left .profile-info {
   text-decoration: none;
+  & p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $color-primary;
+    margin: 0;
+  }
 }
 
 .info-left .sidebar {

@@ -17,6 +17,9 @@
   border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
 }
 
+.border-radius {
+  border-radius: var(--card-border-radius);
+}
 
 .profile__container main {
       padding: var(--card-padding);

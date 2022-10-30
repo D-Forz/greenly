@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
-    @posts = policy_scope(Post).includes(:user, :photo_attachment, :comments).order(created_at: :desc)
+    @posts = policy_scope(Post).includes(:user, :comments).with_attached_photo.order(created_at: :desc)
     @pagy, @posts = pagy_countless(@posts, items: 10)
   end
 

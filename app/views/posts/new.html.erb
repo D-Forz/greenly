@@ -1,5 +1,5 @@
 <%= content_for(:title, 'New Post | Greenly') %>
 
-<%= render "remote_modal", title: "New Post" do %>
+<%= render "shared/modal", title: "New Post" do %>
   <%= render "form", post: @post %>
 <% end %>

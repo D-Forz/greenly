@@ -1,6 +1,5 @@
 <%= content_for(:title, 'New Event | Greenly') %>
 
-<%= render "posts/remote_modal", title: "New Event" do %>
+<%= render "shared/modal", title: "New Event" do %>
   <%= render 'form' %>
-  <%= link_to "Events", events_path %>
 <% end %>

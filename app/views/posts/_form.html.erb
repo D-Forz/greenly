@@ -1,5 +1,8 @@
 <%= simple_form_for @post do |f| %>
   <%= f.input :content %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit %>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
 <% end %>

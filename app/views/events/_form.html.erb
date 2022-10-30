@@ -4,5 +4,8 @@
   <%= f.input :event_date, as: :date, html5: true %>
   <%= f.input :address %>
   <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
 <% end %>

@@ -4,7 +4,7 @@
       <%= image_tag "greenly.ico", style: "width: 40px; height: 40px", alt: "Greenly icon" %>
     <% end %>
     <% if user_signed_in? %>
-      <div class="search-bar">
+      <div class="search-bar" data-controller="sweetalert" data-action="input->sweetalert#fakeReport">
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="search" placeholder="Search for people, post and events">
       </div>

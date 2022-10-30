@@ -2,21 +2,23 @@
 <% if event.attendances.empty? %>
   <p>No attendees yet, be the first!</p>
 <% else %>
-  <h4>Going</h4>
-  <div class="attendant">
-    <% event.attendances.last(5).each do |attendance| %>
-      <% if attendance.attendance_status == "Going" %>
-        <span><%= cl_image_tag attendance.user.photo.key %></span>
+  <% if event.attendances.where(attendance_status: "Going").any? %>
+    <h4>Going</h4>
+    <div class="attendant">
+      <% event.attendances.where(attendance_status: "Going").last(5).each do |attendance| %>
+        <% if attendance.attendance_status == "Going" %>
+          <span><%= cl_image_tag attendance.user.photo.key %></span>
+        <% end %>
       <% end %>
-    <% end %>
-    <p>
-      <%= event.attendances.where(attendance_status: "Going").last.user.first_name %>
-      and <%= pluralize(event.attendances.where(attendance_status: "Going").count - 1, "user") %> more
-    </p>
-  </div>
-  <div class="attendant">
-    <% if event.attendances.where(attendance_status: "Maybe").any? %>
-      <h4>Maybe</h4>
+      <p>
+        <%= event.attendances.where(attendance_status: "Going").last.user.first_name %>
+        and <%= pluralize(event.attendances.where(attendance_status: "Going").count - 1, "user") %> more
+      </p>
+    </div>
+  <% end %>
+  <% if event.attendances.where(attendance_status: "Maybe").any? %>
+    <h4>Maybe</h4>
+    <div class="attendant">
       <% event.attendances.last(5).each do |attendance| %>
         <% if attendance.attendance_status == "Maybe" %>
           <span><%= cl_image_tag attendance.user.photo.key %></span>
@@ -24,15 +26,15 @@
       <% end %>
       <p>
         <%= event.attendances.where(attendance_status: "Maybe").last.user.first_name %>
-        and <%= pluralize(event.attendances.where(attendance_status: "Going").count - 1, "user") %> more
+        and <%= pluralize(event.attendances.where(attendance_status: "Maybe").count - 1, "user") %> more
       </p>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 <% end %>
 
 <% if event.attendances.where(user: current_user).empty? %>
-<%= simple_form_for [event, Attendance.new] do |f| %>
-  <%= f.input :attendance_status, collection: ["Going", "Maybe"], as: :radio_buttons %>
-  <%= f.button :submit, "Attend", class: "btn btn-primary", value: "Confirm" %>
-<% end %>
+  <%= simple_form_for [event, Attendance.new] do |f| %>
+    <%= f.input :attendance_status, collection: ["Going", "Maybe"], as: :radio_buttons %>
+    <%= f.button :submit, "Attend", class: "btn btn-primary", value: "Confirm" %>
+  <% end %>
 <% end %>

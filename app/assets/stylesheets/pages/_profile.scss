@@ -17,6 +17,9 @@
   border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
 }
 
+.border-radius {
+  border-radius: .7rem;
+}
 
 .profile__container main {
       padding: var(--card-padding);
@@ -156,14 +159,7 @@
 
 .badges div {
   margin-bottom: 30px;
-}
-
-.badges img {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.10), 0 3px 6px rgba(0,0,0,0.10);
-  width: auto;
-  height: auto;
-  cursor: pointer;
-  max-width: 100%;
+  border-radius: var(--card-border-radius);
 }
 
 @media (max-width:990px) {

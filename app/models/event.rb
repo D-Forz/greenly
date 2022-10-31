@@ -9,9 +9,8 @@ class Event < ApplicationRecord
   has_one_attached :photo
   belongs_to :user
 
-  validates :title, :description, :event_date, :address, presence: true
-  validates :title, uniqueness: true, length: { minimum: 5, maximum: 80 },
-                    format: { with: /\A[a-zA-Z0-9 ]+\z/, message: "only allows letters, numbers and spaces" }
+  validates :title, :description, :event_date, :address, :photo, presence: true
+  validates :title, uniqueness: true, length: { minimum: 5, maximum: 80 }
   validates :description, length: { minimum: 10, maximum: 1000 }
   validate :event_date_cannot_be_in_the_past
 

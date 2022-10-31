@@ -5,7 +5,7 @@
           <%= image_tag current_user.photo %>
       </div>
       <%= link_to profile_path(current_user), class: "profile-info" do %>
-        <h4><%= current_user.full_name %></h4>
+        <p><%= current_user.full_name %></p>
         <p class="text-muted">@<%= current_user.username %></p>
       <% end %>
     </div>
@@ -39,7 +39,7 @@
               <h3>Logout</h3>
           <% end %>
         </div>
-      <%= link_to "Create Post", new_post_path, data: { turbo_frame: "remote_modal" }, class: "btn btn-primary" %>
+      <%= link_to "Create Post", new_post_path, data: { turbo_frame: "remote_modal" }, class: "btn btn-primary mb-3" %>
   </div>
 <% end %>
     <%= render "shared/modal_theme" %>

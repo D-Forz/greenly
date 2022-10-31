@@ -1,8 +1,8 @@
 <div class="white__card">
   <div class="head">
     <div class="user">
-      <div class="profile-photo">
-        <%= image_tag post.user.photo, alt: "Profile Photo"%>
+      <div class="card-profile-photo">
+        <%= cl_image_tag post.user.photo.key, alt: "Profile Photo"%>
       </div>
       <div>
         <p class="fw-bold"><%= post.user.full_name %></p>
@@ -14,7 +14,7 @@
     </span>
   </div>
   <div class="photo">
-    <%= image_tag post.photo, alt: "Post Image" if post.photo.attached? %>
+    <%= cl_image_tag post.photo.key, alt: "Post Image" if post.photo.attached? %>
   </div>
   <div class="action-buttons">
     <div class="interaction-buttons">

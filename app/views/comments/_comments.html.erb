@@ -13,12 +13,12 @@
             <br><small> <%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small>
           </p>
           <% if comment.user == current_user %>
-            <div data-controller="sweetalert">
+            <div data-controller="sweetalert" class="delete">
               <span class="invisible">
                 <%= link_to "comment", comment_path(comment.id),
                 data: {sweetalert_target:"deleteButton", turbo_method: :delete} %>
               </span>
-              <div data-action="click->sweetalert#confirmAlert" style="cursor:pointer;">
+              <div data-action="click->sweetalert#confirmAlert">
                 <i class="fa-regular fa-trash-can"></i>
               </div>
             </div>

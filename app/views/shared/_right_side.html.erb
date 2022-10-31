@@ -1,12 +1,27 @@
 <div class="right__side">
   <div class="mini__card">
-    <h3 class="text-center">Next events</h3>
-    <ul>
-      <% @events.each do |event| %>
-        <li><%= link_to event.title, event_path(event), class: 'text-decoration-none' %></li>
-      <% end %>
-    </ul>
+    <h3 class="text-center">This week on Greenly</h3>
+    <a href="#" target="_blank">
+      <%= image_tag "sembrar_tomates.jpg", class: "photo" %>
+    </a>
+    <div class="text">
+      <p>How to grow tomatoes in home</p>
+    </div>
   </div>
-
   <%= link_to "Create a new Event", new_event_path, data: { turbo_frame: "remote_modal" }, class: "btn btn-primary" %>
+
+  <div class="footer mt-3" data-controller="sweetalert" data-action="click->sweetalert#fakeReport">
+    <div class="text-center">
+      <span class="mx-3">About</span>
+      <span class="mx-3">Accessibility</span>
+      <span class="mx-3">Language</span>
+    </div>
+    <div class="text-center m-3">
+      <span class="mx-3">Privacy</span>
+      <span class="mx-3">Conditions</span>
+    </div>
+    <div class="text-center">
+      <span class="mx-3">Greenly © 2022. All rights reserved </span>
+    </div>
+  </div>
 </div>

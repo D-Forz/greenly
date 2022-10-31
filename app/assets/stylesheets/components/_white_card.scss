@@ -20,6 +20,10 @@
     display: flex;
     gap: 1rem;
   }
+  & .card-profile-photo img {
+    width: 2.4rem;
+    border-radius: 50%;
+    }
   & .photo {
     border-radius: var(--card-border-radius);
     overflow: hidden;

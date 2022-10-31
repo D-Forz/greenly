@@ -35,6 +35,9 @@
     align-items: center;
     font-size: 1.4rem;
     margin: 0.6rem;
+    & .interaction-buttons span {
+      cursor: pointer;
+    }
   }
   & .card__details {
     padding: 0.5rem;

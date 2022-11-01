@@ -10,5 +10,8 @@ application.register("remote-modal", RemoteModalController)
 import ResetFormController from "./reset_form_controller"
 application.register("reset-form", ResetFormController)
 
+import ShareController from "./share_controller"
+application.register("share", ShareController)
+
 import SweetalertController from "./sweetalert_controller"
 application.register("sweetalert", SweetalertController)

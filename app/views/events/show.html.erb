@@ -4,10 +4,10 @@
   <main>
     <div class="row">
       <div class="col-md-8">
-        <div class="white__card">
+        <div class="white__card" data-controller="share" data-share-url-value="<%= event_url(@event) %>">
           <div class="head">
             <div class="title">
-              <h2><%= @event.title %></h2>
+              <h2 data-share-target="title"><%= @event.title %></h2>
             </div>
             <span class="edit">
                 <%= render partial: "shared/dropdown", locals: { item: @event } %>
@@ -19,16 +19,17 @@
           <div class="action-buttons">
               <div class="interaction-buttons">
                   <span><i class="fa-regular fa-heart"></i></span>
-                  <span><i class="fa-regular fa-comment-dots"></i></span>
-                  <span><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
+                  <span id="comments-btn"><i class="fa-regular fa-comment-dots"></i></span>
+                  <span data-action="click->share#share"><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
               </div>
               <div class="bookmark">
                   <span><%= render "favorites/favorite", favoritable: @event %></span>
               </div>
           </div>
           <div class="card__details">
-              <p><%= @event.description %></p>
+              <p data-share-target="description"><%= @event.description %></p>
               <div class="more-info mt-3">
+                  <%= content_tag(:div, "", class: "mb-2", data:{share_target: "result"}) %>
                   <div class="date mb-2">
                       <span><i class="fa-regular fa-calendar"></i></span>
                       <span><%= @event.event_date.to_fs(:long) %></span>

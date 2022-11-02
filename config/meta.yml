@@ -1,4 +1,4 @@
 meta_product_name: "Greenly"
 meta_title: "Greenly - Make a difference, take care of the environment"
 meta_description: "You can help shape the future"
-meta_image: "greenly.ico" # should exist in `app/assets/images/`
+meta_image: "og_image.jpg" # should exist in `app/assets/images/`

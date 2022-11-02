@@ -1,16 +1,25 @@
 <div class="white__card">
   <div class="head">
     <div class="title">
-      <h2><%= link_to event.title, event_path(event) %></h2>
+      <h4><%= link_to event.title, event_path(event) %></h4>
     </div>
     <span class="edit mx-3">
         <%= render partial: "shared/dropdown", locals: { item: event } %>
     </span>
   </div>
   <div class="photo">
-    <%= cl_image_tag event.photo.key, alt: "Event Image" if event.photo.attached? %>
+    <%= link_to event_path(event) do %>
+      <%= cl_image_tag event.photo.key, alt: "Event Image" if event.photo.attached? %>
+    <% end %>
   </div>
   <div class="card__details">
-    <div class="text-muted"><%= pluralize(event.comments.count, "comment") %></div>
+    <div class="text-muted">
+      <span><i class="fa-regular fa-eye"></i></span>
+      <%= pluralize(event.views, "view") %>
+      <span class="ms-3"><i class="fa-regular fa-comment-dots"></i></span>
+      <%= pluralize(event.comments.count, "comment") %>
+      <span class="ms-3"><i class="fa-solid fa-users-rectangle"></i></span>
+      <%= pluralize(event.attendances.where(attendance_status: "Going").count, "attendees") %>
+    </div>
   </div>
 </div>

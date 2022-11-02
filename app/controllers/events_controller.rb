@@ -7,6 +7,9 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.friendly.find(params[:id])
+    view = @event.views + 1
+    @event.update(views: view)
+
     authorize @event
   end
 

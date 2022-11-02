@@ -23,7 +23,7 @@
           </div>
         </div>
         <p class="desc">
-          Hi ! My name is Jane Doe. I'm an Ambientalist from Medellín, in Colombia. I really enjoy participate in activities.
+          Hi ! My name is <%= current_user.first_name %>. I'm an Ambientalist from Medellín, in Colombia. I really enjoy participate in activities.
         </p>
         <div class="social mb-3">
           <i class="fa-brands fa-square-facebook"></i>
@@ -35,7 +35,11 @@
       <div class="profile-right col-lg-8">
         <div class="header-badges">
           <span class="profile-nav">Badges</span>
-          <span class="edit__profile">Edit profile</span>
+          <span class="edit__profile">
+            <%= link_to edit_user_registration_path, data: { turbo_frame: "remote_modal" } do %>
+              Edit Profile
+            <% end %>
+          </span>
         </div>
         <div class="row badges">
         <%= render "shared/empty_state" if @current_user.badges.empty? %>

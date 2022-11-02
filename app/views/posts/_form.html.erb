@@ -1,6 +1,6 @@
 <%= simple_form_for @post do |f| %>
-  <%= f.input :content %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :content, label: "Post Content", placeholder: "What's on your mind?", input_html: { rows: 5 } %>
+  <%= f.input :photo, as: :file, label: "Post Photo", hint: "Share a photo with the community" %>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
     <%= f.button :submit, class: "btn btn-primary" %>

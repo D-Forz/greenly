@@ -20,10 +20,3 @@ export default class extends Controller {
     }
   }
 }
-
-var commentsBtn = document.getElementById('comments-btn');
-var commentsForm = document.getElementById('comment_content');
-
-commentsBtn.addEventListener('click', function() {
-  commentsForm.focus();
-});

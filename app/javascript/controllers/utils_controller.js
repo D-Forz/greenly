@@ -1,8 +1,8 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="reset-form"
+// Connects to data-controller="utils"
 export default class extends Controller {
-  reset() {
+  resetForm() {
     this.element.reset()
   }
 }

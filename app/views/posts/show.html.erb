@@ -1,0 +1,52 @@
+<%= content_for(:title, 'Post details | Greenly') %>
+<% content_for(:meta_description, @post.content) %>
+<% content_for(:meta_image, cl_image_tag(@post.photo.key), width: 1200, height: 630, crop: :fill) %>
+
+<div class="container">
+  <main>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="white__card" data-controller="share" data-share-url-value="<%= post_url(@post) %>">
+          <div class="head">
+            <div class="user">
+              <div class="card-profile-photo">
+                <%= cl_image_tag @post.user.photo.key, alt: "Profile Photo"%>
+              </div>
+              <div>
+                <p class="fw-bold"><%= @post.user.full_name %></p>
+                <small class="mt-0">Colombia, <%= distance_of_time_in_words_to_now(@post.created_at) %> ago</small>
+              </div>
+            </div>
+            <span class="edit">
+              <%= render partial: "shared/dropdown", locals: { item: @post } %>
+            </span>
+          </div>
+          <div class="photo">
+            <%= image_tag @post.photo, alt: "Post Image" if @post.photo.attached? %>
+          </div>
+          <div class="action-buttons">
+            <div class="interaction-buttons">
+              <span><i class="fa-regular fa-heart"></i></span>
+              <span><i class="fa-regular fa-comment-dots"></i></span>
+              <span data-action="click->share#share"><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
+            </div>
+            <div class="bookmark">
+              <span><%= render "favorites/favorite", favoritable: @post %></span>
+            </div>
+          </div>
+          <div class="card__details">
+            <p><%= @post.content %></p>
+            <%= content_tag(:div, "", class: "mb-2", data:{share_target: "result"}) %>
+          </div>
+          <%= render partial: "comments/comment_form", locals: { commentable: @post } %>
+          <div class="card__comments">
+            <%= render partial: "comments/comments", locals: { commentable: @post } %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <%= render 'shared/right_side' %>
+      </div>
+    </div>
+  </main>
+</div>

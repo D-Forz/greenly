@@ -5,7 +5,7 @@
   <p>
     Liked by <b><%= likeable.likes.last.user.first_name %></b>
     <% if likeable.likes.count > 1 %>
-      and <b><%= pluralize(likeable.likes.count - 1, "user") %></b> others
+      and <b><%= pluralize(likeable.likes.count - 1, "user") %></b> more
     <% end %>
   </p>
 <% end %>

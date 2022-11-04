@@ -1,6 +1,6 @@
 <%= simple_form_for @event do |f| %>
   <div class="border-radius">
-    <%= f.input :title, label: "Event Title", placeholder: "What's the event called?" %>
+    <%= f.input :title, label: "Event Title", placeholder: "What's the event called?", hint: "Max 80 characters" %>
   </div>
   <%= f.input :description, label: "Event Description", placeholder: "What's the event about?", input_html: { rows: 5 } %>
   <%= f.input :event_date, as: :datetime, html5: true, label: "Event Date" %>

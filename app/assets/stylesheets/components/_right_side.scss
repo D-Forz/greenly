@@ -1,6 +1,9 @@
 .right__side {
   position: sticky;
   top: var(--sticky-top);
+  & h3 {
+    color: $color-primary;
+  }
   & .btn {
     width: 100%;
     text-align: center;

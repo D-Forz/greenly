@@ -8,8 +8,9 @@
       <p>How to grow tomatoes in home</p>
     </div>
   </div>
-  <%= link_to "Create a new Event", new_event_path, data: { turbo_frame: "remote_modal" }, class: "btn btn-primary" %>
-
+  <% if user_signed_in? %>
+    <%= link_to "Create a new Event", new_event_path, data: { turbo_frame: "remote_modal" }, class: "btn btn-primary" %>
+  <% end %>
   <div class="footer mt-3" data-controller="sweetalert" data-action="click->sweetalert#fakeReport">
     <div class="text-center">
       <span class="mx-3">About</span>

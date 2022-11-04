@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create]
   end
 
-  resources :posts, except: %i[show] do
+  resources :posts do
     resources :comments, only: %i[create]
   end
 

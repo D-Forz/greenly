@@ -10,6 +10,10 @@ class PostPolicy < ApplicationPolicy
     user.present?
   end
 
+  def show?
+    user.present?
+  end
+
   def update?
     user.present? && record.user == user
   end

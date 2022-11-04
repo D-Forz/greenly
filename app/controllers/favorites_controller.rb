@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = policy_scope(Favorite)
+    @favorites = policy_scope(Favorite).order(created_at: :desc)
   end
 
   def create

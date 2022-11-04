@@ -26,6 +26,10 @@ class PostsController < ApplicationController
     authorize @post
   end
 
+  def show
+    authorize @post
+  end
+
   def update
     authorize @post
     if @post.update(post_params)

@@ -14,12 +14,14 @@
   </div>
   <div class="card__details">
     <div class="text-muted">
-      <span><i class="fa-regular fa-eye"></i></span>
-      <%= pluralize(event.views, "view") %>
-      <span class="ms-3"><i class="fa-regular fa-comment-dots"></i></span>
-      <%= pluralize(event.comments.count, "comment") %>
-      <span class="ms-3"><i class="fa-solid fa-users-rectangle"></i></span>
-      <%= pluralize(event.attendances.where(attendance_status: "Going").count, "attendees") %>
+      <span class="ms-3"><i class="fa-regular fa-eye"></i> <%= pluralize(event.views, "view") %></span>
+      <span><i class="fa-regular fa-heart"></i> <%= pluralize(event.likes.count, "like") %></span>
+      <span class="ms-3">
+        <i class="fa-regular fa-comment-dots"></i> <%= pluralize(event.comments.count, "comment") %>
+      </span>
+      <span class="ms-3">
+        <i class="fa-solid fa-users-rectangle"></i> <%= pluralize(event.attendances.where(attendance_status: "Going").count, "attendees") %>
+      </span>
     </div>
   </div>
 </div>

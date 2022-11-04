@@ -1,78 +1,78 @@
 :root {
-    --boder-radius: 2rem;
-    --card-border-radius: 1rem;
-    --btn-padding: 0.6rem 2rem;
-    --search-padding: 0.6rem 1rem;
-    --card-padding: 1rem;
+  --boder-radius: 2rem;
+  --card-border-radius: 1rem;
+  --btn-padding: 0.6rem 2rem;
+  --search-padding: 0.6rem 1rem;
+  --card-padding: 1rem;
 
-    --sticky-top: 5.4rem;
+  --sticky-top: 5.4rem;
 }
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
-    list-style: none;
-    border: none;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  border: none;
 }
 
 textarea {
-    resize: none;
+  resize: none;
 }
 
 .profile-photo {
-    width: 2.7rem;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    overflow: hidden;
+  width: 2.7rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 img {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .btn {
-    display: inline-block;
-    font-weight: 500;
-    border-radius: var(--boder-radius);
-    cursor: pointer;
-    transition: all 300ms ease;
-    font-size: 0.9rem;
+  display: inline-block;
+  font-weight: 500;
+  border-radius: var(--boder-radius);
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 0.9rem;
 }
 
 .btn:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .btn-primary {
-    background: $color-primary;
-    color: white;
+  background: $color-primary;
+  color: white;
 }
 
 .text-bold {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .text-muted {
-    color: $color-gray;
+  color: $color-gray;
 }
 
 /* main starts */
 
 main {
-    position: relative;
-    top: 5.4rem;
+  position: relative;
+  top: 5.4rem;
 }
 
 
 /* Theme starts */
 .customize-theme {
-    background: rgba(255, 255, 255, 0.5);
-    /*
+  background: rgba(255, 255, 255, 0.5);
+  /*
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -87,46 +87,46 @@ main {
 }
 
 .customize-theme .card {
-    background: $color-white;
-    padding: 3rem;
-    border-radius: var(--card-border-radius);
-    width: 50%;
+  background: $color-white;
+  padding: 3rem;
+  border-radius: var(--card-border-radius);
+  width: 50%;
 }
 
 /* font size starts */
 .customize-theme .font-size {
-    margin-top: 5rem;
+  margin-top: 5rem;
 }
 
 .customize-theme .font-size>div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: $color-light;
-    padding: var(--search-padding);
-    border-radius: var(--card-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $color-light;
+  padding: var(--search-padding);
+  border-radius: var(--card-border-radius);
 }
 
 .customize-theme .choose-size {
-    background: $color-secondary;
-    height: 0.3rem;
-    width: 100%;
-    margin: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: $color-secondary;
+  height: 0.3rem;
+  width: 100%;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .customize-theme .choose-size span {
-    width: 1rem;
-    height: 1rem;
-    background: $color-secondary;
-    border-radius: 50%;
-    cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  background: $color-secondary;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .customize-theme .choose-size span.active {
-    background: $color-primary;
+  background: $color-primary;
 }
 
 /* font size ends */
@@ -134,34 +134,38 @@ main {
 /* color starts */
 
 .customize-theme .choose-color {
-    background: $color-light;
-    padding: var(--search-padding);
-    border-radius: var(--card-border-radius);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background: $color-light;
+  padding: var(--search-padding);
+  border-radius: var(--card-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .customize-theme .choose-color span {
-    width: 2.2rem;
-    height: 2.2rem;
-    border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
 }
 
 .customize-theme .choose-color span:nth-child(1) {
-    background: hsl(252, 75%, 60%);
+  background: hsl(252, 75%, 60%);
 }
+
 .customize-theme .choose-color span:nth-child(2) {
-    background: hsl(52, 75%, 60%);
+  background: hsl(52, 75%, 60%);
 }
+
 .customize-theme .choose-color span:nth-child(3) {
-    background: hsl(352, 75%, 60%);
+  background: hsl(352, 75%, 60%);
 }
+
 .customize-theme .choose-color span:nth-child(4) {
-    background: hsl(152, 75%, 60%);
+  background: hsl(152, 75%, 60%);
 }
+
 .customize-theme .choose-color span:nth-child(5) {
-    background: hsl(202, 75%, 60%);
+  background: hsl(202, 75%, 60%);
 }
 
 .customize-theme .choose-color span.active {
@@ -178,7 +182,7 @@ main {
   gap: 1.5rem;
 }
 
-.customize-theme .choose-bg > div {
+.customize-theme .choose-bg>div {
   padding: var(--card-padding);
   width: 100%;
   border-radius: 0.4rem;
@@ -189,7 +193,7 @@ main {
   font-weight: bold;
 }
 
-.customize-theme .choose-bg > div.active {
+.customize-theme .choose-bg>div.active {
   border: 2px solid $color-primary
 }
 
@@ -208,7 +212,7 @@ main {
   color: white;
 }
 
-.customize-theme .choose-bg > div span {
+.customize-theme .choose-bg>div span {
   width: 2rem;
   height: 2rem;
   border: 2px solid $color-gray;
@@ -224,69 +228,71 @@ main {
 
 @media screen and (max-width: 1200px) {
   .container {
-      width: 96%;
+    width: 96%;
   }
 
   main .container {
-      grid-template-columns: 5rem auto 30vw;
-      gap: 1rem;
+    grid-template-columns: 5rem auto 30vw;
+    gap: 1rem;
   }
 
   .left {
-      width: 5rem;
-      z-index: 5;
+    width: 5rem;
+    z-index: 5;
   }
 
   main .container .left .profile {
-      display: none;
+    display: none;
   }
 
   .left .btn {
-      display: none;
+    display: none;
   }
 }
 
 @media screen and (max-width: 992px) {
   nav .search-bar {
-      display: none;
+    display: none;
   }
 
   main .container {
-      grid-template-columns: 0 auto 5rem;
-      gap: 0;
+    grid-template-columns: 0 auto 5rem;
+    gap: 0;
   }
 
   main .container .left {
-      grid-column: 3/4;
-      position: fixed;
-      bottom: 0;
-      right: 0;
+    grid-column: 3/4;
+    position: fixed;
+    bottom: 0;
+    right: 0;
   }
+
   /* NOTIFICATION POPUP*/
   .left .notifications-popup {
-      position: absolute;
-      left: -20rem;
-      width: 20rem;
+    position: absolute;
+    left: -20rem;
+    width: 20rem;
   }
 
   .left .notifications-popup::before {
-      display: absolute;
-      top:1.3rem;
-      left: calc(20rem - 0.6rem);
-      display: block;
+    display: absolute;
+    top: 1.3rem;
+    left: calc(20rem - 0.6rem);
+    display: block;
   }
 
 
   main .container .middle {
-      grid-column: 1/3;
+    grid-column: 1/3;
   }
 
   main .container .right {
-      display: none;
+    display: none;
   }
 
 
 }
+
 /* RESPONSIVENESS media query ends */
 
 /*start button animation starts*/
@@ -294,6 +300,39 @@ main {
   height: 50px;
   width: 220px;
   font-size: 20px;
+}
+
+.boton {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    border: 2px solid #52C2B7;
+    transition: all .25s ease-out;
+  }
+  &::before {
+    background-color: #6ECC5E;
+    top: -15px;
+    left: -15px;
+  }
+  &::after {
+    bottom: -15px;
+    right: -15px;
+  }
+  &:hover {
+    &::before {
+      top: 15px;
+      left: 15px;
+    }
+    &::after {
+      bottom: 15px;
+      right: 15px;
+    }
+  }
 }
 
 

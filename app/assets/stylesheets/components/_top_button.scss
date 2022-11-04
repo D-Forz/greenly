@@ -1,0 +1,48 @@
+/* gotop button starts */
+.go-top-container {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+  width: 6.6rem;
+  height: 6.6rem;
+  z-index: -1;
+}
+
+.go-top-button {
+  width: 0rem;
+  height: 0rem;
+  background: $color-primary;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .2s;
+  top: 1%;
+  left: 1%;
+  transform: translate(100%, 200%);
+  z-index: -1;
+}
+
+.go-top-button i{
+  position: absolute;
+  font-size: 1.7rem;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: #fff;
+  transition: .2s;
+}
+
+.show {
+  z-index: 10;
+}
+
+.show .go-top-button {
+  width: 3rem;
+  height: 3rem;
+  z-index: 11;
+}
+
+.show i {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* gotop button ends */

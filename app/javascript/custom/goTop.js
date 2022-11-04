@@ -7,10 +7,3 @@ window.onscroll = function () {
           .classList.remove('show');
   }
 };
-
-document.querySelector('.go-top-container').addEventListener('click', () => {
-  window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-  })
-});

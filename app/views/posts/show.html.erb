@@ -13,7 +13,7 @@
                 <%= cl_image_tag @post.user.photo.key, alt: "Profile Photo"%>
               </div>
               <div>
-                <p class="fw-bold"><%= @post.user.full_name %></p>
+                <p class="fw-bold" data-share-target="title"><%= @post.user.full_name %></p>
                 <small class="mt-0">Colombia, <%= distance_of_time_in_words_to_now(@post.created_at) %> ago</small>
               </div>
             </div>
@@ -26,7 +26,7 @@
           </div>
           <div class="action-buttons">
             <div class="interaction-buttons">
-              <span><i class="fa-regular fa-heart"></i></span>
+              <span><%= render "likes/like", likeable: @post %></span>
               <span><i class="fa-regular fa-comment-dots"></i></span>
               <span data-action="click->share#share"><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
             </div>
@@ -34,8 +34,11 @@
               <span><%= render "favorites/favorite", favoritable: @post %></span>
             </div>
           </div>
+          <div class="liked-by">
+            <%= render "likes/likes", likeable: @post %>
+          </div>
           <div class="card__details">
-            <p><%= @post.content %></p>
+            <p data-share-target="description"><%= @post.content %></p>
             <%= content_tag(:div, "", class: "mb-2", data:{share_target: "result"}) %>
           </div>
           <%= render partial: "comments/comment_form", locals: { commentable: @post } %>
@@ -46,6 +49,11 @@
       </div>
       <div class="col-md-4">
         <%= render 'shared/right_side' %>
+      </div>
+      <div class="go-top-container" data-controller="utils" data-action="click->utils#goTop">
+        <div class="go-top-button">
+          <i class="fas fa-chevron-up"></i>
+        </div>
       </div>
     </div>
   </main>

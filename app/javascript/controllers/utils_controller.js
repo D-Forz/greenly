@@ -5,4 +5,11 @@ export default class extends Controller {
   resetForm() {
     this.element.reset()
   }
+
+  goTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+  }
 }

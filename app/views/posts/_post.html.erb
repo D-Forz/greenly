@@ -1,11 +1,11 @@
-<div class="white__card">
+<div class="white__card" data-controller="share" data-share-url-value="<%= post_url(post) %>">
   <div class="head">
     <div class="user">
       <div class="card-profile-photo">
         <%= cl_image_tag post.user.photo.key, alt: "Profile Photo"%>
       </div>
       <div>
-        <p class="fw-bold"><%= post.user.full_name %></p>
+        <p class="fw-bold" data-share-target="title"><%= post.user.full_name %></p>
         <small class="mt-0">Colombia, <%= distance_of_time_in_words_to_now(post.created_at) %> ago</small>
       </div>
     </div>
@@ -22,7 +22,7 @@
     <div class="interaction-buttons">
         <span><%= render "likes/like", likeable: post %></span>
         <span><i class="fa-regular fa-comment-dots"></i></span>
-        <span><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
+        <span data-action="click->share#share"><i class="fa-sharp fa-solid fa-share-nodes"></i></span>
     </div>
     <div class="bookmark">
         <span><%= render "favorites/favorite", favoritable: post %></span>
@@ -32,7 +32,8 @@
     <%= render "likes/likes", likeable: post %>
   </div>
   <div class="card__details">
-    <p><%= post.content %></p>
+    <p data-share-target="description"><%= post.content %></p>
+    <%= content_tag(:div, "", class: "mb-2", data:{share_target: "result"}) %>
   </div>
   <%= render partial: "comments/comment_form", locals: { commentable: post } %>
   <div class="card__comments">

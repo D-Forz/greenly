@@ -1,0 +1,9 @@
+<% if likeable.likes.find_by(likeable_id: likeable.id, user: current_user) %>
+  <%= link_to like_path(likeable.id), data: {turbo_method: :delete} do %>
+    <i class="fa-solid fa-heart"></i>
+  <% end %>
+<% else %>
+  <%= link_to likes_path("#{likeable.class.to_s.downcase}_id": likeable.id), data: {turbo_method: :post} do %>
+    <i class="fa-regular fa-heart"></i>
+  <% end %>
+<% end %>

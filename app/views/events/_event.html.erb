@@ -14,7 +14,10 @@
   </div>
   <div class="card__details">
     <div class="text-muted">
-      <span><i class="fa-regular fa-eye"></i></span>
+      <% if user_signed_in? %>
+        <span><%= render "favorites/favorite", favoritable: event %></span>
+      <% end %>
+      <span class="ms-3"><i class="fa-regular fa-eye"></i></span>
       <%= pluralize(event.views, "view") %>
       <span class="ms-3"><i class="fa-regular fa-comment-dots"></i></span>
       <%= pluralize(event.comments.count, "comment") %>

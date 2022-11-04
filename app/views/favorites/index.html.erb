@@ -1,34 +1,24 @@
+<%= content_for(:title, 'Favorites | Greenly') %>
+
 <div class="container">
   <main>
-    <h1>Favoritos</h1>
-
-    <% if @favorites.empty? %>
-      <p>No tienes favoritos</p>
-
-    <% else %>
-      <table>
-        <thead>
-          <tr>
-            <th>Tipo</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @favorites.each do |favorite| %>
-            <tr>
-              <td><%= favorite.favoritable_type %></td>
-              <td>
-                <% if favorite.favoritable_type == "Post" %>
-                  <%= link_to "See", posts_path %>
-                <% else %>
-                  <%= link_to 'See', event_path(favorite.favoritable_id) %> <!-- need fix -->
-                <% end %>
-              </td>
-            </tr>
+    <div class="row">
+      <div class="col-md-3">
+        <%= render 'shared/sidebar' %>
+      </div>
+      <div class="col-md-6">
+        <%= render "shared/empty_state" if @favorites.empty? %>
+        <% @favorites.each do |favorite| %>
+          <% if favorite.favoritable_type == "Post" %>
+            <%= render "posts/post", post: Post.find(favorite.favoritable_id) %>
+          <% else %>
+            <%= render "events/event", event: Event.find(favorite.favoritable_id) %>
           <% end %>
-        </tbody>
-      </table>
-    <% end %>
+        <% end %>
+      </div>
+      <div class="col-md-3">
+        <%= render 'shared/right_side' %>
+      </div>
+    </div>
   </main>
 </div>

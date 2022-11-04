@@ -247,6 +247,55 @@ comment2 = event6.comments.create!(
 )
 p "#comment '#{comment2.content}' has been created"
 
+comment3 = event10.comments.create!(
+  user: user4,
+  content: "¡Quiero ser parte de esto, el futuro del planeta está en nuestras manos !"
+)
+p "#comment '#{comment3.content}' has been created"
+
+comment4 = event4.comments.create!(
+  user: user4,
+  content: "¡Los parques de nuestra ciudad dan una gran impresión de lo que somos como comunidad, quiero ayudar a mejorar el aspecto de nuestros barrios!"
+)
+p "#comment '#{comment4.content}' has been created"
+
+comment5 = event8.comments.create!(
+  user: user7,
+  content: "Los arboles son parte vital de nuestra vida, la tala de arboles nos afecta a todos, ¡que buena iniciativa!"
+)
+p "#comment '#{comment5.content}' has been created"
+
+comment6 = event4.comments.create!(
+  user: user10,
+  content: "¡Woow! que buen plan, estaré presente, quiero invitar a mis amig@s"
+)
+p "#comment '#{comment6.content}' has been created"
+
+comment7 = event8.comments.create!(
+  user: user7,
+  content: "Que bonita forma de dejar huella en nuestro planeta, saber que somos parte del cambio es muy gratificante"
+)
+p "#comment '#{comment7.content}' has been created"
+
+comment8 = event4.comments.create!(
+  user: user10,
+  content: ""
+)
+p "#comment '#{comment8.content}' has been created"
+
+comment9 = event4.comments.create!(
+  user: user10,
+  content: ""
+)
+p "#comment '#{comment9.content}' has been created"
+
+comment10 = event4.comments.create!(
+  user: user10,
+  content: "¡"
+)
+p "#comment '#{comment10.content}' has been created"
+
+
 p '¡Creating Posts!'
 
 post1 = Post.new(

@@ -14,7 +14,9 @@
     </span>
   </div>
   <div class="photo">
-    <%= cl_image_tag post.photo.key, alt: "Post Image" if post.photo.attached? %>
+    <%= link_to post_path(post) do %>
+      <%= cl_image_tag post.photo.key, alt: "Post Image" if post.photo.attached? %>
+    <% end %>
   </div>
   <div class="action-buttons">
     <div class="interaction-buttons">

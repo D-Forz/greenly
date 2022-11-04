@@ -46,3 +46,25 @@
     padding: 0.5rem;
   }
 }
+
+.liked-by {
+  display: flex;
+}
+
+.liked-by span {
+  width: 1.4rem;
+  height: 1.4rem;
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--color-white);
+  margin-left: -0.6rem;
+}
+
+.liked-by span:first-child {
+  margin: 0;
+}
+
+.liked-by p {
+  margin-left: 0.5rem;
+}

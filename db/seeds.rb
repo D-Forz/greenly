@@ -112,6 +112,72 @@ user10.photo.attach(io: File.open('app/assets/images/users/andrea.jpg'),
                     filename: 'andrea.jpg', content_type: 'image/jpg')
 p "#{user10.first_name} has been created!"
 
+user11 = User.create!(
+  first_name: "Daniel",
+  last_name: "Amaya",
+  username: 'amayadaniel',
+  email: "daniel@email.com",
+  password: "password"
+)
+user11.photo.attach(io: File.open('app/assets/images/users/daniel123.jpg'),
+                    filename: 'daniel123.jpg', content_type: 'image/jpg')
+p "#{user11.first_name} has been created!"
+
+user12 = User.create!(
+  first_name: "Dario",
+  last_name: "Gomez",
+  username: 'dariogomez',
+  email: "dario@email.com",
+  password: "password"
+)
+user12.photo.attach(io: File.open('app/assets/images/users/dario123.jpg'),
+                    filename: 'dario123.jpg', content_type: 'image/jpg')
+p "#{user12.first_name} has been created!"
+
+user13 = User.create!(
+  first_name: "silvia",
+  last_name: "ficcion",
+  username: 'silviaficcion',
+  email: "silvia@email.com",
+  password: "password"
+)
+user13.photo.attach(io: File.open('app/assets/images/users/silvia123.jpg'),
+                    filename: 'silvia123.jpg', content_type: 'image/jpg')
+p "#{user13.first_name} has been created!"
+
+user14 = User.create!(
+  first_name: "rebecca",
+  last_name: "darwin",
+  username: 'rebeccadarwin',
+  email: "rebecca@email.com",
+  password: "password"
+)
+user14.photo.attach(io: File.open('app/assets/images/users/rebecca123.jpg'),
+                    filename: 'rebecca123.jpg', content_type: 'image/jpg')
+p "#{user14.first_name} has been created!"
+
+user15 = User.create!(
+  first_name: "nadia",
+  last_name: "nadine",
+  username: 'nadianadine',
+  email: "nadia@email.com",
+  password: "password"
+)
+user15.photo.attach(io: File.open('app/assets/images/users/nadia123.jpg'),
+                    filename: 'nadia123.jpg', content_type: 'image/jpg')
+p "#{user15.first_name} has been created!"
+
+user16 = User.create!(
+  first_name: "Inaya",
+  last_name: "inadine",
+  username: 'inayanadine',
+  email: "inaya@email.com",
+  password: "password"
+)
+user16.photo.attach(io: File.open('app/assets/images/users/inaya123.jpg'),
+                    filename: 'inaya123.jpg', content_type: 'image/jpg')
+p "#{user16.first_name} has been created!"
+
 p 'Creating events!'
 
 event1 = Event.new(
@@ -321,7 +387,7 @@ p "#comment '#{comment14.content}' has been created"
 
 comment15 = event7.comments.create!(
   user: user8,
-  content: "Tenemos que llevar implementos para la recolección y bolsas? 
+  content: "Tenemos que llevar implementos para la recolección y bolsas?
   O en el lugar nos dan todos los implementos?"
 )
 p "#comment '#{comment15.content}' has been created"
@@ -355,7 +421,6 @@ comment20 = event9.comments.create!(
   content: "Me encanta esta actividad, nuestro mayor deseo es disfrutar de estas hermosas playas totalmente limpias"
 )
 p "#comment '#{comment20.content}' has been created"
-
 
 p '¡Creating Posts!'
 
@@ -492,7 +557,7 @@ _attendance10 = Attendance.create!(
 p "#{user4.first_name} is attending #{event5.title}"
 
 _attendance11 = Attendance.create!(
-  user: user3,
+  user: user11,
   event: event8,
   attendance_status: "Going"
 )
@@ -518,3 +583,152 @@ _attendance9 = Attendance.create!(
   attendance_status: "Maybe"
 )
 p "#{user5.first_name} is attending #{event8.title}"
+
+like1 = event1.likes.create!(
+  user: user1
+)
+p "#{like1.user.name} likes #{event1.title}"
+like2 = event2.likes.create!(
+  user: user2
+)
+p "#{like2.user.name} likes #{event2.title}"
+like3 = event3.likes.create!(
+  user: user3
+)
+p "#{like3.user.name} likes #{event3.title}"
+like5 = event5.likes.create!(
+  user: user5
+)
+p "#{like5.user.name} likes #{event5.title}"
+like4 = event4.likes.create!(
+  user: user4
+)
+p "#{like4.user.name} likes #{event4.title}"
+like6 = event6.likes.create!(
+  user: user6
+)
+p "#{like6.user.name} likes #{event6.title}"
+like7 = event7.likes.create!(
+  user: user7
+)
+p "#{like7.user.name} likes #{event7.title}"
+like8 = event8.likes.create!(
+  user: user8
+)
+p "#{like8.user.name} likes #{event8.title}"
+like9 = event9.likes.create!(
+  user: user9
+)
+p "#{like9.user.name} likes #{event9.title}"
+like10 = event9.likes.create!(
+  user: user10
+)
+p "#{like10.user.name} likes #{event9.title}"
+like11 = event3.likes.create!(
+  user: user11
+)
+p "#{like11.user.name} likes #{event3.title}"
+like12 = event2.likes.create!(
+  user: user12
+)
+
+p "#{like12.user.name} likes #{event2.title}"
+like13 = event1.likes.create!(
+  user: user13
+)
+p "#{like13.user.name} likes #{event1.title}"
+like14 = event1.likes.create!(
+  user: user13
+)
+p "#{like14.user.name} likes #{event1.title}"
+like15 = event2.likes.create!(
+  user: user13
+)
+p "#{like15.user.name} likes #{event2.title}"
+like16 = event3.likes.create!(
+  user: user13
+)
+p "#{like16.user.name} likes #{event3.title}"
+like17 = event4.likes.create!(
+  user: user13
+)
+p "#{like17.user.name} likes #{event3.title}"
+like18 = event5.likes.create!(
+  user: user13
+)
+p "#{like18.user.name} likes #{event5.title}"
+like19 = event6.likes.create!(
+  user: user13
+)
+p "#{like19.user.name} likes #{event6.title}"
+like20 = event7.likes.create!(
+  user: user13
+)
+p "#{like20.user.name} likes #{event7.title}"
+like21 = event8.likes.create!(
+  user: user13
+)
+p "#{like21.user.name} likes #{event8.title}"
+like22 = event9.likes.create!(
+  user: user13
+)
+p "#{like22.user.name} likes #{event9.title}"
+like23 = event10.likes.create!(
+  user: user13
+)
+p "#{like23.user.name} likes #{event10.title}"
+like24 = event1.likes.create!(
+  user: user12
+)
+p "#{like24.user.name} likes #{event1.title}"
+like25 = event5.likes.create!(
+  user: user12
+)
+p "#{like25.user.name} likes #{event5.title}"
+like26 = event3.likes.create!(
+  user: user12
+)
+p "#{like26.user.name} likes #{event3.title}"
+like27 = event4.likes.create!(
+  user: user12
+)
+p "#{like27.user.name} likes #{event4.title}"
+like27 = event6.likes.create!(
+  user: user12
+)
+p "#{like27.user.name} likes #{event6.title}"
+
+like28 = event7.likes.create!(
+  user: user12
+)
+p "#{like28.user.name} likes #{event7.title}"
+
+like29 = event8.likes.create!(
+  user: user12
+)
+p "#{like29.user.name} likes #{event8.title}"
+
+like30 = event9.likes.create!(
+  user: user12
+)
+p "#{like30.user.name} likes #{event9.title}"
+
+like31 = event10.likes.create!(
+  user: user12
+)
+p "#{like31.user.name} likes #{event10.title}"
+
+like32 = event10.likes.create!(
+  user: user12
+)
+p "#{like32.user.name} likes #{event10.title}"
+
+like33 = event1.likes.create!(
+  user: user11
+)
+p "#{like33.user.name} likes #{event1.title}"
+
+like34 = event2.likes.create!(
+  user: user11
+)
+p "#{like34.user.name} likes #{event2.title}"

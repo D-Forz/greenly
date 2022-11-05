@@ -272,28 +272,89 @@ comment6 = event4.comments.create!(
 p "#comment '#{comment6.content}' has been created"
 
 comment7 = event8.comments.create!(
-  user: user7,
+  user: user1,
   content: "Que bonita forma de dejar huella en nuestro planeta, saber que somos parte del cambio es muy gratificante"
 )
 p "#comment '#{comment7.content}' has been created"
 
-comment8 = event4.comments.create!(
-  user: user10,
-  content: ""
+comment8 = event5.comments.create!(
+  user: user2,
+  content: "¡Quiero semillas para mi! No me lo pierdo"
 )
 p "#comment '#{comment8.content}' has been created"
 
-comment9 = event4.comments.create!(
-  user: user10,
-  content: ""
+comment9 = event5.comments.create!(
+  user: user1,
+  content: "¿De que arboles van a entregar semillas?"
 )
 p "#comment '#{comment9.content}' has been created"
 
-comment10 = event4.comments.create!(
-  user: user10,
-  content: "¡"
+comment10 = event1.comments.create!(
+  user: user9,
+  content: "Esta es una buena practica porque no solo le enseñamos a los niños, también es una gran oportunidad para que la escuela pueda cocinar con sus propios productos"
 )
 p "#comment '#{comment10.content}' has been created"
+
+comment11 = event1.comments.create!(
+  user: user4,
+  content: "quiero aprender y luego implementaro en mi casa, quiero cocinar con tomates frescos jajaja"
+)
+p "#comment '#{comment11.content}' has been created"
+
+comment12 = event2.comments.create!(
+  user: user8,
+  content: "Que bonita iniciativa muchachos, sabemos que el plastico es un gran problema y uno de los principales agentes contaminantes del medio hambiente."
+)
+p "#comment '#{comment12.content}' has been created"
+
+comment13 = event2.comments.create!(
+  user: user5,
+  content: "Que triste que no podré asistir, espero que para una próxima ocasion pueda ser parte de tan linda labor"
+)
+p "#comment '#{comment13.content}' has been created"
+
+comment14 = event5.comments.create!(
+  user: user6,
+  content: "Creo que son Cedros y Acacias amarillas y rojas; Ojalá tengan de otras especies."
+)
+p "#comment '#{comment14.content}' has been created"
+
+comment15 = event7.comments.create!(
+  user: user8,
+  content: "Tenemos que llevar implementos para la recolección y bolsas? 
+  O en el lugar nos dan todos los implementos?"
+)
+p "#comment '#{comment15.content}' has been created"
+
+comment16 = event7.comments.create!(
+  user: user5,
+  content: "Creo que solo debemos llevar guantes, en el lugar nos dan los demás implementos"
+)
+p "#comment '#{comment16.content}' has been created"
+
+comment17 = event10.comments.create!(
+  user: user4,
+  content: "Quiero participar, creo que podría compartir un poco de mi conocimiento en el area si en algún momento lo requieren"
+)
+p "#comment '#{comment17.content}' has been created"
+
+comment18 = event10.comments.create!(
+  user: user1,
+  content: "Ojalá en mi epoca hubieramos tenido estas oportunidades de cuidar el medio hambiente y así tener un poco mas de conciencia... ¡Deseo participar!"
+)
+p "#comment '#{comment18.content}' has been created"
+
+comment19 = event9.comments.create!(
+  user: user8,
+  content: "Quiero invertir mi tiempo de vacaciones en este lindo proyecto, me encanta el mar y por ende quiero apoyar este tipo de iniciativas... ¡Es genial!"
+)
+p "#comment '#{comment19.content}' has been created"
+
+comment20 = event9.comments.create!(
+  user: user6,
+  content: "Me encanta esta actividad, nuestro mayor deseo es disfrutar de estas hermosas playas totalmente limpias"
+)
+p "#comment '#{comment20.content}' has been created"
 
 
 p '¡Creating Posts!'
@@ -335,6 +396,13 @@ post5.photo.attach(io: File.open('app/assets/images/posts/sobrino.jpg'), filenam
 post5.save!
 p "#post '#{post5.content[0..25]}...' has been created"
 
+post6 = user8.posts.new(
+  content: "Gracias a las diferentes actividades en las que he participado sobre huertas, he podido realizar mi propia huerta en casa"
+)
+post6.photo.attach(io: File.open('app/assets/images/posts/huerta-casera.jpg'), filename: 'huerta-casera.jpg', content_type: 'image/jpg')
+post6.save!
+p "#post '#{post6.content[0..25]}...' has been created"
+
 comment3 = post1.comments.create!(
   user: user3,
   content: "¡Ahí voy a estar Juan!"
@@ -346,6 +414,12 @@ comment4 = post1.comments.create!(
   content: "¡Yo también, voy a llevar a mis amigos!"
 )
 p "#comment '#{comment4.content}' has been created"
+
+comments3 = post3.comments.create!(
+  user: user8,
+  content: "También conocí esta red social de una forma muy similar y particular, un día caminando por el bario de mi novia vi un grupo de personas limpiando un parque, les pregunté de donde salió la iniciativa y así empezé a utilizar esta maravillosa red social."
+)
+p "#coment '#{comments3.content}' has been created"
 
 _attendance1 = Attendance.create!(
   user: user1,
@@ -388,3 +462,59 @@ _attendance6 = Attendance.create!(
   attendance_status: "Maybe"
 )
 p "#{user8.first_name} is attending #{event10.title}"
+
+_attendance7 = Attendance.create!(
+  user: user10,
+  event: event5,
+  attendance_status: "Maybe"
+)
+p "#{user5.first_name} is attending #{event5.title}"
+
+_attendance8 = Attendance.create!(
+  user: user1,
+  event: event5,
+  attendance_status: "Going"
+)
+p "#{user1.first_name} is attending #{event5.title}"
+
+_attendance9 = Attendance.create!(
+  user: user7,
+  event: event5,
+  attendance_status: "Maybe"
+)
+p "#{user7.first_name} is attending #{event5.title}"
+
+_attendance10 = Attendance.create!(
+  user: user4,
+  event: event5,
+  attendance_status: "Going"
+)
+p "#{user4.first_name} is attending #{event5.title}"
+
+_attendance11 = Attendance.create!(
+  user: user3,
+  event: event8,
+  attendance_status: "Going"
+)
+p "#{user3.first_name} is attending #{event8.title}"
+
+_attendance12 = Attendance.create!(
+  user: user8,
+  event: event8,
+  attendance_status: "Going"
+)
+p "#{user8.first_name} is attending #{event8.title}"
+
+_attendance13 = Attendance.create!(
+  user: user3,
+  event: event8,
+  attendance_status: "Going"
+)
+p "#{user3.first_name} is attending #{event8.title}"
+
+_attendance9 = Attendance.create!(
+  user: user5,
+  event: event8,
+  attendance_status: "Maybe"
+)
+p "#{user5.first_name} is attending #{event8.title}"

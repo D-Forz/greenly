@@ -729,161 +729,161 @@ _attendace39 = Attendance.create!(
 )
 p "#{user6.first_name} is attending #{event4.title}"
 
-_attendace = Attendance.create!(
+_attendace40 = Attendance.create!(
   user: user5
   event: event3,
   attendance_status: "Maybe"
 )
 p "#{user5.first_name} is attending #{event3.title}"
 
-_attendace = Attendance.create!(
+_attendace41 = Attendance.create!(
   user: user7
   event: event3,
   attendance_status: "Going"
 )
 p "#{user7.first_name} is attending #{event3.title}"
 
-_attendace = Attendance.create!(
+_attendace42 = Attendance.create!(
   user: user9
   event: event3,
   attendance_status: "Going"
 )
 p "#{user9.first_name} is attending #{event3.title}"
 
-_attendace = Attendance.create!(
+_attendace43 = Attendance.create!(
   user: user10
   event: event3,
   attendance_status: "Going"
 )
 p "#{user10.first_name} is attending #{event3.title}"
 
-_attendace = Attendance.create!(
+_attendace44 = Attendance.create!(
   user: user2
   event: event3,
   attendance_status: "Maybe"
 )
 p "#{user2.first_name} is attending #{event3.title}"
 
-_attendace = Attendance.create!(
+_attendace45 = Attendance.create!(
   user: user4
   event: event3,
   attendance_status: "Going"
 )
 p "#{user4.first_name} is attending #{event3.title}"
 
-_attendace = Attendance.create!(
+_attendace46 = Attendance.create!(
   user: user1
   event: event3,
   attendance_status: "Maybe"
 )
 p "#{user1.first_name} is attending #{event3.title}"
 
-_attendace = Attendance.create!(
+_attendace47 = Attendance.create!(
   user: user1
   event: event2,
   attendance_status: "Going"
 )
 p "#{user1.first_name} is attending #{event2.title}"
 
-_attendace = Attendance.create!(
+_attendace48 = Attendance.create!(
   user: user3
   event: event2,
   attendance_status: "Going"
 )
 p "#{user3.first_name} is attending #{event2.title}"
 
-_attendace = Attendance.create!(
+_attendace49 = Attendance.create!(
   user: user5
   event: event2,
   attendance_status: "Going"
 )
 p "#{user5.first_name} is attending #{event2.title}"
 
-_attendace = Attendance.create!(
+_attendace50 = Attendance.create!(
   user: user7
   event: event2,
   attendance_status: "Going"
 )
 p "#{user7.first_name} is attending #{event2.title}"
 
-_attendace = Attendance.create!(
+_attendace51 = Attendance.create!(
   user: user9
   event: event2,
   attendance_status: "Maybe"
 )
 p "#{user9.first_name} is attending #{event2.title}"
 
-_attendace = Attendance.create!(
+_attendace52 = Attendance.create!(
   user: user10
   event: event2,
   attendance_status: "Maybe"
 )
 p "#{user10.first_name} is attending #{event2.title}"
 
-_attendace = Attendance.create!(
+_attendace53 = Attendance.create!(
   user: user4
   event: event2,
   attendance_status: "Maybe"
 )
 p "#{user4.first_name} is attending #{event2.title}"
 
-_attendace = Attendance.create!(
+_attendace54 = Attendance.create!(
   user: user6
   event: event2,
   attendance_status: "Going"
 )
 p "#{user6.first_name} is attending #{event2.title}"
 
-_attendace = Attendance.create!(
+_attendace55 = Attendance.create!(
   user: user10
   event: event1,
   attendance_status: "Maybe"
 )
 p "#{user10.first_name} is attending #{event1.title}"
 
-_attendace = Attendance.create!(
+_attendace56 = Attendance.create!(
   user: user9
   event: event1,
   attendance_status: "Going"
 )
 p "#{user9.first_name} is attending #{event1.title}"
 
-_attendace = Attendance.create!(
+_attendace57 = Attendance.create!(
   user: user8
   event: event1,
   attendance_status: "Going"
 )
 p "#{user8.first_name} is attending #{event1.title}"
 
-_attendace = Attendance.create!(
+_attendace58 = Attendance.create!(
   user: user6
   event: event1,
   attendance_status: "Going"
 )
 p "#{user6.first_name} is attending #{event1.title}"
 
-_attendace = Attendance.create!(
+_attendace59 = Attendance.create!(
   user: user4
   event: event1,
   attendance_status: "Going"
 )
 p "#{user4.first_name} is attending #{event1.title}"
 
-_attendace = Attendance.create!(
+_attendace60 = Attendance.create!(
   user: user2
   event: event1,
   attendance_status: "Going"
 )
 p "#{user2.first_name} is attending #{event1.title}"
 
-_attendace = Attendance.create!(
+_attendace61 = Attendance.create!(
   user: user1
   event: event1,
   attendance_status: "Going"
 )
 p "#{user1.first_name} is attending #{event1.title}"
 
-_attendace = Attendance.create!(
+_attendace62 = Attendance.create!(
   user: user2
   event: event1,
   attendance_status: "Going"

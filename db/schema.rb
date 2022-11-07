@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_02_014622) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_04_010128) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -109,6 +109,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_014622) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "likeable_type", null: false
+    t.bigint "likeable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "merit_actions", force: :cascade do |t|
     t.integer "user_id"
     t.string "action_method"
@@ -169,6 +179,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_014622) do
     t.string "username", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
+    t.boolean "organizer", default: false
     t.integer "phone"
     t.integer "sash_id"
     t.integer "level", default: 0
@@ -188,5 +199,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_014622) do
   add_foreign_key "comments", "users"
   add_foreign_key "events", "users"
   add_foreign_key "favorites", "users"
+  add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"
 end

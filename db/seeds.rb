@@ -577,158 +577,495 @@ _attendance13 = Attendance.create!(
 )
 p "#{user3.first_name} is attending #{event8.title}"
 
-_attendance9 = Attendance.create!(
+_attendance14 = Attendance.create!(
   user: user5,
   event: event8,
   attendance_status: "Maybe"
 )
 p "#{user5.first_name} is attending #{event8.title}"
 
+_attendace15 = Attendance.create!(
+  user: user2,
+  event: event9,
+  attendance_status: "Maybe"
+)
+p "#{user2.first_name} is attending #{event9.title}"
+
+_attendace16 = Attendance.create!(
+  user: user4,
+  event: event9,
+  attendance_status: "Going"
+)
+p "#{user4.first_name} is attending #{event9.title}"
+
+_attendace17 = Attendance.create!(
+  user: user6,
+  event: event9,
+  attendance_status: "Going"
+)
+p "#{user6.first_name} is attending #{event9.title}"
+
+_attendace18 = Attendance.create!(
+  user: user8,
+  event: event9,
+  attendance_status: "Going"
+)
+p "#{user8.first_name} is attending #{event9.title}"
+
+_attendace19 = Attendance.create!(
+  user: user3,
+  event: event6,
+  attendance_status: "Maybe"
+)
+p "#{user10.first_name} is attending #{event6.title}"
+
+_attendace20 = Attendance.create!(
+  user: user1,
+  event: event7,
+  attendance_status: "Maybe"
+)
+p "#{user1.first_name} is attending #{event7.title}"
+
+_attendace21 = Attendance.create!(
+  user: user3,
+  event: event7,
+  attendance_status: "Going"
+)
+p "#{user3.first_name} is attending #{event7.title}"
+
+_attendace22 = Attendance.create!(
+  user: user5,
+  event: event7,
+  attendance_status: "Going"
+)
+p "#{user5.first_name} is attending #{event7.title}"
+
+_attendace23 = Attendance.create!(
+  user: user7,
+  event: event7,
+  attendance_status: "Maybe"
+)
+p "#{user7.first_name} is attending #{event7.title}"
+
+_attendace24 = Attendance.create!(
+  user: user9,
+  event: event7,
+  attendance_status: "Maybe"
+)
+p "#{user9.first_name} is attending #{event7.title}"
+
+_attendace25 = Attendance.create!(
+  user: user10,
+  event: event7,
+  attendance_status: "Going"
+)
+p "#{user10.first_name} is attending #{event7.title}"
+
+_attendace26 = Attendance.create!(
+  user: user1,
+  event: event6,
+  attendance_status: "Going"
+)
+p "#{user1.first_name} is attending #{event6.title}"
+
+_attendace27 = Attendance.create!(
+  user: user2,
+  event: event6,
+  attendance_status: "Going"
+)
+p "#{user2.first_name} is attending #{event6.title}"
+
+_attendace28 = Attendance.create!(
+  user: user4,
+  event: event6,
+  attendance_status: "Going"
+)
+p "#{user4.first_name} is attending #{event6.title}"
+
+_attendace29 = Attendance.create!(
+  user: user5,
+  event: event6,
+  attendance_status: "Going"
+)
+p "#{user5.first_name} is attending #{event6.title}"
+
+_attendace30 = Attendance.create!(
+  user: user7,
+  event: event6,
+  attendance_status: "Going"
+)
+p "#{user7.first_name} is attending #{event6.title}"
+
+_attendace31 = Attendance.create!(
+  user: user9,
+  event: event6,
+  attendance_status: "Maybe"
+)
+p "#{user9.first_name} is attending #{event6.title}"
+
+_attendace32 = Attendance.create!(
+  user: user10,
+  event: event6,
+  attendance_status: "Going"
+)
+p "#{user10.first_name} is attending #{event6.title}"
+
+_attendace33 = Attendance.create!(
+  user: user8,
+  event: event4,
+  attendance_status: "Going"
+)
+p "#{user8.first_name} is attending #{event4.title}"
+
+_attendace34 = Attendance.create!(
+  user: user7,
+  event: event4,
+  attendance_status: "Going"
+)
+p "#{user7.first_name} is attending #{event4.title}"
+
+_attendace35 = Attendance.create!(
+  user: user5,
+  event: event4,
+  attendance_status: "Going"
+)
+p "#{user5.first_name} is attending #{event4.title}"
+
+_attendace36 = Attendance.create!(
+  user: user3,
+  event: event4,
+  attendance_status: "Going"
+)
+p "#{user3.first_name} is attending #{event4.title}"
+
+_attendace37 = Attendance.create!(
+  user: user2,
+  event: event4,
+  attendance_status: "Going"
+)
+p "#{user2.first_name} is attending #{event4.title}"
+
+_attendace38 = Attendance.create!(
+  user: user1,
+  event: event4,
+  attendance_status: "Going"
+)
+p "#{user1.first_name} is attending #{event4.title}"
+
+_attendace39 = Attendance.create!(
+  user: user6,
+  event: event4,
+  attendance_status: "Going"
+)
+p "#{user6.first_name} is attending #{event4.title}"
+
+_attendace40 = Attendance.create!(
+  user: user5,
+  event: event3,
+  attendance_status: "Maybe"
+)
+p "#{user5.first_name} is attending #{event3.title}"
+
+_attendace41 = Attendance.create!(
+  user: user7,
+  event: event3,
+  attendance_status: "Going"
+)
+p "#{user7.first_name} is attending #{event3.title}"
+
+_attendace42 = Attendance.create!(
+  user: user9,
+  event: event3,
+  attendance_status: "Going"
+)
+p "#{user9.first_name} is attending #{event3.title}"
+
+_attendace43 = Attendance.create!(
+  user: user10,
+  event: event3,
+  attendance_status: "Going"
+)
+p "#{user10.first_name} is attending #{event3.title}"
+
+_attendace44 = Attendance.create!(
+  user: user2,
+  event: event3,
+  attendance_status: "Maybe"
+)
+p "#{user2.first_name} is attending #{event3.title}"
+
+_attendace45 = Attendance.create!(
+  user: user4,
+  event: event3,
+  attendance_status: "Going"
+)
+p "#{user4.first_name} is attending #{event3.title}"
+
+_attendace46 = Attendance.create!(
+  user: user1,
+  event: event3,
+  attendance_status: "Maybe"
+)
+p "#{user1.first_name} is attending #{event3.title}"
+
+_attendace47 = Attendance.create!(
+  user: user1,
+  event: event2,
+  attendance_status: "Going"
+)
+p "#{user1.first_name} is attending #{event2.title}"
+
+_attendace48 = Attendance.create!(
+  user: user3,
+  event: event2,
+  attendance_status: "Going"
+)
+p "#{user3.first_name} is attending #{event2.title}"
+
+_attendace49 = Attendance.create!(
+  user: user5,
+  event: event2,
+  attendance_status: "Going"
+)
+p "#{user5.first_name} is attending #{event2.title}"
+
+_attendace50 = Attendance.create!(
+  user: user7,
+  event: event2,
+  attendance_status: "Going"
+)
+p "#{user7.first_name} is attending #{event2.title}"
+
+_attendace51 = Attendance.create!(
+  user: user9,
+  event: event2,
+  attendance_status: "Maybe"
+)
+p "#{user9.first_name} is attending #{event2.title}"
+
+_attendace52 = Attendance.create!(
+  user: user10,
+  event: event2,
+  attendance_status: "Maybe"
+)
+p "#{user10.first_name} is attending #{event2.title}"
+
+_attendace53 = Attendance.create!(
+  user: user4,
+  event: event2,
+  attendance_status: "Maybe"
+)
+p "#{user4.first_name} is attending #{event2.title}"
+
+_attendace54 = Attendance.create!(
+  user: user6,
+  event: event2,
+  attendance_status: "Going"
+)
+p "#{user6.first_name} is attending #{event2.title}"
+
+_attendace55 = Attendance.create!(
+  user: user10,
+  event: event1,
+  attendance_status: "Maybe"
+)
+p "#{user10.first_name} is attending #{event1.title}"
+
+_attendace56 = Attendance.create!(
+  user: user9,
+  event: event1,
+  attendance_status: "Going"
+)
+p "#{user9.first_name} is attending #{event1.title}"
+
+_attendace57 = Attendance.create!(
+  user: user8,
+  event: event1,
+  attendance_status: "Going"
+)
+p "#{user8.first_name} is attending #{event1.title}"
+
+_attendace58 = Attendance.create!(
+  user: user6,
+  event: event1,
+  attendance_status: "Going"
+)
+p "#{user6.first_name} is attending #{event1.title}"
+
+_attendace59 = Attendance.create!(
+  user: user4,
+  event: event1,
+  attendance_status: "Going"
+)
+p "#{user4.first_name} is attending #{event1.title}"
+
+_attendace60 = Attendance.create!(
+  user: user2,
+  event: event1,
+  attendance_status: "Going"
+)
+p "#{user2.first_name} is attending #{event1.title}"
+
+_attendace61 = Attendance.create!(
+  user: user1,
+  event: event1,
+  attendance_status: "Going"
+)
+p "#{user1.first_name} is attending #{event1.title}"
+
+_attendace62 = Attendance.create!(
+  user: user3,
+  event: event1,
+  attendance_status: "Going"
+)
+p "#{user2.first_name} is attending #{event1.title}"
+
+
 like1 = event1.likes.create!(
   user: user1
 )
-p "#{like1.user.name} likes #{event1.title}"
+p "#{like1.user.full_name} likes #{event1.title}"
 like2 = event2.likes.create!(
   user: user2
 )
-p "#{like2.user.name} likes #{event2.title}"
+p "#{like2.user.full_name} likes #{event2.title}"
 like3 = event3.likes.create!(
   user: user3
 )
-p "#{like3.user.name} likes #{event3.title}"
+p "#{like3.user.full_name} likes #{event3.title}"
 like5 = event5.likes.create!(
   user: user5
 )
-p "#{like5.user.name} likes #{event5.title}"
+p "#{like5.user.full_name} likes #{event5.title}"
 like4 = event4.likes.create!(
   user: user4
 )
-p "#{like4.user.name} likes #{event4.title}"
+p "#{like4.user.full_name} likes #{event4.title}"
 like6 = event6.likes.create!(
   user: user6
 )
-p "#{like6.user.name} likes #{event6.title}"
+p "#{like6.user.full_name} likes #{event6.title}"
 like7 = event7.likes.create!(
   user: user7
 )
-p "#{like7.user.name} likes #{event7.title}"
+p "#{like7.user.full_name} likes #{event7.title}"
 like8 = event8.likes.create!(
   user: user8
 )
-p "#{like8.user.name} likes #{event8.title}"
+p "#{like8.user.full_name} likes #{event8.title}"
 like9 = event9.likes.create!(
   user: user9
 )
-p "#{like9.user.name} likes #{event9.title}"
+p "#{like9.user.full_name} likes #{event9.title}"
 like10 = event9.likes.create!(
   user: user10
 )
-p "#{like10.user.name} likes #{event9.title}"
+p "#{like10.user.full_name} likes #{event9.title}"
 like11 = event3.likes.create!(
   user: user11
 )
-p "#{like11.user.name} likes #{event3.title}"
+p "#{like11.user.full_name} likes #{event3.title}"
 like12 = event2.likes.create!(
   user: user12
 )
 
-p "#{like12.user.name} likes #{event2.title}"
+p "#{like12.user.full_name} likes #{event2.title}"
 like13 = event1.likes.create!(
   user: user13
 )
-p "#{like13.user.name} likes #{event1.title}"
+p "#{like13.user.full_name} likes #{event1.title}"
 like14 = event1.likes.create!(
-  user: user13
+  user: user15
 )
-p "#{like14.user.name} likes #{event1.title}"
+p "#{like14.user.full_name} likes #{event1.title}"
 like15 = event2.likes.create!(
   user: user13
 )
-p "#{like15.user.name} likes #{event2.title}"
+p "#{like15.user.full_name} likes #{event2.title}"
 like16 = event3.likes.create!(
   user: user13
 )
-p "#{like16.user.name} likes #{event3.title}"
+p "#{like16.user.full_name} likes #{event3.title}"
 like17 = event4.likes.create!(
   user: user13
 )
-p "#{like17.user.name} likes #{event3.title}"
+p "#{like17.user.full_name} likes #{event3.title}"
 like18 = event5.likes.create!(
   user: user13
 )
-p "#{like18.user.name} likes #{event5.title}"
+p "#{like18.user.full_name} likes #{event5.title}"
 like19 = event6.likes.create!(
   user: user13
 )
-p "#{like19.user.name} likes #{event6.title}"
+p "#{like19.user.full_name} likes #{event6.title}"
 like20 = event7.likes.create!(
   user: user13
 )
-p "#{like20.user.name} likes #{event7.title}"
+p "#{like20.user.full_name} likes #{event7.title}"
 like21 = event8.likes.create!(
   user: user13
 )
-p "#{like21.user.name} likes #{event8.title}"
+p "#{like21.user.full_name} likes #{event8.title}"
 like22 = event9.likes.create!(
   user: user13
 )
-p "#{like22.user.name} likes #{event9.title}"
+p "#{like22.user.full_name} likes #{event9.title}"
 like23 = event10.likes.create!(
   user: user13
 )
-p "#{like23.user.name} likes #{event10.title}"
+p "#{like23.user.full_name} likes #{event10.title}"
 like24 = event1.likes.create!(
   user: user12
 )
-p "#{like24.user.name} likes #{event1.title}"
+p "#{like24.user.full_name} likes #{event1.title}"
 like25 = event5.likes.create!(
   user: user12
 )
-p "#{like25.user.name} likes #{event5.title}"
+p "#{like25.user.full_name} likes #{event5.title}"
 like26 = event3.likes.create!(
   user: user12
 )
-p "#{like26.user.name} likes #{event3.title}"
+p "#{like26.user.full_name} likes #{event3.title}"
 like27 = event4.likes.create!(
   user: user12
 )
-p "#{like27.user.name} likes #{event4.title}"
+p "#{like27.user.full_name} likes #{event4.title}"
 like27 = event6.likes.create!(
   user: user12
 )
-p "#{like27.user.name} likes #{event6.title}"
+p "#{like27.user.full_name} likes #{event6.title}"
 
 like28 = event7.likes.create!(
   user: user12
 )
-p "#{like28.user.name} likes #{event7.title}"
+p "#{like28.user.full_name} likes #{event7.title}"
 
 like29 = event8.likes.create!(
   user: user12
 )
-p "#{like29.user.name} likes #{event8.title}"
+p "#{like29.user.full_name} likes #{event8.title}"
 
 like30 = event9.likes.create!(
   user: user12
 )
-p "#{like30.user.name} likes #{event9.title}"
+p "#{like30.user.full_name} likes #{event9.title}"
 
 like31 = event10.likes.create!(
   user: user12
 )
-p "#{like31.user.name} likes #{event10.title}"
+p "#{like31.user.full_name} likes #{event10.title}"
 
 like32 = event10.likes.create!(
-  user: user12
+  user: user16
 )
-p "#{like32.user.name} likes #{event10.title}"
+p "#{like32.user.full_name} likes #{event10.title}"
 
 like33 = event1.likes.create!(
   user: user11
 )
-p "#{like33.user.name} likes #{event1.title}"
+p "#{like33.user.full_name} likes #{event1.title}"
 
 like34 = event2.likes.create!(
   user: user11
 )
-p "#{like34.user.name} likes #{event2.title}"
+p "#{like34.user.full_name} likes #{event2.title}"

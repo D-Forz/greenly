@@ -7,9 +7,8 @@ Greenly is the final project for the Bootcamp at [Le Wagon](https://www.lewagon.
 
 ![Greenly home](https://user-images.githubusercontent.com/90451710/200595134-4a16621b-cdf2-4d45-8d07-b62912fd6c3e.jpeg)
 ![Greenly community](https://user-images.githubusercontent.com/90451710/200595511-65239808-0318-4cdf-a59b-7a7a2f650133.jpeg)
-![Greenly event](https://user-images.githubusercontent.com/90451710/200595734-7fb64854-debe-498a-82b6-687dcfcb85ab.jpeg)
+![Greenly event](https://user-images.githubusercontent.com/90451710/200653602-c1df5495-e38d-4fa1-8546-56327420fe44.jpeg)
 
-    
 ## Tech Stack
 
 **Client:** Bootstrap, FontAwesome, Stimulus Js

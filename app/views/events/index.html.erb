@@ -7,7 +7,15 @@
         <%= render 'shared/sidebar' %>
       </div>
       <div class="col-md-6">
-        <%= render @events %>
+      <%= render "shared/empty_state" if @events.empty? %>
+
+        <%= turbo_frame_tag "events-#{@pagy.page}", class: "events" do %>
+          <%= render @events %>
+          <% if @pagy.next %>
+            <%= turbo_frame_tag "events-#{@pagy.next}", loading: :lazy, class: "events",
+            src: pagy_url_for(@pagy, @pagy.next) %>
+          <% end %>
+        <% end %>
       </div>
       <div class="col-md-3">
         <%= render 'shared/right_side' %>

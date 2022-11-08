@@ -43,13 +43,7 @@
         </div>
         <div class="row badges">
         <%= render "shared/empty_state" if @current_user.badges.empty? %>
-        <!-- badges
-          <% current_user.badges.each do |badge| %>
-            <%= badge.name %>
-            <%= badge.description %>
-          <% end %>
-          -->
-        <% current_user.badges.each do |badge| %>
+        <% current_user.badges.last(6).each do |badge| %>
           <div class="col-md-4">
             <div class="card h-100">
               <div class="card-body d-flex flex-column align-items-center justify-content-center">

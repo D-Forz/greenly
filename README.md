@@ -65,7 +65,7 @@ To run this project, you will need to add the following environment variables to
 ## Authors
 
 - [@D-Forz](https://www.github.com/D-Forz)
-- [@amayabdaniel](https://www.github.com/amayabdanielz)
+- [@amayabdaniel](https://www.github.com/amayabdaniel)
 - [@FelipeTavera1](https://www.github.com/FelipeTavera1)
 
 

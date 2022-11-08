@@ -7,7 +7,7 @@
     <div class="attendant">
       <% event.attendances.where(attendance_status: "Going").last(5).each do |attendance| %>
         <% if attendance.attendance_status == "Going" %>
-          <span><%= cl_image_tag attendance.user.photo.key %></span>
+          <span><%= cl_image_tag attendance.user.photo.key, width: 25, height: 25, crop: :fill %></span>
         <% end %>
       <% end %>
       <p>
@@ -21,7 +21,7 @@
     <div class="attendant">
       <% event.attendances.last(5).each do |attendance| %>
         <% if attendance.attendance_status == "Maybe" %>
-          <span><%= cl_image_tag attendance.user.photo.key %></span>
+          <span><%= cl_image_tag attendance.user.photo.key, width: 30, height: 30, crop: :fill %></span>
         <% end %>
       <% end %>
       <p>

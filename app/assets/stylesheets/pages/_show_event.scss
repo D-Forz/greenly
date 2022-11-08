@@ -20,13 +20,13 @@
     display: flex;
   }
   & .attendant span {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
     display: block;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid $color-white;
-    margin-left: -0.6rem;
+    margin-left: -0.5rem;
     &:first-child {
       margin-left: 0;
     }

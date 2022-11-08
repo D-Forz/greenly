@@ -1154,6 +1154,31 @@ like50 = post2.likes.create!(
 )
 p "#{like50.user.full_name} likes #{post2.content[0..25]}"
 
+like51 = post6.likes.create!(
+  user: user16
+)
+p "#{like51.user.full_name} likes #{post6.content[0..25]}"
+
+like52 = post6.likes.create!(
+  user: user4
+)
+p "#{like52.user.full_name} likes #{post6.content[0..25]}"
+
+like53 = post6.likes.create!(
+  user: user1
+)
+p "#{like53.user.full_name} likes #{post6.content[0..25]}"
+
+like54 = post6.likes.create!(
+  user: user2
+)
+p "#{like54.user.full_name} likes #{post6.content[0..25]}"
+
+like55 = post3.likes.create!(
+  user: user4
+)
+p "#{like55.user.full_name} likes #{post3.content[0..25]}"
+
 # posts comments
 
 comment50 = post1.comments.create!(
@@ -1221,6 +1246,12 @@ comment60 = post5.comments.create!(
   content: "Es genial!"
 )
 p "#{comment60.user.full_name} commented #{post5.content[0..25]}"
+
+comment61 = post6.comments.create!(
+  user: user5,
+  content: "Me encanta!"
+)
+p "#{comment61.user.full_name} commented #{post6.content[0..25]}"
 
 # favorites
 

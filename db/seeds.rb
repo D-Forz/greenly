@@ -209,7 +209,7 @@ event3 = Event.new(
   description: "Acompañanos a sembrar arboles en el cerro quitasol!",
   event_date: DateTime.new(2022, 11, 26, 7, 0, 0),
   address: "Cerro Quitasol - Bello",
-  user: user3
+  user: user4
 )
 event3.photo.attach(io: File.open('app/assets/images/events/siembra.jpg'),
                     filename: 'siembra.jpg', content_type: 'image/jpg')
@@ -269,7 +269,7 @@ event8 = Event.new(
   description: "Acompañanos a sembrar arboles para mejorar la calidad de vida de los habitantes de la ciudad de Girardota y los alredores!",
   event_date: DateTime.new(2022, 11, 21, 8, 30, 0),
   address: "Girardota - Antioquia",
-  user: user1
+  user: user9
 )
 event8.photo.attach(io: File.open('app/assets/images/events/sembrat.jpg'),
                     filename: 'sembrat.jpg', content_type: 'image/jpg')
@@ -281,7 +281,7 @@ event9 = Event.new(
   description: "La playa de la ciudad de Cartagena es una de las más hermosas del país, por ello, es importante que se mantenga limpia y en buen estado para que todos los ciudadanos puedan disfrutarla. ¡Te esperamos!",
   event_date: DateTime.new(2022, 11, 25, 17, 30, 0),
   address: "Playa de Cartagena - Bolivar",
-  user: user5
+  user: user10
 )
 event9.photo.attach(io: File.open('app/assets/images/events/playas.jpg'),
                     filename: 'playas.jpg', content_type: 'image/jpg')
@@ -289,8 +289,9 @@ event9.save!
 p "#{event9.title} has been created"
 
 event10 = Event.new(
-  title: "Evento de enseñanza del cuidado del medio ambiente a niños",
-  description: "En este evento, los niños aprenderán sobre el cuidado del medio ambiente y como pueden ayudar a cuidarlo. ¡Te esperamos!",
+  title: "Evento de enseñanza del cuidado del medio ambiente a niños de la ciudad",
+  description: "En este evento, los niños aprenderán sobre el cuidado del medio ambiente" \
+               "y como pueden ayudar a cuidarlo mediante diferentes actividades y juegos. ¡Te esperamos!",
   event_date: DateTime.new(2022, 11, 14, 17, 30, 0),
   address: "Avenida Oriental -centro de Medellín.",
   user: user3
@@ -522,7 +523,7 @@ _attendance5 = Attendance.create!(
 p "#{user2.first_name} is attending #{event10.title}"
 
 _attendance6 = Attendance.create!(
-  user: user8,
+  user: user13,
   event: event10,
   attendance_status: "Maybe"
 )
@@ -550,11 +551,11 @@ _attendance9 = Attendance.create!(
 p "#{user7.first_name} is attending #{event5.title}"
 
 _attendance10 = Attendance.create!(
-  user: user4,
+  user: user15,
   event: event5,
   attendance_status: "Going"
 )
-p "#{user4.first_name} is attending #{event5.title}"
+p "#{user15.first_name} is attending #{event5.title}"
 
 _attendance11 = Attendance.create!(
   user: user11,
@@ -712,14 +713,14 @@ p "#{user10.first_name} is attending #{event6.title}"
 
 _attendace33 = Attendance.create!(
   user: user8,
-  event: event4,
+  event: event10,
   attendance_status: "Going"
 )
 p "#{user8.first_name} is attending #{event4.title}"
 
 _attendace34 = Attendance.create!(
-  user: user7,
-  event: event4,
+  user: user14,
+  event: event10,
   attendance_status: "Going"
 )
 p "#{user7.first_name} is attending #{event4.title}"
@@ -879,8 +880,8 @@ _attendace56 = Attendance.create!(
 p "#{user9.first_name} is attending #{event1.title}"
 
 _attendace57 = Attendance.create!(
-  user: user8,
-  event: event1,
+  user: user15,
+  event: event10,
   attendance_status: "Going"
 )
 p "#{user8.first_name} is attending #{event1.title}"
@@ -920,6 +921,7 @@ _attendace62 = Attendance.create!(
 )
 p "#{user2.first_name} is attending #{event1.title}"
 
+# likes events
 
 like1 = event1.likes.create!(
   user: user1
@@ -1069,3 +1071,173 @@ like34 = event2.likes.create!(
   user: user11
 )
 p "#{like34.user.full_name} likes #{event2.title}"
+
+# likes posts
+
+like35 = post1.likes.create!(
+  user: user1
+)
+p "#{like35.user.full_name} likes #{post1.content[0..25]}"
+
+like36 = post2.likes.create!(
+  user: user2
+)
+p "#{like36.user.full_name} likes #{post2.content[0..25]}"
+
+like37 = post3.likes.create!(
+  user: user3
+)
+p "#{like37.user.full_name} likes #{post3.content[0..25]}"
+
+like38 = post4.likes.create!(
+  user: user4
+)
+p "#{like38.user.full_name} likes #{post4.content[0..25]}"
+
+like39 = post5.likes.create!(
+  user: user5
+)
+p "#{like39.user.full_name} likes #{post5.content[0..25]}"
+
+like40 = post6.likes.create!(
+  user: user6
+)
+p "#{like40.user.full_name} likes #{post6.content[0..25]}"
+
+like41 = post1.likes.create!(
+  user: user7
+)
+p "#{like41.user.full_name} likes #{post1.content[0..25]}"
+
+like42 = post2.likes.create!(
+  user: user8
+)
+p "#{like42.user.full_name} likes #{post2.content[0..25]}"
+
+like43 = post3.likes.create!(
+  user: user9
+)
+p "#{like43.user.full_name} likes #{post3.content[0..25]}"
+
+like44 = post4.likes.create!(
+  user: user10
+)
+p "#{like44.user.full_name} likes #{post4.content[0..25]}"
+
+like45 = post5.likes.create!(
+  user: user11
+)
+p "#{like45.user.full_name} likes #{post5.content[0..25]}"
+
+like46 = post6.likes.create!(
+  user: user12
+)
+p "#{like46.user.full_name} likes #{post6.content[0..25]}"
+
+like47 = post2.likes.create!(
+  user: user13
+)
+p "#{like47.user.full_name} likes #{post2.content[0..25]}"
+
+like48 = post1.likes.create!(
+  user: user14
+)
+p "#{like48.user.full_name} likes #{post1.content[0..25]}"
+
+like49 = post3.likes.create!(
+  user: user15
+)
+p "#{like49.user.full_name} likes #{post3.content[0..25]}"
+
+like50 = post2.likes.create!(
+  user: user16
+)
+p "#{like50.user.full_name} likes #{post2.content[0..25]}"
+
+# posts comments
+
+comment50 = post1.comments.create!(
+  user: user10,
+  content: "Allá vamos!"
+)
+p "#{comment50.user.full_name} commented #{post1.content[0..25]}"
+
+comment51 = post2.comments.create!(
+  user: user11,
+  content: "Vamos a por ello!"
+)
+p "#{comment51.user.full_name} commented #{post2.content[0..25]}"
+
+comment52 = post3.comments.create!(
+  user: user12,
+  content: "Me encanta!"
+)
+p "#{comment52.user.full_name} commented #{post3.content[0..25]}"
+
+comment53 = post4.comments.create!(
+  user: user13,
+  content: "Que bonito!"
+)
+p "#{comment53.user.full_name} commented #{post4.content[0..25]}"
+
+comment54 = post5.comments.create!(
+  user: user14,
+  content: "Waoow!"
+)
+p "#{comment54.user.full_name} commented #{post5.content[0..25]}"
+
+comment55 = post6.comments.create!(
+  user: user15,
+  content: "Esto es asombroso!"
+)
+p "#{comment55.user.full_name} commented #{post6.content[0..25]}"
+
+comment56 = post1.comments.create!(
+  user: user16,
+  content: "Aww!"
+)
+p "#{comment56.user.full_name} commented #{post1.content[0..25]}"
+
+comment57 = post2.comments.create!(
+  user: user1,
+  content: "Tenemos que hacer algo similar!"
+)
+p "#{comment57.user.full_name} commented #{post2.content[0..25]}"
+
+comment58 = post3.comments.create!(
+  user: user2,
+  content: "Me encanta!"
+)
+p "#{comment58.user.full_name} commented #{post3.content[0..25]}"
+
+comment59 = post4.comments.create!(
+  user: user3,
+  content: "Me alegra mucho ver esto"
+)
+p "#{comment59.user.full_name} commented #{post4.content[0..25]}"
+
+comment60 = post5.comments.create!(
+  user: user4,
+  content: "Es genial!"
+)
+p "#{comment60.user.full_name} commented #{post5.content[0..25]}"
+
+# favorites
+
+favorite1 = user4.favorites.create!(
+  favoritable_type: "Event",
+  favoritable_id: event10.id
+)
+p "#{favorite1.user.full_name} favorited #{event10.title}"
+
+favorite2 = user4.favorites.create!(
+  favoritable_type: "Event",
+  favoritable_id: event8.id
+)
+p "#{favorite2.user.full_name} favorited #{event8.title}"
+
+favorite3 = user4.favorites.create!(
+  favoritable_type: "Post",
+  favoritable_id: post1.id
+)
+p "#{favorite3.user.full_name} favorited #{post1.content[0..25]}"

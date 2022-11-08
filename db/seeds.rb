@@ -209,7 +209,7 @@ event3 = Event.new(
   description: "Acompañanos a sembrar arboles en el cerro quitasol!",
   event_date: DateTime.new(2022, 11, 26, 7, 0, 0),
   address: "Cerro Quitasol - Bello",
-  user: user4
+  user: user12
 )
 event3.photo.attach(io: File.open('app/assets/images/events/siembra.jpg'),
                     filename: 'siembra.jpg', content_type: 'image/jpg')
@@ -314,18 +314,6 @@ comment2 = event6.comments.create!(
 )
 p "#comment '#{comment2.content}' has been created"
 
-comment3 = event10.comments.create!(
-  user: user4,
-  content: "¡Quiero ser parte de esto, el futuro del planeta está en nuestras manos !"
-)
-p "#comment '#{comment3.content}' has been created"
-
-comment4 = event4.comments.create!(
-  user: user4,
-  content: "¡Los parques de nuestra ciudad dan una gran impresión de lo que somos como comunidad, quiero ayudar a mejorar el aspecto de nuestros barrios!"
-)
-p "#comment '#{comment4.content}' has been created"
-
 comment5 = event8.comments.create!(
   user: user7,
   content: "Los arboles son parte vital de nuestra vida, la tala de arboles nos afecta a todos, ¡que buena iniciativa!"
@@ -362,12 +350,6 @@ comment10 = event1.comments.create!(
 )
 p "#comment '#{comment10.content}' has been created"
 
-comment11 = event1.comments.create!(
-  user: user4,
-  content: "quiero aprender y luego implementaro en mi casa, quiero cocinar con tomates frescos jajaja"
-)
-p "#comment '#{comment11.content}' has been created"
-
 comment12 = event2.comments.create!(
   user: user8,
   content: "Que bonita iniciativa muchachos, sabemos que el plastico es un gran problema y uno de los principales agentes contaminantes del medio hambiente."
@@ -398,12 +380,6 @@ comment16 = event7.comments.create!(
   content: "Creo que solo debemos llevar guantes, en el lugar nos dan los demás implementos"
 )
 p "#comment '#{comment16.content}' has been created"
-
-comment17 = event10.comments.create!(
-  user: user4,
-  content: "Quiero participar, creo que podría compartir un poco de mi conocimiento en el area si en algún momento lo requieren"
-)
-p "#comment '#{comment17.content}' has been created"
 
 comment18 = event10.comments.create!(
   user: user1,
@@ -592,13 +568,6 @@ _attendace15 = Attendance.create!(
 )
 p "#{user2.first_name} is attending #{event9.title}"
 
-_attendace16 = Attendance.create!(
-  user: user4,
-  event: event9,
-  attendance_status: "Going"
-)
-p "#{user4.first_name} is attending #{event9.title}"
-
 _attendace17 = Attendance.create!(
   user: user6,
   event: event9,
@@ -675,13 +644,6 @@ _attendace27 = Attendance.create!(
   attendance_status: "Going"
 )
 p "#{user2.first_name} is attending #{event6.title}"
-
-_attendace28 = Attendance.create!(
-  user: user4,
-  event: event6,
-  attendance_status: "Going"
-)
-p "#{user4.first_name} is attending #{event6.title}"
 
 _attendace29 = Attendance.create!(
   user: user5,
@@ -795,13 +757,6 @@ _attendace44 = Attendance.create!(
 )
 p "#{user2.first_name} is attending #{event3.title}"
 
-_attendace45 = Attendance.create!(
-  user: user4,
-  event: event3,
-  attendance_status: "Going"
-)
-p "#{user4.first_name} is attending #{event3.title}"
-
 _attendace46 = Attendance.create!(
   user: user1,
   event: event3,
@@ -851,13 +806,6 @@ _attendace52 = Attendance.create!(
 )
 p "#{user10.first_name} is attending #{event2.title}"
 
-_attendace53 = Attendance.create!(
-  user: user4,
-  event: event2,
-  attendance_status: "Maybe"
-)
-p "#{user4.first_name} is attending #{event2.title}"
-
 _attendace54 = Attendance.create!(
   user: user6,
   event: event2,
@@ -892,13 +840,6 @@ _attendace58 = Attendance.create!(
   attendance_status: "Going"
 )
 p "#{user6.first_name} is attending #{event1.title}"
-
-_attendace59 = Attendance.create!(
-  user: user4,
-  event: event1,
-  attendance_status: "Going"
-)
-p "#{user4.first_name} is attending #{event1.title}"
 
 _attendace60 = Attendance.create!(
   user: user2,
@@ -939,10 +880,7 @@ like5 = event5.likes.create!(
   user: user5
 )
 p "#{like5.user.full_name} likes #{event5.title}"
-like4 = event4.likes.create!(
-  user: user4
-)
-p "#{like4.user.full_name} likes #{event4.title}"
+
 like6 = event6.likes.create!(
   user: user6
 )
@@ -1089,11 +1027,6 @@ like37 = post3.likes.create!(
 )
 p "#{like37.user.full_name} likes #{post3.content[0..25]}"
 
-like38 = post4.likes.create!(
-  user: user4
-)
-p "#{like38.user.full_name} likes #{post4.content[0..25]}"
-
 like39 = post5.likes.create!(
   user: user5
 )
@@ -1159,11 +1092,6 @@ like51 = post6.likes.create!(
 )
 p "#{like51.user.full_name} likes #{post6.content[0..25]}"
 
-like52 = post6.likes.create!(
-  user: user4
-)
-p "#{like52.user.full_name} likes #{post6.content[0..25]}"
-
 like53 = post6.likes.create!(
   user: user1
 )
@@ -1173,11 +1101,6 @@ like54 = post6.likes.create!(
   user: user2
 )
 p "#{like54.user.full_name} likes #{post6.content[0..25]}"
-
-like55 = post3.likes.create!(
-  user: user4
-)
-p "#{like55.user.full_name} likes #{post3.content[0..25]}"
 
 # posts comments
 
@@ -1241,34 +1164,8 @@ comment59 = post4.comments.create!(
 )
 p "#{comment59.user.full_name} commented #{post4.content[0..25]}"
 
-comment60 = post5.comments.create!(
-  user: user4,
-  content: "Es genial!"
-)
-p "#{comment60.user.full_name} commented #{post5.content[0..25]}"
-
 comment61 = post6.comments.create!(
   user: user5,
   content: "Me encanta!"
 )
 p "#{comment61.user.full_name} commented #{post6.content[0..25]}"
-
-# favorites
-
-favorite1 = user4.favorites.create!(
-  favoritable_type: "Event",
-  favoritable_id: event10.id
-)
-p "#{favorite1.user.full_name} favorited #{event10.title}"
-
-favorite2 = user4.favorites.create!(
-  favoritable_type: "Event",
-  favoritable_id: event8.id
-)
-p "#{favorite2.user.full_name} favorited #{event8.title}"
-
-favorite3 = user4.favorites.create!(
-  favoritable_type: "Post",
-  favoritable_id: post1.id
-)
-p "#{favorite3.user.full_name} favorited #{post1.content[0..25]}"

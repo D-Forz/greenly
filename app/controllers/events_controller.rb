@@ -2,7 +2,8 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
   before_action :set_event, only: %i[edit update destroy]
   def index
-    @events = policy_scope(Event).includes(:user).with_attached_photo.order(created_at: :desc)
+    @events = policy_scope(Event).includes(:user, :attendances, :comments).with_attached_photo.order(created_at: :desc)
+    @pagy, @events = pagy_countless(@events, items: 10)
   end
 
   def show

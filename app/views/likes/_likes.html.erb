@@ -1,6 +1,6 @@
 <% if likeable.likes.any? %>
   <% likeable.likes.last(5).each do |like| %>
-    <span><%= cl_image_tag like.user.photo.key %></span>
+    <span><%= cl_image_tag like.user.photo.key, width: 23, height: 23, crop: :fill %></span>
   <% end %>
   <p>
     Liked by <b><%= likeable.likes.last.user.first_name %></b>

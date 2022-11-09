@@ -52,4 +52,9 @@ Rails.application.reloader.to_prepare do
     name: "The Event Attender",
     description: "Over 10 events attended"
   )
+  Merit::Badge.create!(
+    id: 8,
+    name: "The Community Builder",
+    description: "Over 10 likes"
+  )
 end

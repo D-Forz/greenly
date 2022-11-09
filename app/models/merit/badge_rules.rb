@@ -48,6 +48,10 @@ module Merit
       grant_on 'attendances#create', badge_id: 7, badge: 'The Event Attender', to: :user do |attendance|
         attendance.user.attendances.count >= 10
       end
+
+      grant_on 'likes#create', badge_id: 8, badge: 'The Community Builder', to: :user do |like|
+        like.user.likes.count >= 10
+      end
     end
   end
 end

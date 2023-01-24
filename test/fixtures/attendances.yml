@@ -1,9 +1,0 @@
-attendance_one:
-  attendance_status: Going
-  user: jhon
-  event: event_one
-
-attendance_two:
-  attendance_status: Maybe
-  user: pedro
-  event: event_two

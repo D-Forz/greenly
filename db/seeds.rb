@@ -183,7 +183,7 @@ p 'Creating events!'
 event1 = Event.new(
   title: "Sembremos tomates",
   description: "Estaremos sembrando tomates en el huerto de la escuela, todos son bienvenidos!",
-  event_date: DateTime.new(2022, 11, 30, 18, 0, 0),
+  event_date: DateTime.new(2023, 11, 30, 18, 0, 0),
   address: "Escuela de la ciudad",
   user: user1
 )
@@ -195,7 +195,7 @@ p "#{event1.title} has been created"
 event2 = Event.new(
   title: "Mejor sin plasticos",
   description: "Estaremos recolectando todos los residuos plasticos que tengas en tu hogar con el fin de dar una adecuada disposición de dichos elementos!",
-  event_date: DateTime.new(2022, 12, 30, 9, 0, 0),
+  event_date: DateTime.new(2023, 12, 30, 9, 0, 0),
   address: "Cancha de futbol - El playón",
   user: user1
 )
@@ -207,7 +207,7 @@ p "#{event2.title} has been created"
 event3 = Event.new(
   title: "Sembraton de arboles",
   description: "Acompañanos a sembrar arboles en el cerro quitasol!",
-  event_date: DateTime.new(2022, 11, 26, 7, 0, 0),
+  event_date: DateTime.new(2023, 11, 26, 7, 0, 0),
   address: "Cerro Quitasol - Bello",
   user: user12
 )
@@ -219,7 +219,7 @@ p "#{event3.title} has been created"
 event4 = Event.new(
   title: "Limpieza de parque",
   description: "Te invitamos a ser parte de la limpieza del parque recreativo de Andalucía, limpiar nuestras zonas de recreación será indispensable para poder disfrutarlas en su totalidad!",
-  event_date: DateTime.new(2022, 12, 4, 8, 0, 0),
+  event_date: DateTime.new(2023, 12, 4, 8, 0, 0),
   address: "Parque recreativo Andalucía - Metrocable",
   user: user3
 )
@@ -231,7 +231,7 @@ p "#{event4.title} has been created"
 event5 = Event.new(
   title: "Entrega de semillas de arboles",
   description: "A futuro Medellín planea ser una ciudad reforestada; por ello, teniendo una visión a furturo, queremos que seas parte de este proyecto y que puedas ayudar con dicha actividad en nuestra bella ciudad de Medellín !",
-  event_date: DateTime.new(2022, 12, 11, 8, 0, 0),
+  event_date: DateTime.new(2023, 12, 11, 8, 0, 0),
   address: "Jardín Botánico de Medellín",
   user: user5
 )
@@ -243,7 +243,7 @@ p "#{event5.title} has been created"
 event6 = Event.new(
   title: "Limpieza de separadores viales en la Oriental",
   description: "Debido a la alta circulación de vehiculos por esta zona, hay una alta presencia de basuras de todo en este separador vial. Esta es una zona principal de la ciudad que debe permanecer limpia y tu podrás ser parte de este cambio y servir de ejemplo para otras personas... ¡Te esperamos!",
-  event_date: DateTime.new(2022, 11, 15, 17, 30, 0),
+  event_date: DateTime.new(2023, 11, 15, 17, 30, 0),
   address: "Avenida Oriental -centro de Medellín.",
   user: user7
 )
@@ -255,7 +255,7 @@ p "#{event6.title} has been created"
 event7 = Event.new(
   title: "Recolección de residuos en el parque de la 33",
   description: "El parque de la 33 es uno de los parques más grandes de la ciudad, por ello, es importante que se mantenga limpio y en buen estado para que todos los ciudadanos puedan disfrutarlo. ¡Te esperamos!",
-  event_date: DateTime.new(2022, 11, 18, 9, 30, 0),
+  event_date: DateTime.new(2023, 11, 18, 9, 30, 0),
   address: "Parque de la 33 - Medellín",
   user: user2
 )
@@ -267,7 +267,7 @@ p "#{event7.title} has been created"
 event8 = Event.new(
   title: "Sembraton de arboles en Girardota",
   description: "Acompañanos a sembrar arboles para mejorar la calidad de vida de los habitantes de la ciudad de Girardota y los alredores!",
-  event_date: DateTime.new(2022, 11, 21, 8, 30, 0),
+  event_date: DateTime.new(2023, 11, 21, 8, 30, 0),
   address: "Girardota - Antioquia",
   user: user9
 )
@@ -279,7 +279,7 @@ p "#{event8.title} has been created"
 event9 = Event.new(
   title: "Limpieza de la playa en el caribe",
   description: "La playa de la ciudad de Cartagena es una de las más hermosas del país, por ello, es importante que se mantenga limpia y en buen estado para que todos los ciudadanos puedan disfrutarla. ¡Te esperamos!",
-  event_date: DateTime.new(2022, 11, 25, 17, 30, 0),
+  event_date: DateTime.new(2023, 11, 25, 17, 30, 0),
   address: "Playa de Cartagena - Bolivar",
   user: user10
 )
@@ -292,7 +292,7 @@ event10 = Event.new(
   title: "Evento de enseñanza del cuidado del medio ambiente a niños de la ciudad",
   description: "En este evento, los niños aprenderán sobre el cuidado del medio ambiente" \
                "y como pueden ayudar a cuidarlo mediante diferentes actividades y juegos. ¡Te esperamos!",
-  event_date: DateTime.new(2022, 11, 14, 17, 30, 0),
+  event_date: DateTime.new(2023, 11, 14, 17, 30, 0),
   address: "Avenida Oriental -centro de Medellín.",
   user: user3
 )

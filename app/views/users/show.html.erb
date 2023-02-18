@@ -4,7 +4,7 @@
     <div class="header"></div>
     <div class="row">
       <div class="profile__left col-md-4">
-        <%= image_tag @user.photo, class: "profile__photo" %>
+        <%= cl_image_tag @user.photo.key, class: "profile__photo" %>
         <h4 class="profile__name"><%= @user.full_name %></h4>
         <p class="profile__info">Ambientalist</p>
         <p class="profile__info"><%= @user.email %></p>

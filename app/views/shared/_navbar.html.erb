@@ -25,7 +25,7 @@
 
         <div class="profile-photo">
           <%= link_to profile_path(current_user) do %>
-            <%= image_tag current_user.photo, alt: "User profile" %>
+            <%= cl_image_tag current_user.photo.key, alt: "User profile" %>
           <% end %>
         </div>
     <% else %>

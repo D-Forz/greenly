@@ -22,7 +22,7 @@
             </span>
           </div>
           <div class="photo">
-            <%= image_tag @post.photo, alt: "Post Image" if @post.photo.attached? %>
+            <%= cl_image_tag @post.photo.key, alt: "Post Image" if @post.photo.attached? %>
           </div>
           <div class="action-buttons">
             <div class="interaction-buttons">

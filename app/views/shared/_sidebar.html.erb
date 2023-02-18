@@ -2,7 +2,7 @@
   <div class="info-left">
     <div class="profile">
       <div class="profile-photo">
-          <%= image_tag current_user.photo %>
+          <%= cl_image_tag current_user.photo.key %>
       </div>
       <%= link_to profile_path(current_user), class: "profile-info" do %>
         <p><%= current_user.full_name %></p>
